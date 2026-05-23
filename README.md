@@ -1,13 +1,15 @@
-# marguerite.jp archive
-Files from wayback machine archive of www.marguerite.jp
-
+# Marguerite.jp hanafuda continuation
 ## How to get Marguerite Hanafuda running
+1. Ensure PHP is installed
+1. Run `start.bat`
+   - `start.bat` assumes you have Firefox. If not, please navigate to `http://localhost:8888/Games/Marguerite_Hanafuda/` with your browser.
 
-1. Edit `/Games/Marguerite_Hanafuda/HTML5_Resouces/graphcLib.js`
-   - Change the 2 references of `www.marguerite.jp` to your domain `localhost:8888`
-1. Start local web server `php -S localhost:8888`
-1. `open http://localhost:8888/Games/Marguerite_Hanafuda/`
+## Plans for this project
+I intend to:
+* Parse and slightly clean-up the codebase
+* Translate the game into English, and allow the user to toggle languages in the game setings
+* Potentially, add missing house rules (e.g. to koi-koi)
+* Host a live version of the updated game
+* Potentially, look into how this could be packaged to run as an offline desktop application
 
-...have fun!
-
-✨🎴✨
+I aim to work on this project primarily until 10th June, and see how far I get.
