@@ -188,7 +188,7 @@ function initCanvas(bgColor) {
     if (AUDIO_INIT)
         AUDIO_INIT();
 
-    _f_initMenuLangToggle();
+    _f_initMenuLangToggle(); // OYABB
 }
 
 function putPartOfImage(img, sx, sy, sw, sh, dx, dy, dw, dh) {
