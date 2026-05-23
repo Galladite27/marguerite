@@ -17,7 +17,7 @@ function UI_SETTINGS_3() {
 
 _f_toggle_sprite=0;
 function _f_toggle_sprite_disp(mode) {
-    var str='札の動画効果：入', pos=9, len=10;
+    var str='札の動画効果：入', pos=9, len=7;
     if (_f_rule_sel['UI_noSprite'])
         str='札の動画効果：切';
     if (mode) {

@@ -15,13 +15,13 @@ function AUDIO_INIT() {
         navigator.userAgent.indexOf('iPod') > -1 ||
         navigator.userAgent.indexOf('iPad') > -1) {
             noAudio=1;
-            setMenuItem('MENU_AUDIO', 8, 5, '無音モード', 'NOAUDIO_ALERT()', 1);
+            setMenuItem('MENU_AUDIO', 8, 5, _f_getText('MENU_AUDIO_OFF'), 'NOAUDIO_ALERT()', 1);
             return;
     }
     
     if (navigator.userAgent.indexOf('Goanna/') > -1) {
         noAudio=2;
-        setMenuItem('MENU_AUDIO', 8, 5, '無音モード', 'NOAUDIO_ALERT()', 1);
+        setMenuItem('MENU_AUDIO', 8, 5, _f_getText('MENU_AUDIO_OFF'), 'NOAUDIO_ALERT()', 1);
         return;
     }
     
@@ -59,45 +59,45 @@ function AUDIO_INIT() {
         }
         catch (e) {
             noAudio=3;
-            setMenuItem('MENU_AUDIO', 8, 5, '無音モード', 'AUDIO_TOGGLE()', 0);
+            setMenuItem('MENU_AUDIO', 8, 5, _f_getText('MENU_AUDIO_OFF'), 'AUDIO_TOGGLE()', 0);
             return;
         }
     }
     
     silentMode=0;
     audioObj[0]=null;
-    setMenuItem('MENU_AUDIO', 8, 5, '有音モード', 'AUDIO_TOGGLE()', 0);
+    setMenuItem('MENU_AUDIO', 8, 5, _f_getText('MENU_AUDIO_ON'), 'AUDIO_TOGGLE()', 0);
 }
 
 function SHOW_AUDIOMODE() {
     if (noAudio) {
-        setMenuItem('MENU_AUDIO', 8, 5, '無音モード', 'NOAUDIO_ALERT()', 1);
+        setMenuItem('MENU_AUDIO', 8, 5, _f_getText('MENU_AUDIO_OFF'), 'NOAUDIO_ALERT()', 1);
     }
     else {
         if(silentMode)
-            setMenuItem('MENU_AUDIO', 8, 5, '無音モード', 'AUDIO_TOGGLE()', 0);
+            setMenuItem('MENU_AUDIO', 8, 5, _f_getText('MENU_AUDIO_OFF'), 'AUDIO_TOGGLE()', 0);
         else
-            setMenuItem('MENU_AUDIO', 8, 5, '有音モード', 'AUDIO_TOGGLE()', 0);
+            setMenuItem('MENU_AUDIO', 8, 5, _f_getText('MENU_AUDIO_ON'), 'AUDIO_TOGGLE()', 0);
     }
 }
 
 function NOAUDIO_ALERT() {
     if(noAudio>1)
-        alert('ペールムーンでは不具合があるため、音声出力を停止しております。');
+        alert(_f_getText('NOAUDIO_ALERT_1'));
     else if(noAudio>2)
-        alert('お使いの端末では音声出力がサポート出来ません。');
-    else alert('モバイル端末では音声出力をサポートしておりません。');
+        alert(_f_getText('NOAUDIO_ALERT_2'));
+    else alert(_f_getText('NOAUDIO_ALERT_OTHER'));
 }
 
 function AUDIO_TOGGLE() {
     if (silentMode) {
         silentMode=0;
         var i, j;
-        setMenuItem('MENU_AUDIO', 8, 5, '有音モード', 'AUDIO_TOGGLE()', 0);
+        setMenuItem('MENU_AUDIO', 8, 5, _f_getText('MENU_AUDIO_ON'), 'AUDIO_TOGGLE()', 0);
         return;
     }
     
-    setMenuItem('MENU_AUDIO', 8, 5, '無音モード', 'AUDIO_TOGGLE()', 0);
+    setMenuItem('MENU_AUDIO', 8, 5, _f_getText('MENU_AUDIO_OFF'), 'AUDIO_TOGGLE()', 0);
     silentMode=1;
 }
 

@@ -7,6 +7,7 @@ var cache0=cache_name+'0-R020611-1';
 var urls0=[
 	'/Games/Marguerite_Hanafuda/Hanafuda.html',
 	'/Games/Marguerite_Hanafuda/HTML5_Resouces/vals.js',
+	'/Games/Marguerite_Hanafuda/HTML5_Resouces/lang_lut.js',
 	];
 var cache1=cache_name+'1-R020611-1';
 var urls1=[
