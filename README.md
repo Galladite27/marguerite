@@ -1,8 +1,8 @@
 # Marguerite.jp hanafuda continuation
 ## How to get Marguerite Hanafuda running
 1. Ensure PHP is installed
-1. Run `start.bat`
-   - `start.bat` assumes you have Firefox. If not, please navigate to `http://localhost:8888/Games/Marguerite_Hanafuda/` with your browser.
+1. Run `run.bat`
+   - `run.bat` assumes you have Firefox. If not, please navigate to `http://localhost:8888/Games/Marguerite_Hanafuda/` with your browser.
 
 ## Plans for this project
 I intend to:
