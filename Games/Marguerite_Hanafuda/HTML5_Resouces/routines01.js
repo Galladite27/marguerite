@@ -1,4 +1,10 @@
-function PLAY_KOIKOI(){_f_gamemode=_F_GAMEMODE_KOIKOI;_f_players=2;_f_kabu_mode=0;setMenuItem('MENUBAR_RESTART', -8, 5, 'お品書きに戻る', 'QUIT_GAME()', 0);_f_h5_next=setTimeout('GAME_START(); ', 10);}
+function PLAY_KOIKOI() {
+    _f_gamemode=_F_GAMEMODE_KOIKOI;
+    _f_players=2;
+    _f_kabu_mode=0;
+    setMenuItem('MENUBAR_RESTART', -8, 5, _f_getText('MENU_RETURN'), 'QUIT_GAME()', 0);
+    _f_h5_next=setTimeout('GAME_START(); ', 10);
+}
 function PLAY_MUSHI(){_f_gamemode=_F_GAMEMODE_MUSHI;_f_players=2;_f_kabu_mode=0;setMenuItem('MENUBAR_RESTART', -8, 5, 'お品書きに戻る', 'QUIT_GAME()', 0);_f_h5_next=setTimeout('GAME_START(); ', 10);}
 function PLAY_HANAAWASE(){_f_gamemode=_F_GAMEMODE_HANAAWASE;_f_players=3;_f_kabu_mode=0;setMenuItem('MENUBAR_RESTART', -8, 5, 'お品書きに戻る', 'QUIT_GAME()', 0);_f_h5_next=setTimeout('GAME_START(); ', 10);}
 function PLAY_88(){_f_gamemode=_F_GAMEMODE_88;_f_players=3;_f_kabu_mode=0;setMenuItem('MENUBAR_RESTART', -8, 5, 'お品書きに戻る', 'QUIT_GAME()', 0);_f_h5_next=setTimeout('GAME_START(); ', 10);}
@@ -9,12 +15,122 @@ function PLAY_3_600KEN(){_f_gamemode=_F_GAMEMODE_600KEN;_f_players=3;_f_kabu_mod
 function PLAY_HACHI(){_f_gamemode=_F_GAMEMODE_HACHI;_f_players=2;_f_kabu_mode=0;setMenuItem('MENUBAR_RESTART', -8, 5, 'お品書きに戻る', 'QUIT_GAME()', 0);_f_h5_next=setTimeout('GAME_START(); ', 10);}
 function PLAY_OICHOKABU(){_f_gamemode=_F_GAMEMODE_OICHOKABU;_f_players=3;_f_kabu_mode=1;setMenuItem('MENUBAR_RESTART', -8, 5, 'お品書きに戻る', 'QUIT_GAME()', 0);_f_h5_next=setTimeout('GAME_START(); ', 10);}
 function PLAY_KYOKABU(){_f_gamemode=_F_GAMEMODE_KYOKABU;_f_players=3;_f_kabu_mode=1;setMenuItem('MENUBAR_RESTART', -8, 5, 'お品書きに戻る', 'QUIT_GAME()', 0);_f_h5_next=setTimeout('GAME_START(); ', 10);}
-function GAME_START(){var i, j;_f_toggle_sprite_disp(1);graph_noSprite=_f_rule_sel['UI_noSprite'] || 0;_f_max_kyokusu=12;_f_600ken_norm=256;if(_f_gamemode==_F_GAMEMODE_HACHI){ _f_600ken_norm=2; _f_max_kyokusu=0; }else if(_f_gamemode==_F_GAMEMODE_600KEN){ _f_600ken_norm=3; _f_max_kyokusu=0; }else if(_f_rule_sel['UI_game_kyokusu']) _f_max_kyokusu=6;_f_fuda_used=0;i=-1; while((j=k=_f_fuda_used_table[++i])!=0){if(((j &= 0xf0)==0x60 || j==0x70) && _f_gamemode==_F_GAMEMODE_MUSHI) continue;if(((j &= 0xf0)==0xb0 || j==0xc0) && _f_kabu_mode) continue;_f_yamafuda[_f_fuda_used++]=k;}_f_cushion_color();removeAllOfTextArea();_f_game_ctr=0;i=-1; while(++i<3){_f[i].total_result=0;j=_f[i].result.length;while(--j>=0) _f[i].result[j]=0;}if(!(_f_seatName[1]=_f_rule_sel['UI_right_name'])) _f_seatName[1]='真希';if(!(_f_seatName[2]=_f_rule_sel['UI_left_name'])) _f_seatName[2]='ユイカ';_f_oya=Math.floor(Math.random()*3);if(_f_kabu_mode){_f_players=3;if(_f_rule_sel['OCK_fudaType']==1){_f_fuda_used=0;k=0; while((k+=0x10)<0xb0){j=4; while(--j>=0) _f_yamafuda[_f_fuda_used++]=k | 8;}_f_yamafuda[1]=0xb0 | 8;}i=40; while(--i>=0) _f_oichokabu_yamafuda[i]=_f_yamafuda[i];}_f_torefuda_mark=_f_rule_sel['UI_torefuda_mark'];_f_fudaBack=0; if(!_f_rule_sel['UI_fudaBack']<1) _f_fudaBack=1;_f_h5_next=setTimeout('NEW_GAME(); ', 10);}
-function NEW_GAME(){var i, j;_f_oya=Math.floor(Math.random()*_f_players);_f_kyokusu_ctr=0;_f_600ken_4ko_flag=-1;_f_600ken_victor=-1;_f_600ken_ichikoro_flag=-1;_f_600ken_te4_flag=0;_f_600ken_new=1;_f_600ken_4ko_flag2=-1;_f_600ken_victor2=-1;_f_600ken_ichikoro_flag2=-1;_f_8_prev_winner=-1;i=3;j=0;if(_f_gamemode==_F_GAMEMODE_88 || _f_gamemode==_F_GAMEMODE_SUDAOSHI){j=60;_f_88_ba_rate=0;_f_88_ba_rate_next=0;}if(_f_kabu_mode){j=50;_f_oichokabu_oyaTotalPoint=0;}while(--i>=0){_f[i].score=j;_f[i].score_before_game=j;_f[i].point_600ken=0;_f[i].current_point_600ken=0;}_f_init_balance();if(_f_kabu_mode){}_f_h5_next=setTimeout('DEOYAGIME(); ', 10);}
+
+function GAME_START() {
+    var i, j;
+    _f_toggle_sprite_disp(1);
+    graph_noSprite=_f_rule_sel['UI_noSprite'] || 0;
+    _f_max_kyokusu=12;
+    _f_600ken_norm=256;
+    if (_f_gamemode==_F_GAMEMODE_HACHI) {
+        _f_600ken_norm=2;
+        _f_max_kyokusu=0;
+    }
+    else if (_f_gamemode==_F_GAMEMODE_600KEN) {
+        _f_600ken_norm=3;
+        _f_max_kyokusu=0;
+    } else if (_f_rule_sel['UI_game_kyokusu'])
+        _f_max_kyokusu=6;
+
+    _f_fuda_used=0;
+    i=-1;
+    while ((j=k=_f_fuda_used_table[++i])!=0) {
+        if (((j &= 0xf0)==0x60 || j==0x70) && _f_gamemode==_F_GAMEMODE_MUSHI)
+            continue;
+        if (((j &= 0xf0)==0xb0 || j==0xc0) && _f_kabu_mode)
+            continue;
+
+        _f_yamafuda[_f_fuda_used++]=k;
+    }
+
+    _f_cushion_color();
+    removeAllOfTextArea();
+    _f_game_ctr=0;
+
+    i=-1;
+    while (++i<3) {
+        _f[i].total_result=0;
+        j=_f[i].result.length;
+        while (--j>=0)
+            _f[i].result[j]=0;
+    }
+
+    if (!(_f_seatName[1]=_f_rule_sel['UI_right_name']))
+        _f_seatName[1]='真希';
+    if (!(_f_seatName[2]=_f_rule_sel['UI_left_name']))
+        _f_seatName[2]='ユイカ';
+
+    _f_oya=Math.floor(Math.random()*3);
+
+    if (_f_kabu_mode) {
+        _f_players=3;
+        if (_f_rule_sel['OCK_fudaType']==1) {
+            _f_fuda_used=0;
+            k=0;
+            while ((k+=0x10)<0xb0) {
+                j=4;
+                while (--j>=0)
+                    _f_yamafuda[_f_fuda_used++]=k | 8;
+            }
+            _f_yamafuda[1]=0xb0 | 8;
+        }
+
+        i=40;
+        while (--i>=0)
+            _f_oichokabu_yamafuda[i]=_f_yamafuda[i];
+    }
+
+    _f_torefuda_mark=_f_rule_sel['UI_torefuda_mark'];
+    _f_fudaBack=0;
+    if (!_f_rule_sel['UI_fudaBack']<1)
+        _f_fudaBack=1;
+    _f_h5_next=setTimeout('NEW_GAME(); ', 10);
+}
+function NEW_GAME() {
+    var i, j;
+    
+    _f_oya=Math.floor(Math.random()*_f_players);
+    _f_kyokusu_ctr=0;
+    _f_600ken_4ko_flag=-1;
+    _f_600ken_victor=-1;
+    _f_600ken_ichikoro_flag=-1;
+    _f_600ken_te4_flag=0;
+    _f_600ken_new=1;
+    _f_600ken_4ko_flag2=-1;
+    _f_600ken_victor2=-1;
+    _f_600ken_ichikoro_flag2=-1;
+    _f_8_prev_winner=-1;
+    
+    i=3;
+    j=0;
+    if (_f_gamemode==_F_GAMEMODE_88 || _f_gamemode==_F_GAMEMODE_SUDAOSHI) {
+        j=60;
+        _f_88_ba_rate=0;
+        _f_88_ba_rate_next=0;
+    }
+    if (_f_kabu_mode) {
+        j=50;
+        _f_oichokabu_oyaTotalPoint=0;
+    }
+    while (--i>=0) {
+        _f[i].score=j;
+        _f[i].score_before_game=j;
+        _f[i].point_600ken=0;
+        _f[i].current_point_600ken=0;
+    }
+    
+    _f_init_balance();
+    
+    if (_f_kabu_mode) {
+    }
+    
+    _f_h5_next=setTimeout('DEOYAGIME(); ', 10);}
+
 function DEOYAGIME(){var i,j,k,l,m;_f_status_disp('出親を決めます。');if(_f_kabu_mode){i=40; while(--i>=0) _f_yamafuda[i]=_f_oichokabu_yamafuda[i];}m=3; while(--m>=0){i=8; while(--i>=0) _f[m].tefuda[i]=0;}m=10; while(--m>=0){i=_f_fuda_used;while(--i>=0){j=Math.floor(Math.random()*_f_fuda_used);l=_f_yamafuda[i]; _f_yamafuda[i]=_f_yamafuda[j]; _f_yamafuda[j]=l ^ 0x100;j=Math.floor(Math.random()*_f_fuda_used);k=Math.floor(Math.random()*_f_fuda_used);l=_f_yamafuda[k]; _f_yamafuda[k]=_f_yamafuda[j]; _f_yamafuda[j]=l ^ 0x100;}}if(_f_kabu_mode){i=40; while(--i>=0) _f_oichokabu_yamafuda[i]=_f_yamafuda[i];_f_oichokabu_oyaOpen=1;}_f_yamafuda_remain=_f_fuda_used;_f_oya=0;_f_karioya=_f_seki=-1;removeAllOfTextArea();_f_playfield();_f_i=13;_f_k=0;_f_status='';_f_h5_next=setTimeout('DEOYAGIME_2(); ', 10);}
 function DEOYAGIME_2(){var i;if(++_f_seki>=_f_players){_f_h5_next=setTimeout('DEOYAGIME_END(); ', 10);return;}_f_j=_f_yamafuda[--_f_yamafuda_remain] | 0x200;if(!_f_kabu_mode){_f[_f_seki].tefuda[3]=_f_j;_f_from_yamafuda_to_tefuda(_f_seki, 0, 0);_f_yamafuda_disp();}else {_f[_f_seki].tefuda[0]=_f_j & 0xff;if(_f_oya!=_f_seki){_f_oichokabu_animation_makifuda(_f_seki, _f_j);}else {_f_oichokabu_animation_oyatefuda(0);}_f_yamafuda_disp(-1);}if((i=(_f_j >> 4) & 15)<_f_i){_f_i=i; _f_karioya=_f_seki;}_f_h5_next=setTimeout('WAIT_MOVIE("DEOYAGIME_4"); ', 10);}
 function DEOYAGIME_4(){var i;AUDIO_OUTPUT('kirifuda'+(++_h5_sound_ctr & 3), false);_f_tefuda_disp(_f_seki);_f_h5_next=setTimeout('DEOYAGIME_2(); ', 240);}
 function DEOYAGIME_END(){var i, j;_f_oya=_f_karioya;_f_mini_console_disp();if(_f_gamemode!=_F_GAMEMODE_600KEN) _f_command=_f_nagare_judge();i='CPUが出親です。';if(!_f_oya) i='あなたが出親です。';else if(_f_players!=2) i=_f_seatName[_f_oya]+'が出親です。';_f_status_disp(i);j=0;i=_f_oya; do {_f[i].oyako=_f_oyako_str[j++];if(++i>=_f_players) i=0;} while(j<_f_players);inputKey=-1;if(_f_kabu_mode)_f_oichokabu_oyaOpen=0;else _f_playfield();_f_h5_next=setTimeout('WAIT_MINICONSOLE("IKKYOKU"); ', 10);}
+
 function IKKYOKU(){var i,j,k,l,m;if(_f_kabu_mode){i=40; while(--i>=0) _f_yamafuda[i]=_f_oichokabu_yamafuda[i];}m=10; while(--m>=0){i=_f_fuda_used;while(--i>=0){j=Math.floor(Math.random()*_f_fuda_used);l=_f_yamafuda[i]; _f_yamafuda[i]=_f_yamafuda[j]; _f_yamafuda[j]=l ^ 0x100;j=Math.floor(Math.random()*_f_fuda_used);k=Math.floor(Math.random()*_f_fuda_used);l=_f_yamafuda[k]; _f_yamafuda[k]=_f_yamafuda[j]; _f_yamafuda[j]=l ^ 0x100;}}if(_f_kabu_mode){i=40; while(--i>=0) _f_oichokabu_yamafuda[i]=_f_yamafuda[i];}else {k=_f_fuda_used;i=8; while(--i>=0) _f_kubarifuda[i]=0;j=6; if(_f_gamemode==_F_GAMEMODE_MUSHI || (_f_gamemode==_F_GAMEMODE_600KEN && _f_players==2) || (_f_gamemode==_F_GAMEMODE_KOIKOI && _f_rule_sel['KK_bafuda'])) j=8;while(--j>=0) _f_kubarifuda[j]=_f_yamafuda[--k];i=_f_players; while(--i>=0){j=8; while(--j>=0) _f[i].kubarifuda[j]=0;j=8; if(_f_players==3 || _f_gamemode==_F_GAMEMODE_88 || _f_gamemode==_F_GAMEMODE_HACHI) --j;while(--j>=0) _f[i].kubarifuda[j]=_f_yamafuda[--k];}if(_f_gamemode==_F_GAMEMODE_MUSHI) _f_suffle_2();else if(_f_gamemode==_F_GAMEMODE_KOIKOI) _f_suffle_1();}_f_h5_next=setTimeout('IKKYOKU_2(); ', 10);}
 function _f_suffle_1(){var s, nf=[0, 0], i, j, k, l, m, n;var vt=[0x0001, 0x0100, 0x0010, 0x1000];try {s=2; while(--s>-1){l=8; while(--l>-1){if(!(n=_f[s].kubarifuda[l] & 0xff)) continue;if(n==0xc2) n=0xc0;k=-1; j=0; m=10; while(--m>-1){if(!(i=_f_kubarifuda[m] & 0xff)) continue;if((i ^ n) & 0xf0) continue;if(i==0xc2) i=0xc0;i &= 0x0f;if(k<i) k=i;++j;}if(j<1) continue;nf[s] += vt[n & 0x0f];if(j>2){m=10; while(--m>-1){if(!(i=_f_kubarifuda[m] & 0xff)) continue;if((i ^ n) & 0xf0) continue;if(i==0xc2) i=0xc0;nf[s] += vt[i & 0x0f];}continue;}nf[s] += vt[k & 0x0f];}}if(nf[0]-1<nf[1]){if(_f[0].score>_f[1].score || (!_f_max_kyokusu && _f_kyokusu_ctr>3) || _f_kyokusu_ctr > Math.floor(_f_max_kyokusu*0.7)){return;}i=8; while(--i>=0){j=_f[0].kubarifuda[i]; _f[0].kubarifuda[i]=_f[1].kubarifuda[i]; _f[1].kubarifuda[i]=j;}return;}if(_f[0].score>_f[1].score || (!_f_max_kyokusu && _f_kyokusu_ctr>3) || _f_kyokusu_ctr > Math.floor(_f_max_kyokusu*0.7)){i=8; while(--i>=0){j=_f[0].kubarifuda[i]; _f[0].kubarifuda[i]=_f[1].kubarifuda[i]; _f[1].kubarifuda[i]=j;}}} catch(e){ console.log(e); }}
 function _f_suffle_2(){var s, nf=[0, 0], af=[0, 0], bf=new Array(13), i,j, k, l, f, os=new Array(3), fj=kr=0, fj2=kr2=0;i=13; while(--i>=0) bf[i]=0;i=8; while(--i>=0){j=(_f_kubarifuda[i] >> 4) & 15;if((_f_kubarifuda[i] & 0xff)==0x22){ bf[2]++; continue; }if((_f_kubarifuda[i] & 0x0f)==3) bf[j]++;if(j==4) fj++;if(j==12) kr++;}s=2; while(--s>=0){f=os[0]=os[1]=os[2]=0;fj2=fj; kr2=kr;i=8; while(--i>=0){k=_f[s].kubarifuda[i] & 0xff;l=k >> 4;if(l==4) fj2++;if(l==12) kr2++;if((k & 0x0f)==3){if(l==11){ af[s]++; }if(l==1) os[0]++;if(l==2) os[2]++;nf[s]+=20; continue;}if(k==0xb0){f++;if(bf[1]+bf[3]+bf[8]+bf[12]) nf[s]+=20;continue;}if(k==0xb1 || k==0xb2) af[s]++;if(l==2){if(k==0x22 || bf[2]) os[1]++;continue;}if(!bf[l]) continue;nf[s]+=20;}i=0;if(os[0]) ++i;if(os[1]) ++i;if(os[2]) ++i;if(f) ++i;if(i>2){nf[s]+=25; if(i>3) f=0;}if((i=fj2+f)>=4){nf[s]+=10; if(i>4) f=0;}if((i=kr2+f)>=4){nf[s]+=10; if(i>4) f=0;}}if(af[0]>af[1]) nf[0]+=35;else if(af[1]>af[0]) nf[1]+=35;if(nf[0]-1<nf[1]){if(_f[0].score>_f[1].score || (!_f_max_kyokusu && _f_kyokusu_ctr>3) || _f_kyokusu_ctr > Math.floor(_f_max_kyokusu*0.7)){return;}i=8; while(--i>=0){j=_f[0].kubarifuda[i]; _f[0].kubarifuda[i]=_f[1].kubarifuda[i]; _f[1].kubarifuda[i]=j;}return;}if(_f[0].score>_f[1].score || (!_f_max_kyokusu && _f_kyokusu_ctr>3) || _f_kyokusu_ctr > Math.floor(_f_max_kyokusu*0.7)){i=8; while(--i>=0){j=_f[0].kubarifuda[i]; _f[0].kubarifuda[i]=_f[1].kubarifuda[i]; _f[1].kubarifuda[i]=j;}}}
@@ -78,6 +194,35 @@ function NAGARE_KOIKOI_3(){var i, j, k;if(_f_command<0){_f_h5_next=setTimeout('I
 function NAGARE_KOIKOI_5(){if(_f_command>-1) _f_oya=_f_command;_f_h5_next=setTimeout('IKKYOKU_END(); ', 10);}
 function IKKYOKU_END(){var i, j, k;if(_f_players==3 && _f_gamemode!=_F_GAMEMODE_600KEN){i=_f_players;while(--i>=0){_f[i].score_before_game=_f[i].score=_f[i].score_after_balance;_f[i].current_result=_f[i].result_after_balance;}_f_balance_disp(0);}else if(_f_gamemode==_F_GAMEMODE_600KEN || _f_gamemode==_F_GAMEMODE_HACHI){i=_f_players;while(--i>=0){_f[i].score_before_game=_f[i].score_after_balance=_f[i].score;_f[i].current_result=_f[i].result_after_balance;}_f_h5_next=setTimeout('IKKYOKU_END_3(); ', 10);return;}else {i=_f_players;while(--i>=0){_f[i].score_before_game=_f[i].score=_f[i].score_after_balance;_f[i].current_result=_f[i].result_after_balance;}_f_h5_next=setTimeout('IKKYOKU_END_3(); ', 10);return;}inputKey=0;_f_h5_next=setTimeout('WAIT_MINICONSOLE("IKKYOKU_END_3"); ', 10);}
 function IKKYOKU_END_3(){var i, j, k;if(_f_gamemode==_F_GAMEMODE_600KEN || _f_gamemode==_F_GAMEMODE_HACHI){i=_f_players;while(--i>=0){if(_f[i].score>_f_600ken_norm*10-1) break;}if(i<0){_f_h5_next=setTimeout('IKKYOKU(); ', 10);return;}}if(++_f_kyokusu_ctr<_f_max_kyokusu ||(_f_gamemode==_F_GAMEMODE_88 && _f_rule_sel['HH_extension'] && _f_88_ba_rate_next>1) ||(_f_gamemode==_F_GAMEMODE_600KEN && !_f_600ken_new)){_f_h5_next=setTimeout('IKKYOKU(); ', 10);return;}_f_h5_next=setTimeout('GAME_END(); ', 10);}
-function GAME_END(){var i, j, k;var cs, margin, blines, bcolumns;var w, h, xh, yh;_f_status_erase();_f_console_erase();_f_init_balance();i=_f_players;while(--i>=0){_f[i].result[_f_game_ctr]=_f[i].current_result;j=_f_game_ctr; _f[i].total_result=0;while(--j>=0) _f[i].total_result+=_f[i].result[j];}_f_score_card_disp();}
-function GAME_END_3(){if(++_f_game_ctr>=7){_f_h5_next=setTimeout('MENU(); ', 10);return;}_f_h5_next=setTimeout('NEW_GAME(); ', 10);}
-function GAME_OVER(){_f_h5_next=setTimeout('MENU(); ', 10);}
+
+function GAME_END() {
+    var i, j, k;
+    var cs, margin, blines, bcolumns;
+    var w, h, xh, yh;
+    
+    _f_status_erase();
+    _f_console_erase();
+    _f_init_balance();
+    
+    i=_f_players;
+    while (--i>=0) {
+        _f[i].result[_f_game_ctr]=_f[i].current_result;
+        
+        j=_f_game_ctr;
+        _f[i].total_result=0;
+        while (--j>=0)
+            _f[i].total_result+=_f[i].result[j];
+    }
+        
+    _f_score_card_disp();
+}
+function GAME_END_3() {
+    if (++_f_game_ctr>=7) {
+        _f_h5_next=setTimeout('MENU(); ', 10);
+        return;
+    }
+    _f_h5_next=setTimeout('NEW_GAME(); ', 10);
+}
+function GAME_OVER() {
+    _f_h5_next=setTimeout('MENU(); ', 10);
+}

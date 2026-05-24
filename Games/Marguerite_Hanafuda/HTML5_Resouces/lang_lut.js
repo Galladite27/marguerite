@@ -21,7 +21,8 @@ function _f_langToggle() {
     setMenuItem('MENU_LANG', 300, 3, _f_getText('MENU_LANG_TOGGLE'), '_f_langToggle()', 0);
 
     // Update here!
-    SHOW_AUDIOMODE()
+    SHOW_AUDIOMODE();
+    // For return to menu text - after initial menu, it is shown at all times. Check if we're past that menu, then update based on if currently clickable.
 }
 
 // audioLib
@@ -31,6 +32,9 @@ _f_registerText('MENU_AUDIO_ON', '有音モード', 'Sound: ON');
 _f_registerText('NOAUDIO_ALERT_1', 'ペールムーンでは不具合があるため、音声出力を停止しております。', 'Due to a technical issue with Pale Moon, audio output has been disabled.');
 _f_registerText('NOAUDIO_ALERT_2', 'お使いの端末では音声出力がサポート出来ません。', 'Your device does not support audio output.');
 _f_registerText('NOAUDIO_ALERT_OTHER', 'モバイル端末では音声出力をサポートしておりません。', 'Audio output is not supported on mobile devices.');
+
+//routines01
+_f_registerText('MENU_RETURN', 'お品書きに戻る', 'Return to menu');
 
 // _f_registerText('', '', '');
 
