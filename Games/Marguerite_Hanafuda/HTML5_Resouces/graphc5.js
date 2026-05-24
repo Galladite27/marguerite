@@ -27,13 +27,35 @@ function RULE_SETTINGS() {
     yh+=margin;
     _f_toggle_sprite_disp(0);
     _f_h5_menu_ja();
-    _f_centerText('HEADINGS_2', xh+(w >> 1)-ch*2, yh+margin+ch*2, cs*4, cs, '#fff', '<b>お品書き</b>');
+    _f_centerText('HEADINGS_2', xh+(w >> 1)-ch*4, yh+margin+ch*2, cs*8, cs, '#fff', '<b>'+_f_getText('MENU_TEXT_TITLE')+'</b>');
     SHOW_AUDIOMODE();
     setMenuItem('MENUBAR_RESTART', -8, 5, _f_getText('MENU_RETURN'), '', 1);
-    _f_leftText('HD_3P', xh+cs*2, yh+ch*5, cs*6, cs, '#ff0', '<b>三人打ち</b>');
-    _f_leftText('HD_2P', xh+cs*2, yh+ch*6.7, cs*6, cs, '#ff0', '<b>二人打ち</b>');
-    _f_leftText('HD_KN', xh+cs*2, yh+ch*10.1, cs*6, cs, '#ff0', '<b>カブ競技</b>');
-    _f_leftText('HD_RL', xh+cs*2, yh+ch*14, cs*7, cs, '#ff0', '<b>設定</b>');_f_leftText('HD_OT', xh+cs*2, yh+ch*16, cs*7, cs, '#ff0', '<b>その他</b>');d=_f_textButton2(d, xh+cs*8,yh+ch*5,cs*5,cs,'花合わせ','PLAY_HANAAWASE');d=_f_textButton2(d, xh+cs*13.5,yh+ch*5,cs*5,cs,'はちはち','PLAY_88');d=_f_textButton2(d, xh+cs*19,yh+ch*5,cs*5,cs,'すだおし','PLAY_SUDAOSHI');d=_f_textButton2(d, xh+cs*27,yh+ch*5,cs*5,cs,'三人六百間','PLAY_3_600KEN');d=_f_textButton2(d, xh+cs*8,yh+ch*6.7,cs*5,cs,'こいこい','PLAY_KOIKOI');d=_f_textButton2(d, xh+cs*13.5,yh+ch*6.7,cs*5,cs,'むし','PLAY_MUSHI');d=_f_textButton2(d, xh+cs*19,yh+ch*6.7,cs*6,cs,'二人はちはち','PLAY_2_88');d=_f_textButton2(d, xh+cs*27,yh+ch*6.7,cs*5,cs,'六百間','PLAY_2_600KEN');d=_f_textButton2(d, xh+cs*8,yh+ch*8.4,cs*5,cs,'はち','PLAY_HACHI');d=_f_textButton2(d, xh+cs*8,yh+ch*10.1,cs*6,cs,'おいちょかぶ','PLAY_OICHOKABU');d=_f_textButton2(d, xh+cs*15,yh+ch*10.1,cs*5,cs,'京かぶ','PLAY_KYOKABU');d=_f_textButton2(d, xh+cs*8,yh+ch*14,cs*5,cs,'ルール設定','RULE_MENU');d=_f_textButton2(d, xh+cs*15,yh+ch*14,cs*6,cs,'対局環境設定','UI_SETTINGS', '一試合の局数(十二局または半ドン・一部ゲームを除く)もこちらで選べます。');_f_leftText('TO_PRODUCT_PAGE', xh+cs*8,yh+ch*16,cs*9,cs,'#fff', '<a style="color: #fff; font: inherit; font-weight: bold; text-decoration: none; " href="http:/'+'/www.marguerite.jp/Nihongo/Games/%E3%81%97%E3%82%89%E3%81%8E%E3%81%8F%E8%8A%B1%E6%9C%AD/index.html">公開サイト</a>');d=_f_textButton2(d, xh+cs*14,yh+ch*16,cs*4,cs,'おくづけ','ABOUT');_f_leftText('OTHER_PRODUCTS', xh+cs*19,yh+ch*16,cs*7,cs,'#fff', '<a style="color: #fff; font: inherit; font-weight: bold; text-decoration: none; " href="http:/'+'/www.marguerite.jp/Nihongo/Games/%E3%81%97%E3%82%89%E3%81%8E%E3%81%8F%E9%BA%BB%E9%9B%80/index.html">しらぎく麻雀</a>');_f_h5_next=setTimeout('_f_wait4next(); ', 10);}
+    _f_leftText('HD_3P', xh+cs*2, yh+ch*5, cs*6, cs, '#ff0', '<b>'+_f_getText('MENU_TEXT_3P')+'</b>');
+    _f_leftText('HD_2P', xh+cs*2, yh+ch*6.7, cs*6, cs, '#ff0', '<b>'+_f_getText('MENU_TEXT_2P')+'</b>');
+    _f_leftText('HD_KN', xh+cs*2, yh+ch*10.1, cs*6, cs, '#ff0', '<b>'+_f_getText('MENU_TEXT_KABU')+'</b>');
+    _f_leftText('HD_RL', xh+cs*2, yh+ch*14, cs*7, cs, '#ff0', '<b>'+_f_getText('MENU_TEXT_OPTIONS')+'</b>');
+    _f_leftText('HD_OT', xh+cs*2, yh+ch*16, cs*7, cs, '#ff0', '<b>'+_f_getText('MENU_TEXT_OTHER')+'</b>');
+
+    d=_f_textButton2(d, xh+cs*8,yh+ch*5,cs*5,cs,_f_getText('MENU_GAME_HANAAWASE'),'PLAY_HANAAWASE');
+    d=_f_textButton2(d, xh+cs*13.5,yh+ch*5,cs*5,cs,_f_getText('MENU_GAME_88'),'PLAY_88');
+    d=_f_textButton2(d, xh+cs*19,yh+ch*5,cs*5,cs,_f_getText('MENU_GAME_SUDAOSHI'),'PLAY_SUDAOSHI');
+    d=_f_textButton2(d, xh+cs*27,yh+ch*5,cs*6,cs,_f_getText('MENU_GAME_3_600KEN'),'PLAY_3_600KEN');
+    d=_f_textButton2(d, xh+cs*8,yh+ch*6.7,cs*5,cs,_f_getText('MENU_GAME_KOIKOI'),'PLAY_KOIKOI');
+    d=_f_textButton2(d, xh+cs*13.5,yh+ch*6.7,cs*5,cs,_f_getText('MENU_GAME_MUSHI'),'PLAY_MUSHI');
+    d=_f_textButton2(d, xh+cs*19,yh+ch*6.7,cs*6,cs,_f_getText('MENU_GAME_2_88'),'PLAY_2_88');
+    d=_f_textButton2(d, xh+cs*27,yh+ch*6.7,cs*5,cs,_f_getText('MENU_GAME_2_600KEN'),'PLAY_2_600KEN');
+    d=_f_textButton2(d, xh+cs*8,yh+ch*8.4,cs*5,cs,_f_getText('MENU_GAME_HACHI'),'PLAY_HACHI');
+    d=_f_textButton2(d, xh+cs*8,yh+ch*10.1,cs*6,cs,_f_getText('MENU_GAME_OICHOKABU'),'PLAY_OICHOKABU');
+    d=_f_textButton2(d, xh+cs*15,yh+ch*10.1,cs*5,cs,_f_getText('MENU_GAME_KYOKABU'),'PLAY_KYOKABU');
+
+    d=_f_textButton2(d, xh+cs*8,yh+ch*14,cs*5,cs,_f_getText('MENU_OPT_GAME_RULES'),'RULE_MENU');
+    d=_f_textButton2(d, xh+cs*15,yh+ch*14,cs*6,cs,_f_getText('MENU_OPT_OPTIONS'),'UI_SETTINGS', '一試合の局数(十二局または半ドン・一部ゲームを除く)もこちらで選べます。');
+    _f_leftText('TO_PRODUCT_PAGE', xh+cs*8,yh+ch*16,cs*9,cs,'#fff', '<a style="color: #fff; font: inherit; font-weight: bold; text-decoration: none; " href="http:/'+'/www.marguerite.jp/Nihongo/Games/%E3%81%97%E3%82%89%E3%81%8E%E3%81%8F%E8%8A%B1%E6%9C%AD/index.html">'+_f_getText('MENU_OTHER_SITE')+'</a>');
+    d=_f_textButton2(d, xh+cs*14,yh+ch*16,cs*4,cs,_f_getText('MENU_OTHER_ABOUT'),'ABOUT');
+    _f_leftText('OTHER_PRODUCTS', xh+cs*19,yh+ch*16,cs*7,cs,'#fff', '<a style="color: #fff; font: inherit; font-weight: bold; text-decoration: none; " href="http:/'+'/www.marguerite.jp/Nihongo/Games/%E3%81%97%E3%82%89%E3%81%8E%E3%81%8F%E9%BA%BB%E9%9B%80/index.html">'+_f_getText('MENU_OTHER_MAHJONG')+'</a>');
+
+    _f_h5_next=setTimeout('_f_wait4next(); ', 10);}
+
 function RULE_MENU(){var cs=30; margin=16; blines=4; bcolumns=16;var ch=cs+blines;var w=cs*32+margin*2+bcolumns*3;var h=cs*24+blines*5+cs+margin*2;var xh=600-w/2, yh=450-h/2;var d=10;_f_nextScreen='RULE_SETTINGS()';clearTimeout(_f_h5_next);xh+=margin;yh+=margin;_f_h5_menu_ja();_f_centerText('HEADINGS_2', xh+(w >> 1)-ch*2.5, yh+margin+ch*2, cs*5, cs, '#fff', '<b>ルール設定</b>');SHOW_AUDIOMODE();setMenuItem('MENUBAR_RESTART', -8, 5, _f_getText('MENU_RETURN'), '', 1);_f_leftText('HD_3P', xh+cs*2, yh+ch*5, cs*6, cs, '#ff0', '<b>三人打ち</b>');_f_leftText('HD_2P', xh+cs*2, yh+ch*6.7, cs*6, cs, '#ff0', '<b>二人打ち</b>');_f_leftText('HD_KN', xh+cs*2, yh+ch*10.1, cs*6, cs, '#ff0', '<b>カブ競技</b>');d=_f_textButton2(d, xh+cs*8,yh+ch*5,cs*5,cs,'花合わせ','RULE_HA');d=_f_textButton2(d, xh+cs*13.5,yh+ch*5,cs*5,cs,'はちはち','RULE_88');_f_leftText('NA'+d, xh+cs*19,yh+ch*5, cs*5, cs, '#ccc', 'すだおし');d++;_f_leftText('NA'+d, xh+cs*27,yh+ch*5, cs*5, cs, '#ccc', '三人六百間');d++;d=_f_textButton2(d, xh+cs*8,yh+ch*6.7,cs*5,cs,'こいこい','RULE_KK');_f_leftText('NA'+d, xh+cs*13.5,yh+ch*6.7, cs*5, cs, '#ccc', 'むし');d++;d=_f_textButton2(d, xh+cs*19,yh+ch*6.7,cs*6,cs,'二人はちはち','RULE_88');_f_leftText('NA'+d, xh+cs*27,yh+ch*6.7, cs*5, cs, '#ccc', '六百間');d++;_f_leftText('NA'+d, xh+cs*8,yh+ch*8.4, cs*5, cs, '#ccc', 'はち');d++;d=_f_textButton2(d, xh+cs*8,yh+ch*10.1,cs*6,cs,'おいちょかぶ','RULE_OCK');d=_f_textButton2(d, xh+cs*15,yh+ch*10.1,cs*5,cs,'京かぶ','RULE_OCK');d=_f_textButton2(d, xh+cs*29.5,yh,cs*5,cs,String.fromCharCode(9664)+'お品書き','MENU');_f_h5_next=setTimeout('_f_wait4next(); ', 10);}
 function ABOUT(){var cs=30; margin=16; blines=4; bcolumns=16;var ch=cs+blines;var w=cs*32+margin*2+bcolumns*3;var h=cs*24+blines*5+cs+margin*2;var xh=600-w/2, yh=450-h/2;var d=10;_f_nextScreen='ABOUT()';clearTimeout(_f_h5_next);_f_h5_menu_ja();xh+=margin;yh+=margin;var e=document.getElementById('HEADINGS');e.style.width=Math.floor(18*29*rRatio)+'px';e.innerHTML='<b>『しらぎく花札』のおくづけ</b>';var e=document.getElementById('HEADINGS_VERSION');e.parentNode.removeChild(e);var e=document.getElementById('COPYRIGHT_CREDIT');e.parentNode.removeChild(e);_f_leftText('HD_V', xh, yh+ch*2, cs*16, cs, '#ff0', '<b>版番号</b>');_f_leftText('DT_V', xh+ch*16, yh+ch*2, cs*16, cs, '#fff', _f_version);_f_leftText('HD_AI', xh, yh+ch*3, cs*16, cs,'#ff0', '<b>思考エンジンの版</b>');_f_leftText('DT_AI', xh+ch*16, yh+ch*3, cs*16, cs, '#fff', _f_AI_version);_f_leftText('COPY', xh, yh+ch*5, cs*24, ch, '#fff', 'Copyright'+String.fromCharCode(0xA9)+_f_copyright);d=_f_textButton2(d, xh+cs*28.5,yh,cs*5,cs,String.fromCharCode(9664)+'お品書き','MENU');_f_h5_next=setTimeout('_f_wait4next(); ', 10);}
 function UI_SETTINGS(){_f_cushion_color();document.onselectstart=new Function("return(true)");if(window.sidebar){document.onmousedown=reEnable;}UI_SETTINGS_2();}

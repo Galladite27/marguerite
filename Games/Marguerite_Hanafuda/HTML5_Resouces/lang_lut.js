@@ -62,12 +62,33 @@ _f_registerText('H5_MENU_CHARACTER', '創作キャラクタ・堀北真希うさ
 _f_registerText('H5_MENU_COPYRIGHT', _f_copyright, _f_copyright_en);
 _f_registerText('H5_MENU_GAMENAME', 'しらぎく花札', 'White Chrysanthemum Hanafuda');
 _f_registerText('H5_MENU_VERSION', _f_AI_version, _f_AI_version_en);
-_f_registerText('', '', '');
-_f_registerText('', '', '');
+_f_registerText('QUITGAME_CONFIRM', '現在のゲームを終了して、お品書きに戻りますか？', 'Quit game and return to menu?')
 
 // graphc5
 _f_registerText('MENU_ANIMS_OFF', '札の動画効果：切', 'Animations: OFF');
 _f_registerText('MENU_ANIMS_ON', '札の動画効果：入', 'Animations: ON');
+_f_registerText('MENU_TEXT_TITLE', 'お品書き', 'Available games:');
+_f_registerText('MENU_TEXT_3P', '三人打ち', '3 player');
+_f_registerText('MENU_TEXT_2P', '二人打ち', '2 player');
+_f_registerText('MENU_TEXT_KABU', 'カブ競技', 'Kabu games');
+_f_registerText('MENU_TEXT_OPTIONS', '設定', 'Options');
+_f_registerText('MENU_TEXT_OTHER', 'その他', 'Other');
+_f_registerText('MENU_GAME_HANAAWASE', '花合わせ', 'Hana-awase');
+_f_registerText('MENU_GAME_88', 'はちはち', 'Hachi-hachi');
+_f_registerText('MENU_GAME_SUDAOSHI', 'すだおし', 'Sudaoshi');
+_f_registerText('MENU_GAME_3_600KEN', '三人六百間', '3P Roppyaken');
+_f_registerText('MENU_GAME_KOIKOI', 'こいこい', 'Koi-koi');
+_f_registerText('MENU_GAME_MUSHI', 'むし', 'Mushi');
+_f_registerText('MENU_GAME_2_88', '二人はちはち', '2P Hachi-hachi');
+_f_registerText('MENU_GAME_2_600KEN', '六百間', 'Roppyaken');
+_f_registerText('MENU_GAME_HACHI', 'はち', 'Hachi');
+_f_registerText('MENU_GAME_OICHOKABU', 'おいちょかぶ', 'Oicho-kabu');
+_f_registerText('MENU_GAME_KYOKABU', '京かぶ', 'Kyo-kabu');
+_f_registerText('MENU_OPT_GAME_RULES', 'ルール設定', 'Game rules');
+_f_registerText('MENU_OPT_OPTIONS', '対局環境設定', 'General options');
+_f_registerText('MENU_OTHER_SITE', '公開サイト', 'Visit site');
+_f_registerText('MENU_OTHER_ABOUT', 'おくづけ', 'About');
+_f_registerText('MENU_OTHER_MAHJONG', 'しらぎく麻雀', 'Mahjong');
 
 // routines01
 _f_registerText('MENU_RETURN', 'お品書きに戻る', 'Return to menu');
@@ -77,6 +98,6 @@ _f_registerText('ATRACT_TITLE', 'しらぎく花札', 'しらぎく花札'); // 
 _f_registerText('ATRACT_CREDIT', 'Copyright &copy; '+_f_copyright_year+' さいたま・しらぎくさいと', 'Copyright &copy; '+_f_copyright_year_en+' Saitama・Marguerite Site');
 _f_registerText('ATRACT_TX', '画面をクリック/タップして下さい。', 'Click to begin');
 
-// _f_registerText('', '', '');
+_f_registerText('', '', '');
 
 // TODO: check if / where the current "page" / "mode" (e.g. menu, which menu, in game, which game) is stored so I know better what to redraw

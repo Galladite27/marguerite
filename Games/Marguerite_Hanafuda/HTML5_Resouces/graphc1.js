@@ -467,7 +467,7 @@ function MENU_HORIKITA_MAKI_USAGI() {
 }
 
 function QUIT_GAME() {
-    if (confirm('現在のゲームを終了して、お品書きに戻りますか？')) {
+    if (confirm(_f_getText('QUITGAME_CONFIRM'))) {
         clearTimeout(_f_h5_next);
         clearTimeout(_f_random);
         clearTimeout(_h5_sprite[0].timeout);
