@@ -43,6 +43,10 @@ function _f_langToggle() {
     if (e) { e.innerHTML = _f_getText('ATRACT_TX'); }
     e=document.getElementById('TX3');
     if (e) { e.innerHTML = _f_getText('ATRACT_TX'); }
+
+    // Main menu
+    e=document.getElementById('COPYRIGHT_CREDIT');
+    if (e) { MENU(); }
 }
 
 // audioLib
@@ -52,6 +56,14 @@ _f_registerText('MENU_AUDIO_ON', '有音モード', 'Sound: ON');
 _f_registerText('NOAUDIO_ALERT_1', 'ペールムーンでは不具合があるため、音声出力を停止しております。', 'Due to a technical issue with Pale Moon, audio output has been disabled.');
 _f_registerText('NOAUDIO_ALERT_2', 'お使いの端末では音声出力がサポート出来ません。', 'Your device does not support audio output.');
 _f_registerText('NOAUDIO_ALERT_OTHER', 'モバイル端末では音声出力をサポートしておりません。', 'Audio output is not supported on mobile devices.');
+
+// graphc1
+_f_registerText('H5_MENU_CHARACTER', '創作キャラクタ・堀北真希うさぎ ', 'Character: Maki Horikita the Rabbit ');
+_f_registerText('H5_MENU_COPYRIGHT', _f_copyright, _f_copyright_en);
+_f_registerText('H5_MENU_GAMENAME', 'しらぎく花札', 'White Chrysanthemum Hanafuda');
+_f_registerText('H5_MENU_VERSION', _f_AI_version, _f_AI_version_en);
+_f_registerText('', '', '');
+_f_registerText('', '', '');
 
 // graphc5
 _f_registerText('MENU_ANIMS_OFF', '札の動画効果：切', 'Animations: OFF');
