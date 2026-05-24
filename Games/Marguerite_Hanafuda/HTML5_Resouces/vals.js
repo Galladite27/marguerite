@@ -1,5 +1,6 @@
 _f_version='第3.021版(令和 2年 6月11日)';
 _f_copyright_year='平成22年-令和 2年';
+_f_copyright_year_en='2010-2020'
 _f_copyright=' '+_f_copyright_year+' しらぎくさいと';
 _f_AI_version='第1.620版(令和 2年 5月22日)';
 

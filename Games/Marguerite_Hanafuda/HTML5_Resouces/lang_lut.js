@@ -20,9 +20,26 @@ function _f_langToggle() {
     _f_lang = _f_lang===_F_LANG_JP ? _F_LANG_EN : _F_LANG_JP;
     setMenuItem('MENU_LANG', 300, 3, _f_getText('MENU_LANG_TOGGLE'), '_f_langToggle()', 0);
 
-    // Update here!
+    // Header bar
     SHOW_AUDIOMODE();
     // For return to menu text - after initial menu, it is shown at all times. Check if we're past that menu, then update based on if currently clickable.
+
+    // Atract
+    var e;
+    e=document.getElementById('TITLE1');
+    if (e) { e.innerHTML = _f_getText('ATRACT_TITLE'); }
+    e=document.getElementById('TITLE2');
+    if (e) { e.innerHTML = _f_getText('ATRACT_TITLE'); }
+    e=document.getElementById('TITLE3');
+    if (e) { e.innerHTML = _f_getText('ATRACT_TITLE'); }
+    e=document.getElementById('CREDIT_TXT');
+    if (e) { e.innerHTML = _f_getText('ATRACT_CREDIT'); }
+    e=document.getElementById('TX1');
+    if (e) { e.innerHTML = _f_getText('ATRACT_TX'); }
+    e=document.getElementById('TX2');
+    if (e) { e.innerHTML = _f_getText('ATRACT_TX'); }
+    e=document.getElementById('TX3');
+    if (e) { e.innerHTML = _f_getText('ATRACT_TX'); }
 }
 
 // audioLib
@@ -33,8 +50,13 @@ _f_registerText('NOAUDIO_ALERT_1', 'ペールムーンでは不具合がある�
 _f_registerText('NOAUDIO_ALERT_2', 'お使いの端末では音声出力がサポート出来ません。', 'Your device does not support audio output.');
 _f_registerText('NOAUDIO_ALERT_OTHER', 'モバイル端末では音声出力をサポートしておりません。', 'Audio output is not supported on mobile devices.');
 
-//routines01
+// routines01
 _f_registerText('MENU_RETURN', 'お品書きに戻る', 'Return to menu');
+
+// routines02
+_f_registerText('ATRACT_TITLE', 'しらぎく花札', 'しらぎく花札'); // Opted not to translate for now
+_f_registerText('ATRACT_CREDIT', 'Copyright &copy; '+_f_copyright_year+' さいたま・しらぎくさいと', 'Copyright &copy; '+_f_copyright_year_en+' Saitama・Marguerite Site');
+_f_registerText('ATRACT_TX', '画面をクリック/タップして下さい。', 'Click to begin');
 
 // _f_registerText('', '', '');
 

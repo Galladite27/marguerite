@@ -59,6 +59,114 @@ function OCK_FINISH_END(){_f_status_disp('一局終了です。');_f_h5_next=set
 function OCK_FINISH_END_NOCONTEST(){inputKey=-1;i=-1; k=_f_oichokabu_betted_total; while(++i<_f_players){_f[i].balance=0;if(i==_f_oya) continue;j=4; while(--j>=0) _f[i].balance+=_f[i].oichokabu_balance[j];k-=_f[i].balance;_f[i].score=_f[i].score_after_balance=_f[i].score+_f[i].balance;}_f_oichokabu_oyaTotalPoint+=k;_f[_f_oya].balance=k;_f[_f_oya].score=_f[_f_oya].score_after_balance=_f[_f_oya].score+k;i=_f_players;while(--i>=0){_f[i].result[_f_game_ctr]=_f[i].result_after_balance=_f[i].current_result=_f[i].score_after_balance-50;var s=0; j=_f_game_ctr+1;while(--j>=0) s+=_f[i].result[j];_f[i].total_result=s;}j='Jingle_Drawn';if(_f[0].score>_f[0].score_before_game) j='Jingle_PlayerWin';if(_f[0].score<_f[0].score_before_game) j='Jingle_CPUWin2';AUDIO_OUTPUT(j, false);_f_mini_console_disp();_f_h5_next=setTimeout('WAIT_MINICONSOLE("OCK_FINISH_END_2"); ', 10);}
 function OCK_FINISH_END_2(){inputKey=-1;_f_status_erase();_f_console_erase();_f_balance_disp(0);if(_f_kyokusu_ctr+1<_f_max_kyokusu){if(_f_oichokabu_oyaTotalPoint<=-_f_oichokabu_domae || _f_oichokabu_oyaTotalPoint>=_f_oichokabu_domae*2){if(++_f_oya>=_f_players) _f_oya=0;_f_oichokabu_oyaTotalPoint=0;_f_status_disp('次局は巣立ちで親が代ります。');}}_f_mini_console_disp();inputKey=-1;_f_h5_next=setTimeout('WAIT_MINICONSOLE("OCK_FINISH_END_4"); ', 10);}
 function OCK_FINISH_END_4(){if(++_f_kyokusu_ctr<_f_max_kyokusu){_f_h5_next=setTimeout('IKKYOKU(); ', 10);return;}_f_h5_next=setTimeout('GAME_END(); ', 10);}
-function ATRACT(){var e;putPartOfImage(image[1], 0, 0, 1199, 899, 0, 0, 1200, 900);putPartOfImage(image[0], 3550, 1800, 200, 40, 940, 20, 240, 48);_f_toggle_sprite_disp(0);newTextArea('TITLE1', 198, 82, 800, 128, 128, 'transparent', '#000');e=document.getElementById('TITLE1');e.style.fontStyle='italic';e.style.fontWeight='bold';e.style.fontFamily='serif';e.style.textAlign='center';e.style.lineHeight='1em';e.style.verticalAlign='text-top';e.innerHTML='しらぎく花札';newTextArea('TITLE2', 200, 84, 800, 128, 128, 'transparent', '#909');e=document.getElementById('TITLE2');e.style.fontStyle='italic';e.style.fontWeight='bold';e.style.fontFamily='serif';e.style.textAlign='center';e.style.lineHeight='1em';e.style.verticalAlign='text-top';e.innerHTML='しらぎく花札';newTextArea('TITLE3', 202, 86, 800, 128, 128, 'transparent', '#909');e=document.getElementById('TITLE3');e.style.fontStyle='italic';e.style.fontWeight='bold';e.style.fontFamily='serif';e.style.textAlign='center';e.style.lineHeight='1em';e.style.verticalAlign='text-top';e.innerHTML='しらぎく花札';newTextArea('CREDIT_TXT', 0, 860, 624, 32, 24, '#fef', '#909');e=document.getElementById('CREDIT_TXT');e.style.fontWeight='bold';e.style.fontFamily='serif';e.style.textAlign='left';e.style.lineHeight='1em';e.style.verticalAlign='text-top';e.innerHTML='Copyright &copy; '+_f_copyright_year+' さいたま・しらぎくさいと';newTextArea('TX1', 0, 640, 1200, 40, 40, 'transparent', '#000');e=document.getElementById('TX1');e.style.fontWeight='bold';e.style.fontFamily='serif';e.style.textAlign='center';e.style.lineHeight='1em';e.style.verticalAlign='text-top';e.innerHTML='画面をクリック/タップして下さい。';newTextArea('TX2', -1, 639, 1202, 40, 40, 'transparent', '#909');e=document.getElementById('TX2');e.style.fontWeight='bold';e.style.fontFamily='serif';e.style.textAlign='center';e.style.lineHeight='1em';e.style.verticalAlign='text-top';e.innerHTML='画面をクリック/タップして下さい。';newTextArea('TX3', -2, 638, 1204, 40, 40, 'transparent', '#909');e=document.getElementById('TX3');e.style.fontWeight='bold';e.style.fontFamily='serif';e.style.textAlign='center';e.style.lineHeight='1em';e.style.verticalAlign='text-top';e.innerHTML='画面をクリック/タップして下さい。';newAnchorArea(1, 0, 0, 1200, 800, 'ATRACT_START', 12, 'transparent', '#fff');_f_i=0; inputKey=0;_f_h5_next=setTimeout('ATRACT2(); ', 10);}
-function ATRACT2(){var i, e;i=Math.random();if(++_f_i>96){_f_i=0;e=document.getElementById('TX1');e.style.display='block';e=document.getElementById('TX2');e.style.display='block';e=document.getElementById('TX3');e.style.display='block';}else if(_f_i==64){e=document.getElementById('TX1');e.style.display='none';e=document.getElementById('TX2');e.style.display='none';e=document.getElementById('TX3');e.style.display='none';}if(inputKey==1){H5_SOUND_SET();_f_h5_next=setTimeout('MENU(); ', 10);return;}_f_h5_next=setTimeout('ATRACT2(); ', 10);}
+
+function ATRACT() {
+    var e;
+    putPartOfImage(image[1], 0, 0, 1199, 899, 0, 0, 1200, 900);
+    putPartOfImage(image[0], 3550, 1800, 200, 40, 940, 20, 240, 48);
+    
+    _f_toggle_sprite_disp(0);
+    
+    newTextArea('TITLE1', 198, 82, 800, 128, 128, 'transparent', '#000');
+    e=document.getElementById('TITLE1');
+    e.style.fontStyle='italic';
+    e.style.fontWeight='bold';
+    e.style.fontFamily='serif';
+    e.style.textAlign='center';
+    e.style.lineHeight='1em';
+    e.style.verticalAlign='text-top';
+    e.innerHTML=_f_getText('ATRACT_TITLE');
+
+    newTextArea('TITLE2', 200, 84, 800, 128, 128, 'transparent', '#909');
+    e=document.getElementById('TITLE2');
+    e.style.fontStyle='italic';
+    e.style.fontWeight='bold';
+    e.style.fontFamily='serif';
+    e.style.textAlign='center';
+    e.style.lineHeight='1em';
+    e.style.verticalAlign='text-top';
+    e.innerHTML=_f_getText('ATRACT_TITLE');
+    
+    newTextArea('TITLE3', 202, 86, 800, 128, 128, 'transparent', '#909');
+    e=document.getElementById('TITLE3');
+    e.style.fontStyle='italic';
+    e.style.fontWeight='bold';
+    e.style.fontFamily='serif';
+    e.style.textAlign='center';
+    e.style.lineHeight='1em';
+    e.style.verticalAlign='text-top';
+    e.innerHTML=_f_getText('ATRACT_TITLE');
+    
+    newTextArea('CREDIT_TXT', 0, 860, 624, 32, 24, '#fef', '#909');
+    e=document.getElementById('CREDIT_TXT');
+    e.style.fontWeight='bold';
+    e.style.fontFamily='serif';
+    e.style.textAlign='left';
+    e.style.lineHeight='1em';
+    e.style.verticalAlign='text-top';
+    e.innerHTML=_f_getText('ATRACT_CREDIT');
+    
+    newTextArea('TX1', 0, 640, 1200, 40, 40, 'transparent', '#000');
+    e=document.getElementById('TX1');
+    e.style.fontWeight='bold';
+    e.style.fontFamily='serif';
+    e.style.textAlign='center';
+    e.style.lineHeight='1em';
+    e.style.verticalAlign='text-top';
+    e.innerHTML=_f_getText('ATRACT_TX');
+    
+    newTextArea('TX2', -1, 639, 1202, 40, 40, 'transparent', '#909');
+    e=document.getElementById('TX2');
+    e.style.fontWeight='bold';
+    e.style.fontFamily='serif';
+    e.style.textAlign='center';
+    e.style.lineHeight='1em';
+    e.style.verticalAlign='text-top';
+    e.innerHTML=_f_getText('ATRACT_TX');
+    
+    newTextArea('TX3', -2, 638, 1204, 40, 40, 'transparent', '#909');
+    e=document.getElementById('TX3');
+    e.style.fontWeight='bold';
+    e.style.fontFamily='serif';
+    e.style.textAlign='center';
+    e.style.lineHeight='1em';
+    e.style.verticalAlign='text-top';
+    e.innerHTML=_f_getText('ATRACT_TX');
+    
+    newAnchorArea(1, 0, 0, 1200, 800, 'ATRACT_START', 12, 'transparent', '#fff');
+    
+    _f_i=0;
+    inputKey=0;
+    _f_h5_next=setTimeout('ATRACT2(); ', 10);
+}
+function ATRACT2() {
+    var i, e;
+    i=Math.random();
+    if (++_f_i>96) {
+        _f_i=0;
+        e=document.getElementById('TX1');
+        e.style.display='block';
+        e=document.getElementById('TX2');
+        e.style.display='block';
+        e=document.getElementById('TX3');
+        e.style.display='block';
+    }
+    else if (_f_i==64) {
+        e=document.getElementById('TX1');
+        e.style.display='none';
+        e=document.getElementById('TX2');
+        e.style.display='none';
+        e=document.getElementById('TX3');
+        e.style.display='none';
+    }
+    
+    if (inputKey==1) {
+        H5_SOUND_SET();
+        _f_h5_next=setTimeout('MENU(); ', 10);
+        return;
+    }
+    
+    _f_h5_next=setTimeout('ATRACT2(); ', 10);
+}
+
 function H5_SOUND_SET(){var i, j;if(noAudio) return;j=4; while(--j>-1){i='kirifuda'+j;audioObj[i].volume=0;audioObj[i].play();i='mekurifuda'+j;audioObj[i].volume=0;audioObj[i].play();}}
