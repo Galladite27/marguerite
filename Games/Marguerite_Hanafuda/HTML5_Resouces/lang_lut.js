@@ -56,6 +56,16 @@ function _f_langToggle() {
     } else if (_f_currentMenu == _F_MENU_ABOUT) {
         ABOUT();
     }
+
+    else if (_f_currentMenu == _F_MENU_RULES_HA) {
+        RULE_HA();
+    } else if (_f_currentMenu == _F_MENU_RULES_KK) {
+        RULE_KK();
+    } else if (_f_currentMenu == _F_MENU_RULES_88) {
+        RULE_88();
+    } else if (_f_currentMenu == _F_MENU_RULES_KABU) {
+        RULE_OCK();
+    }
 }
 
 // audioLib
@@ -133,6 +143,42 @@ _f_registerText('MENU_OPTS_MATCHES_OFF', '特に明示せず', 'Disabled');
 _f_registerText('MENU_OPTS_MATCHES_ON', '点滅で明示', 'Enabled');
 _f_registerText('MENU_OPTS_ANIMS_ON', 'あり', 'Enabled');
 _f_registerText('MENU_OPTS_ANIMS_OFF', '無し', 'Disabled');
+
+_f_registerText('MENU_RULES_HA_TITLE', '花合わせ ルール設定', 'Hana-awase rules');
+_f_registerText('MENU_RULES_KK_TITLE', 'こいこい ルール設定', 'Koi-koi rules');
+_f_registerText('MENU_RULES_88_TITLE', 'はちはち ルール設定', 'Hachi-hachi rules');
+_f_registerText('MENU_RULES_KABU_TITLE', 'カブ競技(おいちょかぶ/京かぶ) ルール設定', 'Kabu games rules');
+
+_f_registerText('MENU_RULES_GENERIC_ARI', 'あり', 'On');
+_f_registerText('MENU_RULES_GENERIC_NASHI', 'なし', 'Off');
+_f_registerText('MENU_RULES_GENERIC_ALLYAKUTOGGLE', '上記の役全部', 'All yaku');
+_f_registerText('MENU_RULES_GENERIC_ALLABOVETOGGLE', '上記のルール全部', 'All rules');
+_f_registerText('MENU_RULES_GENERIC_ALLENABLE', 'ありにする', 'Enable');
+_f_registerText('MENU_RULES_GENERIC_ALLDISABLE', 'なしにする', 'Disable');
+
+_f_registerText('MENU_RULES_HA_76TAN', '七短/六短', '7/6 ribbons');
+_f_registerText('MENU_RULES_HA_NOMI', '呑み/花見酒・月見酒', 'Drinking/viewing');
+_f_registerText('MENU_RULES_HA_SPRING', '表菅原', 'Spring');
+_f_registerText('MENU_RULES_HA_PPM', '松桐坊主', 'Pine, paulownia, moon');
+_f_registerText('MENU_RULES_HA_BDB', '猪鹿蝶', 'Boar, deer, butterflies');
+_f_registerText('MENU_RULES_HA_753', '七五三', '753'); // TODO what is this? How should it be translated?
+_f_registerText('MENU_RULES_HA_GRASSRIBBONS', '草短', 'Grass ribbons');
+_f_registerText('MENU_RULES_HA_WP_ROW', '藤シマ/桐シマ', 'Wisteria/paulownia row');
+_f_registerText('MENU_RULES_HA_W_ROW', '雨シマ', 'Willow row');
+_f_registerText('MENU_RULES_HA_76TEYAKU', '手札七カス/六カス', '7/6 chaff teyaku');
+_f_registerText('MENU_RULES_HA_DANDRUFF', 'フケ', 'Dandruff');
+_f_registerText('MENU_RULES_HA_40TNASHI', '四十点/なし', '40 ten/off');
+_f_registerText('MENU_RULES_HA_40T30T', '四十点/三十点', '40 ten/30 ten');
+_f_registerText('MENU_RULES_HA_30T20T', '三十点/二十点', '30 ten/20 ten');
+_f_registerText('MENU_RULES_HA_30T', '三十点', '30 ten');
+_f_registerText('MENU_RULES_HA_20T', '二十点', '20 ten');
+_f_registerText('MENU_RULES_HA_20TYAKU', '二十点役', '20 ten yaku');
+_f_registerText('MENU_RULES_HA_DEKIYAKUNAGASHI', '出来役流し', 'Cancels dekiyaku');
+_f_registerText('MENU_RULES_HA_30TNASHI', '三十点/なし', '30 ten/off');
+_f_registerText('MENU_RULES_HA_60TYAKU', '六十点役', '60 ten yaku');
+_f_registerText('MENU_RULES_HA_FORCEDRAW', '無勝負', 'Forces draw');
+
+_f_registerText('', '', '');
 
 // routines01
 _f_registerText('MENU_RETURN', 'お品書きに戻る', 'Return to menu');

@@ -1,13 +1,305 @@
-function RULE_SELECTEND(){var k, d;try {for(k in _f_rule_sel){localStorage.setItem('Marguerite_HanaFla-'+k, _f_rule_sel[k]);}}catch(e){ ; }_f_h5_next=setTimeout('MENU(); ', 10);}
-function RULE_SELECTEND2(){var k, d;try {for(k in _f_rule_sel){localStorage.setItem('Marguerite_HanaFla-'+k, _f_rule_sel[k]);}}catch(e){ ; }_f_h5_next=setTimeout('RULE_MENU(); ', 10);}
-function RULE_HA(){_f_cushion_color();RULE_HA_2();}
-function RULE_HA_2(){var cs=30; margin=16; blines=4; bcolumns=16;var ch=cs+blines;var w=cs*32+margin*2+bcolumns*3;var h=cs*24+blines*5+cs+margin*2;var xh=600-w/2, yh=450-h/2;var d=10;_f_nextScreen='RULE_HA_2()';clearTimeout(_f_h5_next);if(_f_rule_sel['__acl']){_f_rule_sel['HA_67tan']=2;_f_rule_sel['HA_nomi']=_f_rule_sel['HA_omotesugawara']=_f_rule_sel['HA_makkiribozu']=_f_rule_sel['HA_inoshikacho']=_f_rule_sel['HA_shichigosan']=_f_rule_sel['HA_kusa']=_f_rule_sel['HA_shima']=1;_f_rule_sel['HA_ameshima']=2;_f_rule_sel['HA_67kasu']=0;_f_rule_sel['HA_fuke']=2;delete(_f_rule_sel['__acl']);_f_h5_next=setTimeout('RULE_HA_2(); ', 10);}if(_f_rule_sel['__aok']){_f_rule_sel['HA_67tan']=0;_f_rule_sel['HA_nomi']=_f_rule_sel['HA_omotesugawara']=_f_rule_sel['HA_makkiribozu']=_f_rule_sel['HA_inoshikacho']=_f_rule_sel['HA_shichigosan']=_f_rule_sel['HA_kusa']=_f_rule_sel['HA_shima']=_f_rule_sel['HA_ameshima']=0;_f_rule_sel['HA_67kasu']=2;_f_rule_sel['HA_fuke']=1;delete(_f_rule_sel['__aok']);_f_h5_next=setTimeout('RULE_HA_2(); ', 10);}removeAllOfTextArea();_f_textWindow('OPTION_FIELD', xh, yh, w, h, '#fff');_f_leftText('HEADINGS', xh+margin, yh+margin, cs*14, cs, '#fff', '<b>花合わせ ルール設定</b>');xh+=margin;yh+=margin;_f_leftText('HD_01', xh, yh+ch*2, cs*5, cs, '#ff0', '<b>七短/六短</b>');_f_leftText('HD_02', xh, yh+ch*3, cs*10, cs, '#ff0', '<b>呑み/花見酒・月見酒</b>');_f_leftText('HD_03', xh, yh+ch*4, cs*6, cs, '#ff0', '<b>表菅原</b>');_f_leftText('HD_04', xh, yh+ch*5, cs*6, cs, '#ff0', '<b>松桐坊主</b>');_f_leftText('HD_05', xh, yh+ch*6, cs*6, cs, '#ff0', '<b>猪鹿蝶</b>');_f_leftText('HD_06', xh, yh+ch*7, cs*6, cs, '#ff0', '<b>七五三</b>');_f_leftText('HD_07', xh, yh+ch*8, cs*6, cs, '#ff0', '<b>草短</b>');_f_leftText('HD_08', xh, yh+ch*9, cs*7, cs, '#ff0', '<b>藤シマ/桐シマ</b>');_f_leftText('HD_09', xh, yh+ch*10, cs*6, cs, '#ff0', '<b>雨シマ</b>');_f_leftText('HD_10', xh, yh+ch*12, cs*9, cs, '#ff0', '<b>手札七カス/六カス</b>');_f_leftText('HD_11', xh, yh+ch*13, cs*6, cs, '#ff0', '<b>フケ</b>');_f_leftText('HD_12', xh, yh+ch*15, cs*6, cs, '#ff0', '<b>上記の役全部</b>');d=_f_textButton(d, xh+cs*10,yh+ch*2,cs*2,cs,'なし','HA_67tan', 2);d=_f_textButton(d, xh+cs*13,yh+ch*2,cs*6,cs,'四十点/なし','HA_67tan', 1);d=_f_textButton(d, xh+cs*19,yh+ch*2,cs*7,cs,'四十点/三十点','HA_67tan', 0);d=_f_textButton(d, xh+cs*10,yh+ch*3,cs*2,cs,'なし','HA_nomi', 1);d=_f_textButton(d, xh+cs*13,yh+ch*3,cs*7,cs,'三十点/二十点','HA_nomi', 0);d=_f_textButton(d, xh+cs*10,yh+ch*4,cs*2,cs,'なし','HA_omotesugawara', 1);d=_f_textButton(d, xh+cs*13,yh+ch*4,cs*3,cs,'三十点','HA_omotesugawara', 0);d=_f_textButton(d, xh+cs*10,yh+ch*5,cs*2,cs,'なし','HA_makkiribozu', 1);d=_f_textButton(d, xh+cs*13,yh+ch*5,cs*3,cs,'二十点','HA_makkiribozu', 0);d=_f_textButton(d, xh+cs*10,yh+ch*6,cs*2,cs,'なし','HA_inoshikacho', 1);d=_f_textButton(d, xh+cs*13,yh+ch*6,cs*3,cs,'二十点','HA_inoshikacho', 0);d=_f_textButton(d, xh+cs*10,yh+ch*7,cs*2,cs,'なし','HA_shichigosan', 1);d=_f_textButton(d, xh+cs*13,yh+ch*7,cs*3,cs,'二十点','HA_shichigosan', 0);d=_f_textButton(d, xh+cs*10,yh+ch*8,cs*2,cs,'なし','HA_kusa', 1);d=_f_textButton(d, xh+cs*13,yh+ch*8,cs*3,cs,'二十点','HA_kusa', 0);d=_f_textButton(d, xh+cs*10,yh+ch*9,cs*2,cs,'なし','HA_shima', 1);d=_f_textButton(d, xh+cs*13,yh+ch*9,cs*3,cs,'二十点','HA_shima', 0);d=_f_textButton(d, xh+cs*10,yh+ch*10,cs*2,cs,'なし','HA_ameshima', 2);d=_f_textButton(d, xh+cs*13,yh+ch*10,cs*4,cs,'二十点役','HA_ameshima', 0);d=_f_textButton(d, xh+cs*18,yh+ch*10,cs*5,cs,'出来役流し','HA_ameshima', 1);d=_f_textButton(d, xh+cs*10,yh+ch*12,cs*2,cs,'なし','HA_67kasu', 0);d=_f_textButton(d, xh+cs*13,yh+ch*12,cs*6,cs,'三十点/なし','HA_67kasu', 1);d=_f_textButton(d, xh+cs*19,yh+ch*12,cs*7,cs,'三十点/二十点','HA_67kasu', 2);d=_f_textButton(d, xh+cs*10,yh+ch*13,cs*2,cs,'なし','HA_fuke', 2);d=_f_textButton(d, xh+cs*13,yh+ch*13,cs*4,cs,'六十点役','HA_fuke', 1);d=_f_textButton(d, xh+cs*18,yh+ch*13,cs*3,cs,'無勝負','HA_fuke', 0);d=_f_textButton(d, xh+cs*10,yh+ch*15,cs*5,cs,'なしにする','__acl', 1);d=_f_textButton(d, xh+cs*16,yh+ch*15,cs*5,cs,'ありにする','__aok', 1);d=_f_textButton2(d, xh+cs*22.5,yh,cs*6,cs,String.fromCharCode(9664)+'ルール設定','RULE_SELECTEND2');d=_f_textButton2(d, xh+cs*29.5,yh,cs*5,cs,String.fromCharCode(9664)+'お品書き','RULE_SELECTEND');_f_h5_next=setTimeout('_f_wait4next(); ', 10);}
-function RULE_KK(){_f_cushion_color();RULE_KK_2();}
-function RULE_KK_2(){var cs=30; margin=16; blines=4; bcolumns=16;var ch=cs+blines;var w=cs*32+margin*2+bcolumns*3;var h=cs*24+blines*5+cs+margin*2;var xh=600-w/2, yh=450-h/2;var d=10;_f_nextScreen='RULE_KK_2()';clearTimeout(_f_h5_next);if(_f_rule_sel['__acl']){_f_rule_sel['KK_oyaken']=_f_rule_sel['KK_inoshikacho']=_f_rule_sel['KK_hanamisake']=_f_rule_sel['KK_shichigosan']=_f_rule_sel['KK_ameshiko']=_f_rule_sel['KK_sanko']=_f_rule_sel['KK_sokasu']=_f_rule_sel['KK_sansanni']=_f_rule_sel['KK_kuttsuki']=_f_rule_sel['KK_teshi']=_f_rule_sel['KK_bakefuda']=1;_f_rule_sel['KK_omotesugawara']=0;delete(_f_rule_sel['__acl']);_f_h5_next=setTimeout('RULE_KK_2(); ', 10);}if(_f_rule_sel['__aok']){_f_rule_sel['KK_oyaken']=_f_rule_sel['KK_inoshikacho']=_f_rule_sel['KK_hanamisake']=_f_rule_sel['KK_shichigosan']=_f_rule_sel['KK_ameshiko']=_f_rule_sel['KK_sanko']=_f_rule_sel['KK_sokasu']=_f_rule_sel['KK_sansanni']=_f_rule_sel['KK_kuttsuki']=_f_rule_sel['KK_teshi']=_f_rule_sel['KK_bakefuda']=0;_f_rule_sel['KK_omotesugawara']=1;delete(_f_rule_sel['__aok']);_f_h5_next=setTimeout('RULE_KK_2(); ', 10);}removeAllOfTextArea();_f_textWindow('OPTION_FIELD', xh, yh, w, h, '#fff');_f_leftText('HEADINGS', xh+margin, yh+margin, cs*14, cs, '#fff', '<b>こいこい ルール設定</b>');xh+=margin;yh+=margin;_f_leftText('HD_01', xh, yh+ch*2, cs*17, cs, '#ff0', '<b>配札時の場札</b>');_f_leftText('HD_02', xh, yh+ch*3.5, cs*17, cs, '#ff0', '<b>「こいこい」して流れた場合の出来役</b>');_f_leftText('HD_03', xh, yh+ch*5, cs*5, cs, '#ff0', '<b>親権</b>');_f_leftText('HD_04', xh, yh+ch*6, cs*6, cs, '#ff0', '<b>雨入り四光</b>');_f_leftText('HD_05', xh, yh+ch*7, cs*6, cs, '#ff0', '<b>三光</b>');_f_leftText('HD_06', xh, yh+ch*8, cs*3, cs, '#ff0', '<b>猪鹿蝶</b>');_f_leftText('HD_07', xh, yh+ch*9, cs*7, cs, '#ff0', '<b>花見酒・月見酒</b>');_f_leftText('HD_08', xh, yh+ch*10, cs*3, cs, '#ff0', '<b>七五三</b>');_f_leftText('HD_09', xh, yh+ch*11, cs*3, cs, '#ff0', '<b>表菅原</b>');_f_leftText('HD_10', xh, yh+ch*12, cs*6, cs, '#ff0', '<b>手札総カス</b>');_f_leftText('HD_11', xh, yh+ch*13, cs*7, cs, '#ff0', '<b>手札三々二</b>');_f_leftText('HD_12', xh, yh+ch*14, cs*6, cs, '#ff0', '<b>手札喰付</b>');_f_leftText('HD_13', xh, yh+ch*15, cs*6, cs, '#ff0', '<b>手札手四</b>');_f_leftText('HD_14', xh, yh+ch*16, cs*2, cs, '#ff0', '<b>化札</b>');_f_leftText('HD_15', xh, yh+ch*17.5, cs*8, cs, '#ff0', '<b>上記のルール全部</b>');d=_f_textButton(d, xh+cs*18,yh+ch*2,cs*2,cs,'六枚','KK_bafuda', 0);d=_f_textButton(d, xh+cs*21,yh+ch*2,cs*2,cs,'八枚','KK_bafuda', 1);d=_f_textButton(d, xh+cs*18,yh+ch*3.5,cs*2,cs,'失効','KK_koikoi_nagare', 1);d=_f_textButton(d, xh+cs*21,yh+ch*3.5,cs*2,cs,'有効','KK_koikoi_nagare', 0);d=_f_textButton(d, xh+cs*10,yh+ch*5,cs*2,cs,'なし','KK_oyaken', 1);d=_f_textButton(d, xh+cs*13,yh+ch*5,cs*2,cs,'六文','KK_oyaken', 0);d=_f_textButton(d, xh+cs*10,yh+ch*6,cs*2,cs,'なし','KK_ameshiko', 1);d=_f_textButton(d, xh+cs*13,yh+ch*6,cs*5,cs,'八文','KK_ameshiko', 0);d=_f_textButton(d, xh+cs*10,yh+ch*7,cs*2,cs,'なし','KK_sanko', 1);d=_f_textButton(d, xh+cs*13,yh+ch*7,cs*5,cs,'六文','KK_sanko', 0);d=_f_textButton(d, xh+cs*10,yh+ch*8,cs*2,cs,'なし','KK_inoshikacho', 1);d=_f_textButton(d, xh+cs*13,yh+ch*8,cs*2,cs,'五文','KK_inoshikacho', 0);d=_f_textButton(d, xh+cs*10,yh+ch*9,cs*2,cs,'なし','KK_hanamisake', 1);d=_f_textButton(d, xh+cs*13,yh+ch*9,cs*2,cs,'五文','KK_hanamisake', 0);d=_f_textButton(d, xh+cs*10,yh+ch*10,cs*2,cs,'なし','KK_shichigosan', 1);d=_f_textButton(d, xh+cs*13,yh+ch*10,cs*3,cs,'五文','KK_shichigosan', 0);d=_f_textButton(d, xh+cs*10,yh+ch*11,cs*2,cs,'なし','KK_omotesugawara', 0);d=_f_textButton(d, xh+cs*13,yh+ch*11,cs*3,cs,'五文','KK_omotesugawara', 1);d=_f_textButton(d, xh+cs*10,yh+ch*12,cs*2,cs,'なし','KK_sokasu', 1);d=_f_textButton(d, xh+cs*13,yh+ch*12,cs*3,cs,'六文','KK_sokasu', 0);d=_f_textButton(d, xh+cs*10,yh+ch*13,cs*2,cs,'なし','KK_sansanni', 1);d=_f_textButton(d, xh+cs*13,yh+ch*13,cs*3,cs,'六文','KK_sansanni', 0);d=_f_textButton(d, xh+cs*10,yh+ch*14,cs*2,cs,'なし','KK_kuttsuki', 1);d=_f_textButton(d, xh+cs*13,yh+ch*14,cs*3,cs,'六文','KK_kuttsuki', 0);d=_f_textButton(d, xh+cs*10,yh+ch*15,cs*2,cs,'なし','KK_teshi', 1);d=_f_textButton(d, xh+cs*13,yh+ch*15,cs*3,cs,'六文','KK_teshi', 0);d=_f_textButton(d, xh+cs*10,yh+ch*16,cs*2,cs,'なし','KK_bakefuda', 1);d=_f_textButton(d, xh+cs*13,yh+ch*16,cs*12,cs,'菊に盃をタネとカスに適用','KK_bakefuda', 0);d=_f_textButton(d, xh+cs*10,yh+ch*17.5,cs*5,cs,'なしにする','__acl', 1);d=_f_textButton(d, xh+cs*16,yh+ch*17.5,cs*5,cs,'ありにする','__aok', 1);d=_f_textButton2(d, xh+cs*22.5,yh,cs*6,cs,String.fromCharCode(9664)+'ルール設定','RULE_SELECTEND2');d=_f_textButton2(d, xh+cs*29.5,yh,cs*5,cs,String.fromCharCode(9664)+'お品書き','RULE_SELECTEND');_f_h5_next=setTimeout('_f_wait4next(); ', 10);}
-function RULE_88(){_f_cushion_color();RULE_88_2();}
-function RULE_88_2(){var cs=30; margin=16; blines=4; bcolumns=16;var ch=cs+blines;var w=cs*32+margin*2+bcolumns*3;var h=cs*24+blines*5+cs+margin*2;var xh=600-w/2, yh=450-h/2;var d=10;_f_nextScreen='RULE_88_2()';clearTimeout(_f_h5_next);removeAllOfTextArea();_f_textWindow('OPTION_FIELD', xh, yh, w, h, '#fff');_f_leftText('HEADINGS', xh+margin, yh+margin, cs*14, cs, '#fff', '<b>はちはち ルール設定</b>');xh+=margin;yh+=margin;_f_leftText('HD_01', xh, yh+ch*2, cs*8, cs, '#ff0', '<b>大場・絶場の越年</b>');_f_leftText('HD_02', xh, yh+ch*3, cs*3, cs, '#ff0', '<b>猪鹿蝶</b>');_f_leftText('HD_03', xh, yh+ch*4, cs*18, cs, '#ff0', '<b>二人はちはちでの総八</b>※<b>/二八/素十六</b>');d=_f_textButton(d, xh+cs*18,yh+ch*2,cs*2,cs,'あり','HH_extension', 1);d=_f_textButton(d, xh+cs*21,yh+ch*2,cs*2,cs,'なし','HH_extension', 0);d=_f_textButton(d, xh+cs*18,yh+ch*3,cs*2,cs,'なし','HH_inoshikacho', 1);d=_f_textButton(d, xh+cs*21,yh+ch*3,cs*2,cs,'七貫','HH_inoshikacho', 0);d=_f_textButton(d, xh+cs*18,yh+ch*4,cs*2,cs,'なし','HH_288', 0);d=_f_textButton(d, xh+cs*21,yh+ch*4,cs*2,cs,'あり','HH_288', 1);_f_leftText('HD_04', xh+ch, yh+ch*5.5, cs*32, cs, '#fff', '※二人はちはちでの総八とは、両者同点の場合を指します。');d=_f_textButton2(d, xh+cs*22.5,yh,cs*6,cs,String.fromCharCode(9664)+'ルール設定','RULE_SELECTEND2');d=_f_textButton2(d, xh+cs*29.5,yh,cs*5,cs,String.fromCharCode(9664)+'お品書き','RULE_SELECTEND');_f_h5_next=setTimeout('_f_wait4next(); ', 10);}
-function RULE_OCK(){_f_cushion_color();RULE_OCK_2();}
-function RULE_OCK_2(){var cs=30; margin=16; blines=4; bcolumns=16;var ch=cs+blines;var w=cs*32+margin*2+bcolumns*3;var h=cs*24+blines*5+cs+margin*2;var xh=600-w/2, yh=450-h/2;var d=10;_f_nextScreen='RULE_OCK_2()';clearTimeout(_f_h5_next);removeAllOfTextArea();_f_textWindow('OPTION_FIELD', xh, yh, w, h, '#fff');_f_leftText('HEADINGS', xh+margin, yh+margin, cs*20, cs, '#fff', '<b>カブ競技(おいちょかぶ/京かぶ) ルール設定</b>');xh+=margin;yh+=margin;_f_leftText('HD_01', xh, yh+ch*2, cs*17, cs, '#ff0', '<b>使用札</b>');_f_leftText('HD_02', xh, yh+ch*3, cs*17, cs, '#ff0', '<b>親のブタ/笑い</b>');_f_leftText('HD_03', xh, yh+ch*4, cs*10, cs, '#ff0', '<b>親子同数位</b>');_f_leftText('HD_04', xh, yh+ch*5, cs*6, cs, '#ff0', '<b>蒔き札</b>※');_f_leftText('HD_05', xh, yh+ch*6, cs*18, cs, '#ff0', '<b>七以上引き無し/三以下引きの規制</b>');_f_leftText('HD_06', xh, yh+ch*8, cs*5, cs, '#ff0', '<b>四一</b>※');_f_leftText('HD_07', xh, yh+ch*9, cs*8, cs, '#ff0', '<b>九一/四一の条件</b>');_f_leftText('HD_08', xh, yh+ch*11, cs*32, cs, '#fff', '※印はおいちょかぶでのみ有効。');d=_f_textButton(d, xh+cs*10,yh+ch*2,cs*3,cs,'株札','OCK_fudaType', 1);d=_f_textButton(d, xh+cs*14,yh+ch*2,cs*2,cs,'花札','OCK_fudaType', 0);d=_f_textButton(d, xh+cs*10,yh+ch*3,cs*3,cs,'無勝負','OCK_oyabuta', 1);d=_f_textButton(d, xh+cs*14,yh+ch*3,cs*2,cs,'有効','OCK_oyabuta', 0);d=_f_textButton(d, xh+cs*10,yh+ch*4,cs*2,cs,'親権','OCK_doten', 0);d=_f_textButton(d, xh+cs*13,yh+ch*4,cs*3,cs,'無勝負','OCK_doten', 1);d=_f_textButton(d, xh+cs*10,yh+ch*5,cs*2,cs,'あり','OCK_makifuda', 0);d=_f_textButton(d, xh+cs*13,yh+ch*5,cs*2,cs,'なし','OCK_makifuda', 1);d=_f_textButton(d, xh+cs*10,yh+ch*7,cs*4,cs,'制約あり','OCK_hiki', 0);d=_f_textButton(d, xh+cs*15,yh+ch*7,cs*3,cs,'無制限','OCK_hiki', 1);d=_f_textButton(d, xh+cs*10,yh+ch*8,cs*3,cs,'親の役','OCK_shippin', 0);d=_f_textButton(d, xh+cs*14,yh+ch*8,cs*3,cs,'子の役','OCK_shippin', 1);d=_f_textButton(d, xh+cs*18,yh+ch*8,cs*3,cs,'なし','OCK_shippin', 2);d=_f_textButton(d, xh+cs*10,yh+ch*9,cs*12,cs,'二枚目が一の場合のみ有効','OCK_kuppin', 0);d=_f_textButton(d, xh+cs*23,yh+ch*9,cs*5,cs,'順序は不問','OCK_kuppin', 1);d=_f_textButton2(d, xh+cs*22.5,yh,cs*6,cs,String.fromCharCode(9664)+'ルール設定','RULE_SELECTEND2');d=_f_textButton2(d, xh+cs*29.5,yh,cs*5,cs,String.fromCharCode(9664)+'お品書き','RULE_SELECTEND');_f_h5_next=setTimeout('_f_wait4next(); ', 10);}
+function RULE_SELECTEND() {
+    var k, d;
+    
+    try {
+        for (k in _f_rule_sel) {
+            localStorage.setItem('Marguerite_HanaFla-'+k, _f_rule_sel[k]);
+        }
+    }
+    catch (e) {
+        ;
+    }
+    
+    _f_h5_next=setTimeout('MENU(); ', 10);
+}
+function RULE_SELECTEND2() {
+    var k, d;
+    
+    try {
+        for (k in _f_rule_sel) {
+            localStorage.setItem('Marguerite_HanaFla-'+k, _f_rule_sel[k]);
+        }
+    }
+    catch (e) {
+        ;
+    }
+    
+    _f_h5_next=setTimeout('RULE_MENU(); ', 10);
+}
+
+function RULE_HA() {
+    _f_currentMenu = _F_MENU_RULES_HA;
+    _f_cushion_color();
+    RULE_HA_2();
+}
+function RULE_HA_2() {
+    var cs=30;
+    margin=16;
+    blines=4;
+    bcolumns=16;
+    var ch=cs+blines;
+    var w=cs*32+margin*2+bcolumns*3;
+    var h=cs*24+blines*5+cs+margin*2;
+    var xh=600-w/2, yh=450-h/2;
+    var d=10;
+    
+    _f_nextScreen='RULE_HA_2()';
+    clearTimeout(_f_h5_next);
+    
+    if (_f_rule_sel['__acl']) {
+        _f_rule_sel['HA_67tan']=2;
+        _f_rule_sel['HA_nomi']=_f_rule_sel['HA_omotesugawara']=_f_rule_sel['HA_makkiribozu']=_f_rule_sel['HA_inoshikacho']=_f_rule_sel['HA_shichigosan']=_f_rule_sel['HA_kusa']=_f_rule_sel['HA_shima']=1;
+        _f_rule_sel['HA_ameshima']=2;
+        _f_rule_sel['HA_67kasu']=0;
+        _f_rule_sel['HA_fuke']=2;
+        delete(_f_rule_sel['__acl']);
+        _f_h5_next=setTimeout('RULE_HA_2(); ', 10);
+    }
+    if (_f_rule_sel['__aok']) {
+        _f_rule_sel['HA_67tan']=0;
+        _f_rule_sel['HA_nomi']=_f_rule_sel['HA_omotesugawara']=_f_rule_sel['HA_makkiribozu']=_f_rule_sel['HA_inoshikacho']=_f_rule_sel['HA_shichigosan']=_f_rule_sel['HA_kusa']=_f_rule_sel['HA_shima']=_f_rule_sel['HA_ameshima']=0;
+        _f_rule_sel['HA_67kasu']=2;
+        _f_rule_sel['HA_fuke']=1;
+        delete(_f_rule_sel['__aok']);
+        _f_h5_next=setTimeout('RULE_HA_2(); ', 10);
+    }
+    
+    removeAllOfTextArea();
+    _f_textWindow('OPTION_FIELD', xh, yh, w, h, '#fff');
+    _f_leftText('HEADINGS', xh+margin, yh+margin, cs*14, cs, '#fff', '<b>'+_f_getText('MENU_RULES_HA_TITLE')+'</b>');
+    
+    xh+=margin;
+    yh+=margin;
+    _f_leftText('HD_01', xh, yh+ch*2, cs*5, cs, '#ff0', '<b>'+_f_getText('MENU_RULES_HA_76TAN')+'</b>');
+    _f_leftText('HD_02', xh, yh+ch*3, cs*10, cs, '#ff0', '<b>'+_f_getText('MENU_RULES_HA_NOMI')+'</b>');
+    _f_leftText('HD_03', xh, yh+ch*4, cs*6, cs, '#ff0', '<b>'+_f_getText('MENU_RULES_HA_SPRING')+'</b>');
+    _f_leftText('HD_04', xh, yh+ch*5, cs*10, cs, '#ff0', '<b>'+_f_getText('MENU_RULES_HA_PPM')+'</b>');
+    _f_leftText('HD_05', xh, yh+ch*6, cs*10, cs, '#ff0', '<b>'+_f_getText('MENU_RULES_HA_BDB')+'</b>');
+    _f_leftText('HD_06', xh, yh+ch*7, cs*6, cs, '#ff0', '<b>'+_f_getText('MENU_RULES_HA_753')+'</b>');
+    _f_leftText('HD_07', xh, yh+ch*8, cs*6, cs, '#ff0', '<b>'+_f_getText('MENU_RULES_HA_GRASSRIBBONS')+'</b>');
+    _f_leftText('HD_08', xh, yh+ch*9, cs*10, cs, '#ff0', '<b>'+_f_getText('MENU_RULES_HA_WP_ROW')+'</b>');
+    _f_leftText('HD_09', xh, yh+ch*10, cs*6, cs, '#ff0', '<b>'+_f_getText('MENU_RULES_HA_W_ROW')+'</b>');
+    _f_leftText('HD_10', xh, yh+ch*12, cs*9, cs, '#ff0', '<b>'+_f_getText('MENU_RULES_HA_76TEYAKU')+'</b>');
+    _f_leftText('HD_11', xh, yh+ch*13, cs*6, cs, '#ff0', '<b>'+_f_getText('MENU_RULES_HA_DANDRUFF')+'</b>');
+    _f_leftText('HD_12', xh, yh+ch*15, cs*6, cs, '#ff0', '<b>'+_f_getText('MENU_RULES_GENERIC_ALLYAKUTOGGLE')+'</b>');
+    
+    d=_f_textButton(d, xh+cs*10,yh+ch*2,cs*2,cs,_f_getText('MENU_RULES_GENERIC_NASHI'),'HA_67tan', 2);
+    d=_f_textButton(d, xh+cs*13,yh+ch*2,cs*6,cs,_f_getText('MENU_RULES_HA_40TNASHI'),'HA_67tan', 1);
+    d=_f_textButton(d, xh+cs*19,yh+ch*2,cs*7,cs,_f_getText('MENU_RULES_HA_40T30T'),'HA_67tan', 0);
+    d=_f_textButton(d, xh+cs*10,yh+ch*3,cs*2,cs,_f_getText('MENU_RULES_GENERIC_NASHI'),'HA_nomi', 1);
+    d=_f_textButton(d, xh+cs*13,yh+ch*3,cs*7,cs,_f_getText('MENU_RULES_HA_30T20T'),'HA_nomi', 0);
+    d=_f_textButton(d, xh+cs*10,yh+ch*4,cs*2,cs,_f_getText('MENU_RULES_GENERIC_NASHI'),'HA_omotesugawara', 1);
+    d=_f_textButton(d, xh+cs*13,yh+ch*4,cs*3,cs,_f_getText('MENU_RULES_HA_30T'),'HA_omotesugawara', 0);
+    d=_f_textButton(d, xh+cs*10,yh+ch*5,cs*2,cs,_f_getText('MENU_RULES_GENERIC_NASHI'),'HA_makkiribozu', 1);
+    d=_f_textButton(d, xh+cs*13,yh+ch*5,cs*3,cs,_f_getText('MENU_RULES_HA_20T'),'HA_makkiribozu', 0);
+    d=_f_textButton(d, xh+cs*10,yh+ch*6,cs*2,cs,_f_getText('MENU_RULES_GENERIC_NASHI'),'HA_inoshikacho', 1);
+    d=_f_textButton(d, xh+cs*13,yh+ch*6,cs*3,cs,_f_getText('MENU_RULES_HA_20T'),'HA_inoshikacho', 0);
+    d=_f_textButton(d, xh+cs*10,yh+ch*7,cs*2,cs,_f_getText('MENU_RULES_GENERIC_NASHI'),'HA_shichigosan', 1);
+    d=_f_textButton(d, xh+cs*13,yh+ch*7,cs*3,cs,_f_getText('MENU_RULES_HA_20T'),'HA_shichigosan', 0);
+    d=_f_textButton(d, xh+cs*10,yh+ch*8,cs*2,cs,_f_getText('MENU_RULES_GENERIC_NASHI'),'HA_kusa', 1);
+    d=_f_textButton(d, xh+cs*13,yh+ch*8,cs*3,cs,_f_getText('MENU_RULES_HA_20T'),'HA_kusa', 0);
+    d=_f_textButton(d, xh+cs*10,yh+ch*9,cs*2,cs,_f_getText('MENU_RULES_GENERIC_NASHI'),'HA_shima', 1);
+    d=_f_textButton(d, xh+cs*13,yh+ch*9,cs*3,cs,_f_getText('MENU_RULES_HA_20T'),'HA_shima', 0);
+    d=_f_textButton(d, xh+cs*10,yh+ch*10,cs*2,cs,_f_getText('MENU_RULES_GENERIC_NASHI'),'HA_ameshima', 2);
+    d=_f_textButton(d, xh+cs*13,yh+ch*10,cs*4.5,cs,_f_getText('MENU_RULES_HA_20TYAKU'),'HA_ameshima', 0);
+    d=_f_textButton(d, xh+cs*18,yh+ch*10,cs*6.5,cs,_f_getText('MENU_RULES_HA_DEKIYAKUNAGASHI'),'HA_ameshima', 1);
+    d=_f_textButton(d, xh+cs*10,yh+ch*12,cs*2,cs,_f_getText('MENU_RULES_GENERIC_NASHI'),'HA_67kasu', 0);
+    d=_f_textButton(d, xh+cs*13,yh+ch*12,cs*6,cs,_f_getText('MENU_RULES_HA_30TNASHI'),'HA_67kasu', 1);
+    d=_f_textButton(d, xh+cs*19,yh+ch*12,cs*7,cs,_f_getText('MENU_RULES_HA_30T20T'),'HA_67kasu', 2);
+    d=_f_textButton(d, xh+cs*10,yh+ch*13,cs*2,cs,_f_getText('MENU_RULES_GENERIC_NASHI'),'HA_fuke', 2);
+    d=_f_textButton(d, xh+cs*13,yh+ch*13,cs*4.5,cs,_f_getText('MENU_RULES_HA_60TYAKU'),'HA_fuke', 1);
+    d=_f_textButton(d, xh+cs*18,yh+ch*13,cs*5,cs,_f_getText('MENU_RULES_HA_FORCEDRAW'),'HA_fuke', 0);
+    d=_f_textButton(d, xh+cs*10,yh+ch*15,cs*5,cs,_f_getText('MENU_RULES_GENERIC_ALLDISABLE'),'__acl', 1);
+    d=_f_textButton(d, xh+cs*16,yh+ch*15,cs*5,cs,_f_getText('MENU_RULES_GENERIC_ALLENABLE'),'__aok', 1);
+    
+    d=_f_textButton2(d, xh+cs*22.5,yh,cs*6,cs,String.fromCharCode(9664)+_f_getText('MENU_OPT_GAME_RULES'),'RULE_SELECTEND2');
+    d=_f_textButton2(d, xh+cs*29.5,yh,cs*5,cs,String.fromCharCode(9664)+_f_getText('MENU_TEXT_TITLE'),'RULE_SELECTEND');
+    _f_h5_next=setTimeout('_f_wait4next(); ', 10);
+}
+
+function RULE_KK() {
+    _f_currentMenu = _F_MENU_RULES_KK;
+    _f_cushion_color();
+    RULE_KK_2();
+}
+function RULE_KK_2() {
+    var cs=30;
+    margin=16;
+    blines=4;
+    bcolumns=16;
+    var ch=cs+blines;
+    var w=cs*32+margin*2+bcolumns*3;
+    var h=cs*24+blines*5+cs+margin*2;
+    var xh=600-w/2, yh=450-h/2;
+    var d=10;
+    
+    _f_nextScreen='RULE_KK_2()';
+    clearTimeout(_f_h5_next);
+    
+    if (_f_rule_sel['__acl']) {
+        _f_rule_sel['KK_oyaken']=_f_rule_sel['KK_inoshikacho']=_f_rule_sel['KK_hanamisake']=_f_rule_sel['KK_shichigosan']=_f_rule_sel['KK_ameshiko']=_f_rule_sel['KK_sanko']=_f_rule_sel['KK_sokasu']=_f_rule_sel['KK_sansanni']=_f_rule_sel['KK_kuttsuki']=_f_rule_sel['KK_teshi']=_f_rule_sel['KK_bakefuda']=1;
+        _f_rule_sel['KK_omotesugawara']=0;
+        delete(_f_rule_sel['__acl']);
+        _f_h5_next=setTimeout('RULE_KK_2(); ', 10);
+    }
+    if (_f_rule_sel['__aok']) {
+        _f_rule_sel['KK_oyaken']=_f_rule_sel['KK_inoshikacho']=_f_rule_sel['KK_hanamisake']=_f_rule_sel['KK_shichigosan']=_f_rule_sel['KK_ameshiko']=_f_rule_sel['KK_sanko']=_f_rule_sel['KK_sokasu']=_f_rule_sel['KK_sansanni']=_f_rule_sel['KK_kuttsuki']=_f_rule_sel['KK_teshi']=_f_rule_sel['KK_bakefuda']=0;
+        _f_rule_sel['KK_omotesugawara']=1;
+        delete(_f_rule_sel['__aok']);
+        _f_h5_next=setTimeout('RULE_KK_2(); ', 10);
+    }
+    
+    removeAllOfTextArea();
+    _f_textWindow('OPTION_FIELD', xh, yh, w, h, '#fff');
+    _f_leftText('HEADINGS', xh+margin, yh+margin, cs*14, cs, '#fff', '<b>'+_f_getText('MENU_RULES_KK_TITLE')+'</b>');
+    
+    xh+=margin;
+    yh+=margin;
+    _f_leftText('HD_01', xh, yh+ch*2, cs*17, cs, '#ff0', '<b>配札時の場札</b>');
+    _f_leftText('HD_02', xh, yh+ch*3.5, cs*17, cs, '#ff0', '<b>「こいこい」して流れた場合の出来役</b>');
+    _f_leftText('HD_03', xh, yh+ch*5, cs*5, cs, '#ff0', '<b>親権</b>');
+    _f_leftText('HD_04', xh, yh+ch*6, cs*6, cs, '#ff0', '<b>雨入り四光</b>');
+    _f_leftText('HD_05', xh, yh+ch*7, cs*6, cs, '#ff0', '<b>三光</b>');
+    _f_leftText('HD_06', xh, yh+ch*8, cs*3, cs, '#ff0', '<b>猪鹿蝶</b>');
+    _f_leftText('HD_07', xh, yh+ch*9, cs*7, cs, '#ff0', '<b>花見酒・月見酒</b>');
+    _f_leftText('HD_08', xh, yh+ch*10, cs*3, cs, '#ff0', '<b>七五三</b>');
+    _f_leftText('HD_09', xh, yh+ch*11, cs*3, cs, '#ff0', '<b>表菅原</b>');
+    _f_leftText('HD_10', xh, yh+ch*12, cs*6, cs, '#ff0', '<b>手札総カス</b>');
+    _f_leftText('HD_11', xh, yh+ch*13, cs*7, cs, '#ff0', '<b>手札三々二</b>');
+    _f_leftText('HD_12', xh, yh+ch*14, cs*6, cs, '#ff0', '<b>手札喰付</b>');
+    _f_leftText('HD_13', xh, yh+ch*15, cs*6, cs, '#ff0', '<b>手札手四</b>');
+    _f_leftText('HD_14', xh, yh+ch*16, cs*2, cs, '#ff0', '<b>化札</b>');
+    _f_leftText('HD_15', xh, yh+ch*17.5, cs*8, cs, '#ff0', '<b>'+_f_getText('MENU_RULES_GENERIC_ALLABOVETOGGLE')+'</b>');
+    
+    d=_f_textButton(d, xh+cs*18,yh+ch*2,cs*2,cs,'六枚','KK_bafuda', 0);
+    d=_f_textButton(d, xh+cs*21,yh+ch*2,cs*2,cs,'八枚','KK_bafuda', 1);
+    d=_f_textButton(d, xh+cs*18,yh+ch*3.5,cs*2,cs,'失効','KK_koikoi_nagare', 1);
+    d=_f_textButton(d, xh+cs*21,yh+ch*3.5,cs*2,cs,'有効','KK_koikoi_nagare', 0);
+    d=_f_textButton(d, xh+cs*10,yh+ch*5,cs*2,cs,_f_getText('MENU_RULES_GENERIC_NASHI'),'KK_oyaken', 1);
+    d=_f_textButton(d, xh+cs*13,yh+ch*5,cs*2,cs,'六文','KK_oyaken', 0);
+    d=_f_textButton(d, xh+cs*10,yh+ch*6,cs*2,cs,_f_getText('MENU_RULES_GENERIC_NASHI'),'KK_ameshiko', 1);
+    d=_f_textButton(d, xh+cs*13,yh+ch*6,cs*5,cs,'八文','KK_ameshiko', 0);
+    d=_f_textButton(d, xh+cs*10,yh+ch*7,cs*2,cs,_f_getText('MENU_RULES_GENERIC_NASHI'),'KK_sanko', 1);
+    d=_f_textButton(d, xh+cs*13,yh+ch*7,cs*5,cs,'六文','KK_sanko', 0);
+    d=_f_textButton(d, xh+cs*10,yh+ch*8,cs*2,cs,_f_getText('MENU_RULES_GENERIC_NASHI'),'KK_inoshikacho', 1);
+    d=_f_textButton(d, xh+cs*13,yh+ch*8,cs*2,cs,'五文','KK_inoshikacho', 0);
+    d=_f_textButton(d, xh+cs*10,yh+ch*9,cs*2,cs,_f_getText('MENU_RULES_GENERIC_NASHI'),'KK_hanamisake', 1);
+    d=_f_textButton(d, xh+cs*13,yh+ch*9,cs*2,cs,'五文','KK_hanamisake', 0);
+    d=_f_textButton(d, xh+cs*10,yh+ch*10,cs*2,cs,_f_getText('MENU_RULES_GENERIC_NASHI'),'KK_shichigosan', 1);
+    d=_f_textButton(d, xh+cs*13,yh+ch*10,cs*3,cs,'五文','KK_shichigosan', 0);
+    d=_f_textButton(d, xh+cs*10,yh+ch*11,cs*2,cs,_f_getText('MENU_RULES_GENERIC_NASHI'),'KK_omotesugawara', 0);
+    d=_f_textButton(d, xh+cs*13,yh+ch*11,cs*3,cs,'五文','KK_omotesugawara', 1);
+    d=_f_textButton(d, xh+cs*10,yh+ch*12,cs*2,cs,_f_getText('MENU_RULES_GENERIC_NASHI'),'KK_sokasu', 1);
+    d=_f_textButton(d, xh+cs*13,yh+ch*12,cs*3,cs,'六文','KK_sokasu', 0);
+    d=_f_textButton(d, xh+cs*10,yh+ch*13,cs*2,cs,_f_getText('MENU_RULES_GENERIC_NASHI'),'KK_sansanni', 1);
+    d=_f_textButton(d, xh+cs*13,yh+ch*13,cs*3,cs,'六文','KK_sansanni', 0);
+    d=_f_textButton(d, xh+cs*10,yh+ch*14,cs*2,cs,_f_getText('MENU_RULES_GENERIC_NASHI'),'KK_kuttsuki', 1);
+    d=_f_textButton(d, xh+cs*13,yh+ch*14,cs*3,cs,'六文','KK_kuttsuki', 0);
+    d=_f_textButton(d, xh+cs*10,yh+ch*15,cs*2,cs,_f_getText('MENU_RULES_GENERIC_NASHI'),'KK_teshi', 1);
+    d=_f_textButton(d, xh+cs*13,yh+ch*15,cs*3,cs,'六文','KK_teshi', 0);
+    d=_f_textButton(d, xh+cs*10,yh+ch*16,cs*2,cs,_f_getText('MENU_RULES_GENERIC_NASHI'),'KK_bakefuda', 1);
+    d=_f_textButton(d, xh+cs*13,yh+ch*16,cs*12,cs,'菊に盃をタネとカスに適用','KK_bakefuda', 0);
+    d=_f_textButton(d, xh+cs*10,yh+ch*17.5,cs*5,cs,_f_getText('MENU_RULES_GENERIC_ALLDISABLE'),'__acl', 1);
+    d=_f_textButton(d, xh+cs*16,yh+ch*17.5,cs*5,cs,_f_getText('MENU_RULES_GENERIC_ALLENABLE'),'__aok', 1);
+    
+    d=_f_textButton2(d, xh+cs*22.5,yh,cs*6,cs,String.fromCharCode(9664)+_f_getText('MENU_OPT_GAME_RULES'),'RULE_SELECTEND2');
+    d=_f_textButton2(d, xh+cs*29.5,yh,cs*5,cs,String.fromCharCode(9664)+_f_getText('MENU_TEXT_TITLE'),'RULE_SELECTEND');
+    _f_h5_next=setTimeout('_f_wait4next(); ', 10);
+}
+
+function RULE_88() {
+    _f_currentMenu = _F_MENU_RULES_88;
+    _f_cushion_color();
+    RULE_88_2();
+}
+function RULE_88_2() {
+    var cs=30;
+    margin=16;
+    blines=4;
+    bcolumns=16;
+    var ch=cs+blines;
+    var w=cs*32+margin*2+bcolumns*3;
+    var h=cs*24+blines*5+cs+margin*2;
+    var xh=600-w/2, yh=450-h/2;
+    var d=10;
+
+    _f_nextScreen='RULE_88_2()';
+    clearTimeout(_f_h5_next);
+    removeAllOfTextArea();
+    _f_textWindow('OPTION_FIELD', xh, yh, w, h, '#fff');
+    _f_leftText('HEADINGS', xh+margin, yh+margin, cs*14, cs, '#fff', '<b>'+_f_getText('MENU_RULES_88_TITLE')+'</b>');
+    
+    xh+=margin;
+    yh+=margin;
+    _f_leftText('HD_01', xh, yh+ch*2, cs*8, cs, '#ff0', '<b>大場・絶場の越年</b>');
+    _f_leftText('HD_02', xh, yh+ch*3, cs*3, cs, '#ff0', '<b>猪鹿蝶</b>');
+    _f_leftText('HD_03', xh, yh+ch*4, cs*18, cs, '#ff0', '<b>二人はちはちでの総八</b>※<b>/二八/素十六</b>');
+    
+    d=_f_textButton(d, xh+cs*18,yh+ch*2,cs*2,cs,_f_getText('MENU_RULES_GENERIC_ARI'),'HH_extension', 1);
+    d=_f_textButton(d, xh+cs*21,yh+ch*2,cs*2,cs,_f_getText('MENU_RULES_GENERIC_NASHI'),'HH_extension', 0);
+    d=_f_textButton(d, xh+cs*18,yh+ch*3,cs*2,cs,_f_getText('MENU_RULES_GENERIC_NASHI'),'HH_inoshikacho', 1);
+    d=_f_textButton(d, xh+cs*21,yh+ch*3,cs*2,cs,'七貫','HH_inoshikacho', 0);
+    d=_f_textButton(d, xh+cs*18,yh+ch*4,cs*2,cs,_f_getText('MENU_RULES_GENERIC_NASHI'),'HH_288', 0);
+    d=_f_textButton(d, xh+cs*21,yh+ch*4,cs*2,cs,_f_getText('MENU_RULES_GENERIC_ARI'),'HH_288', 1);
+    _f_leftText('HD_04', xh+ch, yh+ch*5.5, cs*32, cs, '#fff', '※二人はちはちでの総八とは、両者同点の場合を指します。');
+    
+    d=_f_textButton2(d, xh+cs*22.5,yh,cs*6,cs,String.fromCharCode(9664)+_f_getText('MENU_OPT_GAME_RULES'),'RULE_SELECTEND2');
+    d=_f_textButton2(d, xh+cs*29.5,yh,cs*5,cs,String.fromCharCode(9664)+_f_getText('MENU_TEXT_TITLE'),'RULE_SELECTEND');
+    _f_h5_next=setTimeout('_f_wait4next(); ', 10);
+}
+
+function RULE_OCK() {
+    _f_currentMenu = _F_MENU_RULES_KABU;
+    _f_cushion_color();
+    RULE_OCK_2();
+}
+function RULE_OCK_2() {
+    var cs=30;
+    margin=16;
+    blines=4;
+    bcolumns=16;
+    var ch=cs+blines;
+    var w=cs*32+margin*2+bcolumns*3;
+    var h=cs*24+blines*5+cs+margin*2;
+    var xh=600-w/2, yh=450-h/2;
+    var d=10;
+    
+    _f_nextScreen='RULE_OCK_2()';
+    clearTimeout(_f_h5_next);
+    removeAllOfTextArea();
+    _f_textWindow('OPTION_FIELD', xh, yh, w, h, '#fff');
+    _f_leftText('HEADINGS', xh+margin, yh+margin, cs*20, cs, '#fff', '<b>'+_f_getText('MENU_RULES_KABU_TITLE')+'</b>');
+    
+    xh+=margin;
+    yh+=margin;
+    _f_leftText('HD_01', xh, yh+ch*2, cs*17, cs, '#ff0', '<b>使用札</b>');
+    _f_leftText('HD_02', xh, yh+ch*3, cs*17, cs, '#ff0', '<b>親のブタ/笑い</b>');
+    _f_leftText('HD_03', xh, yh+ch*4, cs*10, cs, '#ff0', '<b>親子同数位</b>');
+    _f_leftText('HD_04', xh, yh+ch*5, cs*6, cs, '#ff0', '<b>蒔き札</b>※');
+    _f_leftText('HD_05', xh, yh+ch*6, cs*18, cs, '#ff0', '<b>七以上引き無し/三以下引きの規制</b>');
+    _f_leftText('HD_06', xh, yh+ch*8, cs*5, cs, '#ff0', '<b>四一</b>※');
+    _f_leftText('HD_07', xh, yh+ch*9, cs*8, cs, '#ff0', '<b>九一/四一の条件</b>');
+    _f_leftText('HD_08', xh, yh+ch*11, cs*32, cs, '#fff', '※印はおいちょかぶでのみ有効。');
+    
+    d=_f_textButton(d, xh+cs*10,yh+ch*2,cs*3,cs,'株札','OCK_fudaType', 1);
+    d=_f_textButton(d, xh+cs*14,yh+ch*2,cs*2,cs,'花札','OCK_fudaType', 0);
+    d=_f_textButton(d, xh+cs*10,yh+ch*3,cs*3,cs,'無勝負','OCK_oyabuta', 1);
+    d=_f_textButton(d, xh+cs*14,yh+ch*3,cs*2,cs,'有効','OCK_oyabuta', 0);
+    d=_f_textButton(d, xh+cs*10,yh+ch*4,cs*2,cs,'親権','OCK_doten', 0);
+    d=_f_textButton(d, xh+cs*13,yh+ch*4,cs*3,cs,'無勝負','OCK_doten', 1);
+    d=_f_textButton(d, xh+cs*10,yh+ch*5,cs*2,cs,_f_getText('MENU_RULES_GENERIC_ARI'),'OCK_makifuda', 0);
+    d=_f_textButton(d, xh+cs*13,yh+ch*5,cs*2,cs,_f_getText('MENU_RULES_GENERIC_NASHI'),'OCK_makifuda', 1);
+    d=_f_textButton(d, xh+cs*10,yh+ch*7,cs*4,cs,'制約あり','OCK_hiki', 0);
+    d=_f_textButton(d, xh+cs*15,yh+ch*7,cs*3,cs,'無制限','OCK_hiki', 1);
+    d=_f_textButton(d, xh+cs*10,yh+ch*8,cs*3,cs,'親の役','OCK_shippin', 0);
+    d=_f_textButton(d, xh+cs*14,yh+ch*8,cs*3,cs,'子の役','OCK_shippin', 1);
+    d=_f_textButton(d, xh+cs*18,yh+ch*8,cs*3,cs,_f_getText('MENU_RULES_GENERIC_NASHI'),'OCK_shippin', 2);
+    d=_f_textButton(d, xh+cs*10,yh+ch*9,cs*12,cs,'二枚目が一の場合のみ有効','OCK_kuppin', 0);
+    d=_f_textButton(d, xh+cs*23,yh+ch*9,cs*5,cs,'順序は不問','OCK_kuppin', 1);
+    d=_f_textButton2(d, xh+cs*22.5,yh,cs*6,cs,String.fromCharCode(9664)+_f_getText('MENU_OPT_GAME_RULES'),'RULE_SELECTEND2');
+    d=_f_textButton2(d, xh+cs*29.5,yh,cs*5,cs,String.fromCharCode(9664)+_f_getText('MENU_TEXT_TITLE'),'RULE_SELECTEND');
+    
+    _f_h5_next=setTimeout('_f_wait4next(); ', 10);}
 
 function MENU() {
     _f_currentMenu = _F_MENU_MAIN;
@@ -266,4 +558,27 @@ function _f_toggle_sprite_disp(mode) {
     _f_toggle_sprite_last_mode=mode;
 }
 
-function _f_toggle_sprite_sub(){clearTimeout(_f_toggle_sprite);if(_f_movie_ctr>0){_f_toggle_sprite=setTimeout('_f_toggle_sprite_sub();', 10);return;}var i=_h5_sprite.length; while(--i>-1){if(_h5_sprite[i].id) hideSprite(_h5_sprite[i].id);}_f_rule_sel['UI_noSprite']=_f_rule_sel['UI_noSprite'] ? 0 : 1;graph_noSprite=_f_rule_sel['UI_noSprite'];_f_toggle_sprite_disp(1);try {localStorage.setItem('Marguerite_FlaJong-UI_noSprite', _f_rule_sel['UI_noSprite']);}catch(e){ ; }}
+function _f_toggle_sprite_sub() {
+    clearTimeout(_f_toggle_sprite);
+    if (_f_movie_ctr>0) {
+        _f_toggle_sprite=setTimeout('_f_toggle_sprite_sub();', 10);
+        return;
+    }
+
+    var i=_h5_sprite.length;
+    while (--i>-1) {
+        if (_h5_sprite[i].id)
+            hideSprite(_h5_sprite[i].id);
+    }
+
+    _f_rule_sel['UI_noSprite']=_f_rule_sel['UI_noSprite'] ? 0 : 1;
+    graph_noSprite=_f_rule_sel['UI_noSprite'];
+    _f_toggle_sprite_disp(1);
+
+    try {
+        localStorage.setItem('Marguerite_FlaJong-UI_noSprite', _f_rule_sel['UI_noSprite']);
+    }
+    catch (e) {
+        ;
+    }
+}

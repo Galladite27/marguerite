@@ -13,6 +13,10 @@ _F_MENU_MAIN = 1;
 _F_MENU_RULES_MAIN = 2;
 _F_MENU_OPTIONS = 3;
 _F_MENU_ABOUT = 4;
+_F_MENU_RULES_HA = 5;
+_F_MENU_RULES_KK = 6;
+_F_MENU_RULES_88 = 7;
+_F_MENU_RULES_KABU = 8;
 _f_currentMenu = _F_MENU_ATRACT;
 
 _f_h5_blinkTimeP=400;
