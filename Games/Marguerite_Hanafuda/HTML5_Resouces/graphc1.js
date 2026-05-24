@@ -438,7 +438,7 @@ function _f_h5_menu_ja() {
     putPartOfImage(image[0], 3300, 1800, 240, 280, xh+w-252, yh+h-292, 240, 280);
     drawText(_f_getText('H5_MENU_CHARACTER')+String.fromCharCode(0x25B6), xh+w-260, yh+h-margin*2-6, 14*15, 14, true, 14, 14, 'transparent', '#eee', 'right');
 
-    _f_leftSmallText('COPYRIGHT_CREDIT', xh, yh+ch*22, cs*24, 24, '#fff', 'Copyright'+String.fromCharCode(0xA9)+_f_getText('H5_MENU_COPYRIGHT'));
+    _f_leftSmallText('COPYRIGHT_CREDIT', xh, yh+ch*22, cs*24, 28, '#fff', 'Copyright'+String.fromCharCode(0xA9)+_f_getText('H5_MENU_COPYRIGHT'));
     _f_leftText('HEADINGS', xh, yh, cs*30, ch, '#fff', '<b>『'+_f_getText('H5_MENU_GAMENAME')+'』</b>');
     _f_leftSmallText('HEADINGS_VERSION', xh, yh+ch+4, cs*30, 24, '#fff', _f_getText('H5_MENU_VERSION'));
 
