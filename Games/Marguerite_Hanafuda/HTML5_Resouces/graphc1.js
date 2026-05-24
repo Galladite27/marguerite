@@ -440,7 +440,7 @@ function _f_h5_menu_ja() {
 
     _f_leftSmallText('COPYRIGHT_CREDIT', xh, yh+ch*22, cs*24, 28, '#fff', 'Copyright'+String.fromCharCode(0xA9)+_f_getText('H5_MENU_COPYRIGHT'));
     _f_leftText('HEADINGS', xh, yh, cs*30, ch, '#fff', '<b>『'+_f_getText('H5_MENU_GAMENAME')+'』</b>');
-    _f_leftSmallText('HEADINGS_VERSION', xh, yh+ch+4, cs*30, 24, '#fff', _f_getText('H5_MENU_VERSION'));
+    _f_leftSmallText('HEADINGS_VERSION', xh, yh+ch+4, cs*30, 24, '#fff', _f_getText('H5_MENU_AIVERSION'));
 
     e=document.getElementById('COPYRIGHT_CREDIT');
     e.style.background='transparent';

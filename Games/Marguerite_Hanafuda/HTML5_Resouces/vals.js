@@ -1,10 +1,19 @@
 _f_version='第3.021版(令和 2年 6月11日)';
+_f_version_en='Ver. 3.021 (11 June 2020)';
 _f_copyright_year='平成22年-令和 2年';
 _f_copyright_year_en='2010-2020'
 _f_copyright=' '+_f_copyright_year+' しらぎくさいと';
 _f_copyright_en=' '+_f_copyright_year_en+' Marguerite Site';
 _f_AI_version='第1.620版(令和 2年 5月22日)';
 _f_AI_version_en='Ver. 1.620 (22 May 2020)';
+
+_F_MENU_ATRACT = -1;
+_F_MENU_GAME = -2; // TEMP (?)
+_F_MENU_MAIN = 1;
+_F_MENU_RULES_MAIN = 2;
+_F_MENU_OPTIONS = 3;
+_F_MENU_ABOUT = 4;
+_f_currentMenu = _F_MENU_ATRACT;
 
 _f_h5_blinkTimeP=400;
 _f_h5_blinkTimeN=200;
