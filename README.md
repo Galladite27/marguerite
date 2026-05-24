@@ -12,4 +12,7 @@ I intend to:
 * Host a live version of the updated game
 * Potentially, look into how this could be packaged to run as an offline desktop application
 
+## Current status
+* Landing page & header bar translated
+
 I aim to work on this project primarily until 10th June, and see how far I get.
