@@ -88,10 +88,10 @@ _f_registerText('MENU_TEXT_OTHER', 'その他', 'Other');
 _f_registerText('MENU_GAME_HANAAWASE', '花合わせ', 'Hana-awase');
 _f_registerText('MENU_GAME_88', 'はちはち', 'Hachi-hachi');
 _f_registerText('MENU_GAME_SUDAOSHI', 'すだおし', 'Sudaoshi');
-_f_registerText('MENU_GAME_3_600KEN', '三人六百間', '3P Roppyakken');
+_f_registerText('MENU_GAME_3_600KEN', '三人六百間', 'Roppyakken'); // Would call it "3P roppyakken" but that doesn't fit; but 2P and 3P are normal, so...
 _f_registerText('MENU_GAME_KOIKOI', 'こいこい', 'Koi-koi');
 _f_registerText('MENU_GAME_MUSHI', 'むし', 'Mushi');
-_f_registerText('MENU_GAME_2_88', '二人はちはち', '2P Hachi-hachi');
+_f_registerText('MENU_GAME_2_88', '二人はちはち', '2P Hachi-hachi'); // Should this just be "Hachi-hachi" then? See above comment on 3P riooyakken.
 _f_registerText('MENU_GAME_2_600KEN', '六百間', 'Roppyakken');
 _f_registerText('MENU_GAME_HACHI', 'はち', 'Hachi');
 _f_registerText('MENU_GAME_OICHOKABU', 'おいちょかぶ', 'Oicho-kabu');
