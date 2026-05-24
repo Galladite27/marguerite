@@ -14,5 +14,6 @@ I intend to:
 
 ## Current status
 * Landing page & header bar translated
+* Main menu translated
 
 I aim to work on this project primarily until 10th June, and see how far I get.
