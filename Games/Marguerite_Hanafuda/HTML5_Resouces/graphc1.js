@@ -107,6 +107,9 @@ function _f_cushion_color() {
 
 _f_wasuji_table=new Array('', '一', '二', '三', '四', '五', '六', '七', '八', '九');
 function _f_to_wasuji(val) {
+    if (_f_lang==_F_LANG_EN)
+        return val.toString();
+
     var s='', i;
     if ((i=val) == 0)
         return('零');
