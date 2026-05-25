@@ -178,6 +178,27 @@ _f_registerText('MENU_RULES_HA_30TNASHI', '三十点/なし', '30 ten/off');
 _f_registerText('MENU_RULES_HA_60TYAKU', '六十点役', '60 ten yaku');
 _f_registerText('MENU_RULES_HA_FORCEDRAW', '無勝負', 'Forces draw');
 
+_f_registerText('MENU_RULES_KABU_DECK', '使用札', 'Deck style');
+_f_registerText('MENU_RULES_KABU_BUTAWARAI', '親のブタ/笑い', 'Dealer 3-card 0'); // TODO check if for 3 cards only
+_f_registerText('MENU_RULES_KABU_EQUALSCORE', '親子同数位', 'Dealer matches score');
+_f_registerText('MENU_RULES_KABU_MAKIFUDA', '蒔き札', 'Player initial cards'); // For if the players get a card to view
+_f_registerText('MENU_RULES_KABU_DRAWS', '七以上引き無し/三以下引きの規制', 'No draws for 7 or greater / forced draws for 3 or fewer');
+_f_registerText('MENU_RULES_KABU_41', '四一', '4-1 yaku');
+_f_registerText('MENU_RULES_KABU_9141', '九一/四一の条件', '9-1/4-1 conditions');
+_f_registerText('MENU_RULES_KABU_OCHIKABUONLY', '※印はおいちょかぶでのみ有効。', '※Only applicable to oichi-kabu');
+_f_registerText('MENU_RULES_KABU_DECK_KABUFUDA', '株札', 'Kabu');
+_f_registerText('MENU_RULES_KABU_DECK_HANAFUDA', '花札', 'Hana');
+_f_registerText('MENU_RULES_KABU_BUTAWARAI_REDRAW', '無勝負', 'Draw');
+_f_registerText('MENU_RULES_KABU_BUTAWARAI_VALID', '有効', 'Valid');
+_f_registerText('MENU_RULES_KABU_EQUALSCORE_OYAKEN', '親権', 'Win');
+_f_registerText('MENU_RULES_KABU_EQUALSCORE_DRAW', '無勝負', 'Draw');
+_f_registerText('MENU_RULES_KABU_DRAWS_MANDATED', '制約あり', 'Mandated');
+_f_registerText('MENU_RULES_KABU_DRAWS_UNRESTRICTED', '無制限', 'Unrestricted');
+_f_registerText('MENU_RULES_KABU_41_DEALER', '親の役', 'Dealer');
+_f_registerText('MENU_RULES_KABU_41_PLAYER', '子の役', 'Player');
+_f_registerText('MENU_RULES_KABU_4191_ORDERED', '二枚目が一の場合のみ有効', 'Valid only in order');
+_f_registerText('MENU_RULES_KABU_4191_UNORDERED', '順序は不問', 'Either card first');
+
 _f_registerText('', '', '');
 
 // routines01
