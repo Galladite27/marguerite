@@ -14,6 +14,6 @@ I intend to:
 
 ## Current status
 * Landing page & header bar translated
-* All menus translated apart from game-specific rule menus (hana-awase translated already)
+* All menus translated!
 
 I aim to work on this project primarily until 10th June, and see how far I get.
