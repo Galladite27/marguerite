@@ -117,7 +117,7 @@ _f_registerText('MENU_ABOUT_VER', '版番号', 'Game version:');
 _f_registerText('MENU_ABOUT_AIVER', '思考エンジンの版', 'AI version:');
 
 _f_registerText('MENU_OPTS_ROUNDS', '一試合の局数', 'Game length');
-_f_registerText('MENU_OPTS_ROUNDS_EXCLUDES', '※六百間, 三人六百間, はちには適用されません。', '※Excludes roppyakken, 3P roppyakken and hachi-hachi');
+_f_registerText('MENU_OPTS_ROUNDS_EXCLUDES', '※六百間, 三人六百間, はちには適用されません。', '※Excludes roppyakken and hachi-hachi');
 _f_registerText('MENU_OPTS_SOUNDS', '効果音', 'Sounds');
 _f_registerText('MENU_OPTS_MATCOLOUR', '座布団の色', 'Mat colour');
 _f_registerText('MENU_OPTS_CARDCOLOUR', '札の裏の色', 'Card back colour');
@@ -177,6 +177,35 @@ _f_registerText('MENU_RULES_HA_DEKIYAKUNAGASHI', '出来役流し', 'Cancels dek
 _f_registerText('MENU_RULES_HA_30TNASHI', '三十点/なし', '30 ten/off');
 _f_registerText('MENU_RULES_HA_60TYAKU', '六十点役', '60 ten yaku');
 _f_registerText('MENU_RULES_HA_FORCEDRAW', '無勝負', 'Forces draw');
+
+_f_registerText('MENU_RULES_KK_FIELDSIZE', '配札時の場札', 'Cards drawn to field');
+_f_registerText('MENU_RULES_KK_LOSTYAKU', '「こいこい」して流れた場合の出来役', 'Yaku formed if round ends after "koi-koi"');
+_f_registerText('MENU_RULES_KK_OYAKEN', '親権', 'Dealer win on draw');
+_f_registerText('MENU_RULES_KK_4RAINYBRIGHTS', '雨入り四光', 'Rainy four brights');
+_f_registerText('MENU_RULES_KK_3BRIGHTS', '三光', 'Three brights');
+_f_registerText('MENU_RULES_KK_BDB', '猪鹿蝶', 'Boar, deer, butterfly');
+_f_registerText('MENU_RULES_KK_SAKE', '花見酒・月見酒', 'Flower/moon viewing');
+_f_registerText('MENU_RULES_KK_753', '七五三', '753');
+_f_registerText('MENU_RULES_KK_CFCBW', '表菅原', 'Crane, curtain, warbler');
+_f_registerText('MENU_RULES_KK_DRAW_CHAFF', '手札総カス', 'All-chaff draw');
+_f_registerText('MENU_RULES_KK_DRAW_332', '手札三々二', '3-3-2 draw');
+_f_registerText('MENU_RULES_KK_DRAW_3PAIRS', '手札喰付', '3 pairs draw');
+_f_registerText('MENU_RULES_KK_DRAW_4KIND', '手札手四', '4-of-a-kind draw');
+_f_registerText('MENU_RULES_KK_MULTITYPE', '化札', 'Multi-type cards');
+_f_registerText('MENU_RULES_KK_6CARDS', '六枚', '6 cards');
+_f_registerText('MENU_RULES_KK_8CARDS', '八枚', '8 cards');
+_f_registerText('MENU_RULES_KK_VOID', '失効', 'Void');
+_f_registerText('MENU_RULES_KK_VALID', '有効', 'Valid');
+_f_registerText('MENU_RULES_KK_6MON', '六文', '6 mon');
+_f_registerText('MENU_RULES_KK_8MON', '八文', '8 mon');
+_f_registerText('MENU_RULES_KK_5MON', '五文', '5 mon');
+_f_registerText('MENU_RULES_KK_SAKECUP', '菊に盃をタネとカスに適用', 'Sake cup counts as both ten and chaff');
+
+_f_registerText('MENU_RULES_88_EXTENDS', '大場・絶場の越年', 'Large/grand field extends game');
+_f_registerText('MENU_RULES_88_BDB', '猪鹿蝶', 'Boar, deer, butterflies');
+_f_registerText('MENU_RULES_88_2PYAKU', '二人はちはちでの総八</b>※<b>/二八/素十六', '2P - all eights</b>※<b> / double eights / 16 chaff');
+_f_registerText('MENU_RULES_88_7KAN', '七貫', '7 kan');
+_f_registerText('MENU_RULES_88_2PYAKUNOTE', '※二人はちはちでの総八とは、両者同点の場合を指します。', '※In 2P hachi-hachi, this happens when both players are tied');
 
 _f_registerText('MENU_RULES_KABU_DECK', '使用札', 'Deck style');
 _f_registerText('MENU_RULES_KABU_BUTAWARAI', '親のブタ/笑い', 'Dealer 3-card 0'); // TODO check if for 3 cards only
