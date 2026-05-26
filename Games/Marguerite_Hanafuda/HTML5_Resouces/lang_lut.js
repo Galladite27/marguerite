@@ -72,9 +72,14 @@ function _f_langToggle() {
 
     else if (_f_currentMenu == _F_MENU_GAME) {
         _f_playfield();
+        if (_f_gamemode==_F_GAMEMODE_OICHOKABU || _f_gamemode==_F_GAMEMODE_KYOKABU) {
+            _f_bafuda_disp(0, true);
+            // TODO: display the tefuda / sing card being shown (?) if required, since it is partially covered by the bafuda draw call
+        }
     }
+}
 
-    /*
+/*
 Important functions for drawing game state:
 _f_tefuda_disp (for hand)
 _f_bafuda_disp (for field)
@@ -83,8 +88,24 @@ _f_score_disp (for scores)
 _f_yamafuda_disp (for deck)
 _f_oichokabu_selectable_yamafuda_disp (oicho-kabu selectable deck)
 _f_playfield (peripheral information - does _f_score_disp and _f_yamafuda_disp)
-    */
-}
+*/
+
+/*
+File transation status@
+audioLib - DONE!
+graphc1 - DONE!
+graphc2 - begun - to 1108
+graphc3 - not begun
+graphc4 - not begun
+graphc5 - DONE!
+graphcLib - DONE! (not translating)
+judge01 - not begun
+judge02 - not begun
+judge03 - not begun
+judge04 - not begun
+routines01 - not begun
+routines02 - not begun
+*/
 
 // audioLib
 _f_registerText('MENU_LANG_TOGGLE', 'English', '日本語');
@@ -102,6 +123,21 @@ _f_registerText('H5_MENU_AIVERSION', _f_AI_version, _f_AI_version_en);
 _f_registerText('H5_MENU_VERSION', _f_version, _f_version_en);
 
 _f_registerText('QUITGAME_CONFIRM', '現在のゲームを終了して、お品書きに戻りますか？', 'Quit game and return to menu?')
+
+//graphc2
+_f_registerText('GAME_NEGATIVE', '▲　', '−')
+_f_registerText('GAME_POINTS_TEN', '点', ' pts');
+_f_registerText('GAME_POINTS_TEN_88', '点', ' ten');
+_f_registerText('GAME_POINTS_KAN', '', ' kan');
+_f_registerText('GAME_POINTS_MON', '', ' mon');
+
+_f_registerText('GAME_KABU_DRAW', ' 引き', 'Hit');
+_f_registerText('GAME_KABU_NODRAW', '引かず', 'Stand');
+_f_registerText('', '', '');
+_f_registerText('', '', '');
+_f_registerText('', '', '');
+_f_registerText('', '', '');
+_f_registerText('', '', '');
 
 // graphc5
 _f_registerText('MENU_ANIMS_OFF', '札の動画効果：切', 'Animations: OFF');
@@ -252,8 +288,6 @@ _f_registerText('MENU_RULES_KABU_41_DEALER', '親の役', 'Dealer');
 _f_registerText('MENU_RULES_KABU_41_PLAYER', '子の役', 'Player');
 _f_registerText('MENU_RULES_KABU_4191_ORDERED', '二枚目が一の場合のみ有効', 'Valid only in order');
 _f_registerText('MENU_RULES_KABU_4191_UNORDERED', '順序は不問', 'Either card first');
-
-_f_registerText('', '', '');
 
 // routines01
 _f_registerText('MENU_RETURN', 'お品書きに戻る', 'Return to menu');

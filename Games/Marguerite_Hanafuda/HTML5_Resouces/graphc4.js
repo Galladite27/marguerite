@@ -25,7 +25,34 @@ function _f_oichokabu_animation_erase_watched(){var w=_f_fudaWidth >> 1;var h=_f
 function _f_oichokabu_animation_return_bafuda(bpos, seki){var o=_h5_sprite[0];o._x=_ock_x;o._y=_ock_y;o.ex=_ock_xb; o.ey=_ock_yb;o.dx=30; o.dy=10;var d=Math.sqrt(Math.pow(o.ex-o._x, 2)+Math.pow(o.ey-o._y, 2))/_f_speed;if(d!=0){o.dx=(o.ex-o._x)/d;o.dy=(o.ey-o._y)/d;}o.fcode=0xff;_f_h5_fuda_disp_2sprite(o.id, o.fcode, _f_fudaWidth, _f_fudaHeight, 0);moveSprite(o.id, o._x, o._y);_f_movie_ctr=1;o.timeout=setTimeout('_f_from_tefuda_to_bafuda_sub2(0)', _f_h5_frameDulation);}
 function _f_status_erase(){removeTextArea('PROMPT_WINDOW');}
 function _f_status_disp(str){var fontSize=20;_f_status_erase();var w=236;var h=100;var x=1180-w;var y=690;newTextArea('PROMPT_WINDOW', x, y, w-16, h-16, fontSize, 'rgba(255,255,255,.8)', '#000');e=document.getElementById('PROMPT_WINDOW');e.style.border='solid #ccc 2px';e.style.padding=Math.floor(8*rRatio)+'px';e.style.fontSize=Math.floor(20*rRatio)+'px';e.style.lineHeight=Math.floor(22*rRatio)+'px';e.style.overflow='hidden';e.style.fontFamily='sans-serif';str=str.split('\n').join('<br />');e.innerHTML=str;return;}
-function _f_console_erase(){removeTextArea('COMMAND_BAR');removeTextArea('COMMAND_11');removeTextArea('COMMAND_12');}
-function _f_mini_console_disp(){var dx=1052, n, o;var dy=794;var d=9901;_f_console_erase();newTextArea('COMMAND_BAR', dx, dy, 128, 41, 32, 'rgba(0,0,0,.8)', '#fff');e=document.getElementById('COMMAND_BAR');e.style.border='solid rgba(204,204,204,.7) 2px';dx+=4; dy+=8;newAnchorArea(10, dx, dy, 128, 32, 'COMMAND_11', 28, 'transparent', '#fff');e=document.getElementById('COMMAND_11');e.style.fontFamily='serif';e.style.textAlign='center';e.style.lineHeight='1em';e.style.verticalAlign='text-top';e.innerHTML='進行';return;}
+
+function _f_console_erase() {
+    console.log("F console erase")
+    removeTextArea('COMMAND_BAR');
+    removeTextArea('COMMAND_11');
+    removeTextArea('COMMAND_12');
+}
+function _f_mini_console_disp() {
+    var dx=1052, n, o;
+    var dy=794;
+    var d=9901;
+    
+    _f_console_erase();
+    newTextArea('COMMAND_BAR', dx, dy, 128, 41, 32, 'rgba(0,0,0,.8)', '#fff');
+    e=document.getElementById('COMMAND_BAR');
+    e.style.border='solid rgba(204,204,204,.7) 2px';
+    
+    dx+=4;
+    dy+=8;
+    newAnchorArea(10, dx, dy, 128, 32, 'COMMAND_11', 28, 'transparent', '#fff');
+    e=document.getElementById('COMMAND_11');
+    e.style.fontFamily='serif';
+    e.style.textAlign='center';
+    e.style.lineHeight='1em';
+    e.style.verticalAlign='text-top';
+    e.innerHTML='進行';
+    return;
+}
+
 function _f_console_disp(){var dx=780+128, n, o;var dy=794;var d=9901;_f_console_erase();newTextArea('COMMAND_BAR', dx, dy, 272, 41, 32, 'rgba(0,0,0,.8)', '#fff');e=document.getElementById('COMMAND_BAR');e.style.border='solid rgba(204,204,204,.7) 2px';dx+=4; dy+=8;newAnchorArea(11, dx, dy, 128, 32, 'COMMAND_11', 28, 'transparent', '#fff');e=document.getElementById('COMMAND_11');e.style.fontFamily='serif';e.style.textAlign='center';e.style.lineHeight='1em';e.style.verticalAlign='text-top';e.innerHTML='は い';newAnchorArea(12, dx+148, dy, 128, 32, 'COMMAND_12', 28, 'transparent', '#fff');e=document.getElementById('COMMAND_12');e.style.fontFamily='serif';e.style.textAlign='center';e.style.lineHeight='1em';e.style.verticalAlign='text-top';e.innerHTML='いいえ';return;}
 function _f_score_card_disp(){var cs=28, margin=16, blines=4, bcolumns=16;var ch=cs+blines;var bz=-1, jia, x, y;var tt=new Array(0, 0, 0);var i, d;_f_button_ctr=0;_f_cushion_color();removeAllOfTextArea();var w=cs*32+margin*2+bcolumns*3;var h=cs*24+blines*5+cs+margin*2;var xh=600-w/2, yh=450-h/2;_f_textWindow('SCORE_TABLE', xh, yh, w, h);i='はちはち'; if(_f_gamemode==_F_GAMEMODE_88 && _f_players==2) i='二人はちはち';if(_f_gamemode==_F_GAMEMODE_MUSHI) i='むし';if(_f_gamemode==_F_GAMEMODE_KOIKOI) i='こいこい';if(_f_gamemode==_F_GAMEMODE_HANAAWASE) i='花合わせ';if(_f_gamemode==_F_GAMEMODE_OICHOKABU) i='おいちょかぶ';if(_f_gamemode==_F_GAMEMODE_KYOKABU) i='京かぶ';if(_f_gamemode==_F_GAMEMODE_SUDAOSHI) i='すだおし';if(_f_gamemode==_F_GAMEMODE_600KEN) i='六百間';if(_f_gamemode==_F_GAMEMODE_HACHI) i='はち';_f_leftText('A_GAME_COMPLETED', xh+margin, yh+margin, cs*24, cs, '#fff', i+' 第'+_f_to_wasuji(_f_game_ctr+1)+'回戦終了');xh+=margin;yh+=margin;var players=(_f_players==3) ? 3 : 1;x=xh+cs*4; y=yh+ch*2;i=-1; while(++i<players){j=_f_seatName[i];if(players==1) i='あなた';_f_rightText('SEAT_NAME'+i, x, yh+ch*2, cs*3, cs, '#ff0', j);x+=cs*5;}while(++bz<=_f_game_ctr){y+=ch; x=xh;_f_rightText('GAME_'+bz+'_HEADINGS', x, y, cs*2, cs, '#ff0', (bz+1));x=xh+cs*4;i=-1; while(++i<players){j=_f[i].result[bz]; tt[i]+=j;if(j<0){_f_rightText('SCORE_'+bz+'_'+i+'_SIGN', x, y, cs, cs, '#fff', '▲');j=-j;}_f_rightText('SCORE_'+bz+'_'+i+'_VAL', x, y, cs*3, cs, '#fff', j);x+=cs*5;}}y+=ch*1.5; x=xh;_f_rightText('GAME_TOTAL_HEADINGS', x, y, cs*2, cs, '#ff0', '計');x=xh+cs*4;i=-1; while(++i<players){j=tt[i];if(j<0){_f_rightText('SCORE_TOTAL_'+i+'_SIGN', x, y, cs, cs, '#fff', '▲');j=-j;}_f_rightText('SCORE_TOTAL_'+i+'_VAL', x, y, cs*3, cs, '#fff', j);x+=cs*5;}d=10;d=_f_textButton2(d, xh+cs*25,yh+margin,cs*5,cs,String.fromCharCode(9655)+'終了','GAME_OVER');if(_f_game_ctr<7) d=_f_textButton2(d, xh+cs*30,yh+margin,cs*5,cs,String.fromCharCode(9655)+'次戦','GAME_END_3');return;}

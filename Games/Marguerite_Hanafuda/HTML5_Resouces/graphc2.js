@@ -1,4 +1,6 @@
-function _f_tefuda_disp(seki) {
+function _f_tefuda_disp(seki, keepClickable) {
+    if (!keepClickable)
+        makeNoClickable();
     makeNoClickable();
 
     if(seki<0 || seki>_f_players)
@@ -548,8 +550,9 @@ function _h5_makeBafudaUnclickable() {
         removeTextArea('BAFUDA-NO'+i);
 }
 
-function _f_bafuda_disp(mode) {
-    makeNoClickable();
+function _f_bafuda_disp(mode, keepClickable) {
+    if (!keepClickable)
+        makeNoClickable();
     _f_h5_blinkBafuda_flag=0;
     _f_bafuda_disp_main(mode);
 }
@@ -637,7 +640,7 @@ function _f_bafuda_disp_main(mode) {
                     continue;
 
                 putRectangle(pX[i]-70, cY[j]-60, 130, 118, _f_cushionColor);
-                if ((k=_f[j].betted[i])==0)
+                if ((k=_f[j].betted[i])==0 || (k=_f[j].betted[i])==null)
                     continue;
 
                 y=cY[j];
@@ -684,9 +687,9 @@ function _f_bafuda_disp_main(mode) {
                     drawTextMincho(s, x+2, y+2, 128, 29, 1, 29, 29, 'rgba(0, 0, 0, 0)', l, 'left');
                     if (k) {
                         if (k<0)
-                            s='▲　'+_f_to_wasuji(-k)+'点';
+                            s=_getText('GAME_NEGATIVE')+_f_to_wasuji(-k)+_f_getText('GAME_POINTS_TEN');
                         else
-                            s=_f_to_wasuji(k)+'点';
+                            s=_f_to_wasuji(k)+_f_getText('GAME_POINTS_TEN');
                         drawTextMincho(s, x+124, y+36, 128, 29, 1, 29, 29, 'rgba(0, 0, 0, 0)', l, 'right');
                     }
                 }
@@ -694,9 +697,9 @@ function _f_bafuda_disp_main(mode) {
                     continue;
 
                 if (k<0)
-                    l='引かず';
+                    l=_f_getText('GAME_KABU_NODRAW');
                 else
-                    l=' 引き';
+                    l=_f_getText('GAME_KABU_DRAW');
 
                 x=x00-30;
                 y=cY[j]+20;
