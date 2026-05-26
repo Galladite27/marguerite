@@ -206,7 +206,6 @@ _f_oichokabu_betted_total=0;
 _f_oichokabu_opened_flag=new Array(4);
 _f_oichokabu_betted_flag=new Array(4);
 _f_oichokabu_number=new Array('ブタ', 'ピン', 'ニゾウ', 'サンタ', 'ヨツヤ','ゴケ', 'ロッポ', 'シチケン', 'オイチョ', 'カブ');
-
 _f_kyokabu_number=new Array('笑い', 'ウンスン', 'ニゾウ', 'サンズン', 'ヨンスン','ゴケン', 'ロッケン', 'シチケン', 'オイチョ', 'カブ');
 
 _f_oichokabu_yamafuda=new Array(40);
