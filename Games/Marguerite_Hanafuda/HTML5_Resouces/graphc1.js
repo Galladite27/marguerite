@@ -451,19 +451,22 @@ function _f_h5_menu_ja() {
     e.style.cursor='pointer';
 }
 
-function MENU_HORIKITA_MAKI_USAGI() {
+function MENU_HORIKITA_MAKI_USAGI(redraw = false) {
+    _f_currentMenu = _F_MENU_MAIN_USAGI;
+
     var e;
-    if ((e=document.getElementById('MENU_HORIKITA_MAKI_USAGI_W'))!=null) {
+    if ((e=document.getElementById('MENU_HORIKITA_MAKI_USAGI_W'))!=null && !redraw) {
         e.parentNode.removeChild(e);
+        _f_currentMenu = _F_MENU_MAIN;
         return;
     }
     
-    _f_textWindow('MENU_HORIKITA_MAKI_USAGI_W', 200, 450, 600, 240, '#fff');
+    _f_textWindow('MENU_HORIKITA_MAKI_USAGI_W', 125, 450, 900, 240, '#fff');
     e=document.getElementById('MENU_HORIKITA_MAKI_USAGI_W');
     e.style.padding='1em';
     e.style.textAlign='left';
     e.style.fontFamily='monospace';
-    e.innerHTML='<p style="margin: 0; ">『しらぎく花札』制作者の創作キャラクタ「<strong style="color: #ff0; font-weight: bold; ">堀北真希うさぎ</strong>」です。</p>'+'<p style="margin: 1em 0; ">※『しらぎく花札』には登場しません。</p>'+'<p style="margin: 3.5em 0; text-align: center !important; ">[<a style="color: #ff0; text-decoration: none; font-weight: bold;  " href="http:/'+'/www.marguerite.jp/Nihongo/Features/%E5%A0%80%E5%8C%97%E7%9C%9F%E5%B8%8C%E3%81%86%E3%81%95%E3%81%8E.html">堀北真希うさぎの詳細</a>] 　[<a style="color: #ff0; text-decoration: none; font-weight: bold; cursor: pointer; " onclick="MENU_HORIKITA_MAKI_USAGI(); return(false); ">　閉じる　</a>]'+'';
+    e.innerHTML='<p style="margin: 0; ">'+_f_getText('MENU_USAGI_CHARACTER1')+'「<strong style="color: #ff0; font-weight: bold; ">'+_f_getText('MENU_USAGI_CHARACTER2')+'</strong>」'+_f_getText('MENU_USAGI_CHARACTER3')+'</p>'+'<p style="margin: 1em 0; ">'+_f_getText('MENU_USAGI_FIRST')+'</p>'+'<p style="margin: 3.5em 0; text-align: center !important; ">[<a style="color: #ff0; text-decoration: none; font-weight: bold;  " href="http:/'+'/www.marguerite.jp/Nihongo/Features/%E5%A0%80%E5%8C%97%E7%9C%9F%E5%B8%8C%E3%81%86%E3%81%95%E3%81%8E.html">'+_f_getText('MENU_USAGI_MOREINFO')+'</a>] 　[<a style="color: #ff0; text-decoration: none; font-weight: bold; cursor: pointer; " onclick="MENU_HORIKITA_MAKI_USAGI(); return(false); ">　'+_f_getText('MENU_USAGI_RETURN')+'　</a>]'+'';
 }
 
 function QUIT_GAME() {

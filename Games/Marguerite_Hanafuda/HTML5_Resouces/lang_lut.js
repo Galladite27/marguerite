@@ -51,6 +51,9 @@ function _f_langToggle() {
         MENU();
     } else if (_f_currentMenu == _F_MENU_RULES_MAIN) {
         RULE_MENU();
+    } else if (_f_currentMenu == _F_MENU_MAIN_USAGI) {
+        MENU();
+        MENU_HORIKITA_MAKI_USAGI(redraw = true);
     } else if (_f_currentMenu == _F_MENU_OPTIONS) {
         UI_SETTINGS();
     } else if (_f_currentMenu == _F_MENU_ABOUT) {
@@ -130,6 +133,13 @@ _f_registerText('MENU_OTHER_MAHJONG', 'しらぎく麻雀', 'Mahjong');
 _f_registerText('MENU_ABOUT_TITLE', '『しらぎく花札』のおくづけ', '『White Chrysanthemum Hanafuda』 version info');
 _f_registerText('MENU_ABOUT_VER', '版番号', 'Game version:');
 _f_registerText('MENU_ABOUT_AIVER', '思考エンジンの版', 'AI version:');
+
+_f_registerText('MENU_USAGI_CHARACTER1', '『しらぎく花札』制作者の創作キャラクタ', 'This is 『White Chrysanthemum Hanafuda\'s』 creator\'s original character, ');
+_f_registerText('MENU_USAGI_CHARACTER2', '堀北真希うさぎ', 'Maki Horikita the Rabbit');
+_f_registerText('MENU_USAGI_CHARACTER3', 'です。', '.');
+_f_registerText('MENU_USAGI_FIRST', '※『しらぎく花札』には登場しません。', '※This game is not her first appearence.');
+_f_registerText('MENU_USAGI_MOREINFO', '堀北真希うさぎの詳細', 'More information');
+_f_registerText('MENU_USAGI_RETURN', '閉じる', 'Return');
 
 _f_registerText('MENU_OPTS_ROUNDS', '一試合の局数', 'Game length');
 _f_registerText('MENU_OPTS_ROUNDS_EXCLUDES', '※六百間, 三人六百間, はちには適用されません。', '※Excludes roppyakken and hachi-hachi');

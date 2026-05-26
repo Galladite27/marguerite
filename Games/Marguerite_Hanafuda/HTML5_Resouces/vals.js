@@ -8,15 +8,16 @@ _f_AI_version='第1.620版(令和 2年 5月22日)';
 _f_AI_version_en='Ver. 1.620 (22 May 2020)';
 
 _F_MENU_ATRACT = -1;
-_F_MENU_GAME = -2; // TEMP (?)
+_F_MENU_GAME = -2;
 _F_MENU_MAIN = 1;
-_F_MENU_RULES_MAIN = 2;
-_F_MENU_OPTIONS = 3;
-_F_MENU_ABOUT = 4;
-_F_MENU_RULES_HA = 5;
-_F_MENU_RULES_KK = 6;
-_F_MENU_RULES_88 = 7;
-_F_MENU_RULES_KABU = 8;
+_F_MENU_MAIN_USAGI = 2
+_F_MENU_RULES_MAIN = 3;
+_F_MENU_OPTIONS = 4;
+_F_MENU_ABOUT = 5;
+_F_MENU_RULES_HA = 6;
+_F_MENU_RULES_KK = 7;
+_F_MENU_RULES_88 = 8;
+_F_MENU_RULES_KABU = 9;
 _f_currentMenu = _F_MENU_ATRACT;
 
 _f_h5_blinkTimeP=400;
