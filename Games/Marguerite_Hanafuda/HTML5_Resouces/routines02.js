@@ -169,4 +169,20 @@ function ATRACT2() {
     _f_h5_next=setTimeout('ATRACT2(); ', 10);
 }
 
-function H5_SOUND_SET(){var i, j;if(noAudio) return;j=4; while(--j>-1){i='kirifuda'+j;audioObj[i].volume=0;audioObj[i].play();i='mekurifuda'+j;audioObj[i].volume=0;audioObj[i].play();}}
+function H5_SOUND_SET() {
+    var i, j;
+    
+    if (noAudio)
+        return;
+    
+    j=4;
+    while (--j>-1) {
+        i='kirifuda'+j;
+        audioObj[i].volume=0;
+        audioObj[i].play();
+
+        i='mekurifuda'+j;
+        audioObj[i].volume=0;
+        audioObj[i].play();
+    }
+}

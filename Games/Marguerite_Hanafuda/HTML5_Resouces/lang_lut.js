@@ -66,6 +66,21 @@ function _f_langToggle() {
     } else if (_f_currentMenu == _F_MENU_RULES_KABU) {
         RULE_OCK();
     }
+
+    else if (_f_currentMenu == _F_MENU_GAME) {
+        _f_playfield();
+    }
+
+    /*
+Important functions for drawing game state:
+_f_tefuda_disp (for hand)
+_f_bafuda_disp (for field)
+_f_torifuda_disp (for captured cards)
+_f_score_disp (for scores)
+_f_yamafuda_disp (for deck)
+_f_oichokabu_selectable_yamafuda_disp (oicho-kabu selectable deck)
+_f_playfield (peripheral information - does _f_score_disp and _f_yamafuda_disp)
+    */
 }
 
 // audioLib

@@ -5,16 +5,76 @@ function PLAY_KOIKOI() {
     setMenuItem('MENUBAR_RESTART', -8, 5, _f_getText('MENU_RETURN'), 'QUIT_GAME()', 0);
     _f_h5_next=setTimeout('GAME_START(); ', 10);
 }
-function PLAY_MUSHI(){_f_gamemode=_F_GAMEMODE_MUSHI;_f_players=2;_f_kabu_mode=0;setMenuItem('MENUBAR_RESTART', -8, 5, _f_getText('MENU_RETURN'), 'QUIT_GAME()', 0);_f_h5_next=setTimeout('GAME_START(); ', 10);}
-function PLAY_HANAAWASE(){_f_gamemode=_F_GAMEMODE_HANAAWASE;_f_players=3;_f_kabu_mode=0;setMenuItem('MENUBAR_RESTART', -8, 5, _f_getText('MENU_RETURN'), 'QUIT_GAME()', 0);_f_h5_next=setTimeout('GAME_START(); ', 10);}
-function PLAY_88(){_f_gamemode=_F_GAMEMODE_88;_f_players=3;_f_kabu_mode=0;setMenuItem('MENUBAR_RESTART', -8, 5, _f_getText('MENU_RETURN'), 'QUIT_GAME()', 0);_f_h5_next=setTimeout('GAME_START(); ', 10);}
-function PLAY_2_88(){_f_gamemode=_F_GAMEMODE_88;_f_players=2;_f_kabu_mode=0;setMenuItem('MENUBAR_RESTART', -8, 5, _f_getText('MENU_RETURN'), 'QUIT_GAME()', 0);_f_h5_next=setTimeout('GAME_START(); ', 10);}
-function PLAY_SUDAOSHI(){_f_gamemode=_F_GAMEMODE_SUDAOSHI;_f_players=3;_f_kabu_mode=0;setMenuItem('MENUBAR_RESTART', -8, 5, _f_getText('MENU_RETURN'), 'QUIT_GAME()', 0);_f_h5_next=setTimeout('GAME_START(); ', 10);}
-function PLAY_2_600KEN(){_f_gamemode=_F_GAMEMODE_600KEN;_f_players=2;_f_kabu_mode=0;setMenuItem('MENUBAR_RESTART', -8, 5, _f_getText('MENU_RETURN'), 'QUIT_GAME()', 0);_f_h5_next=setTimeout('GAME_START(); ', 10);}
-function PLAY_3_600KEN(){_f_gamemode=_F_GAMEMODE_600KEN;_f_players=3;_f_kabu_mode=0;setMenuItem('MENUBAR_RESTART', -8, 5, _f_getText('MENU_RETURN'), 'QUIT_GAME()', 0);_f_h5_next=setTimeout('GAME_START(); ', 10);}
-function PLAY_HACHI(){_f_gamemode=_F_GAMEMODE_HACHI;_f_players=2;_f_kabu_mode=0;setMenuItem('MENUBAR_RESTART', -8, 5, _f_getText('MENU_RETURN'), 'QUIT_GAME()', 0);_f_h5_next=setTimeout('GAME_START(); ', 10);}
-function PLAY_OICHOKABU(){_f_gamemode=_F_GAMEMODE_OICHOKABU;_f_players=3;_f_kabu_mode=1;setMenuItem('MENUBAR_RESTART', -8, 5, _f_getText('MENU_RETURN'), 'QUIT_GAME()', 0);_f_h5_next=setTimeout('GAME_START(); ', 10);}
-function PLAY_KYOKABU(){_f_gamemode=_F_GAMEMODE_KYOKABU;_f_players=3;_f_kabu_mode=1;setMenuItem('MENUBAR_RESTART', -8, 5, _f_getText('MENU_RETURN'), 'QUIT_GAME()', 0);_f_h5_next=setTimeout('GAME_START(); ', 10);}
+function PLAY_MUSHI() {
+    _f_gamemode=_F_GAMEMODE_MUSHI;
+    _f_players=2;
+    _f_kabu_mode=0;
+    setMenuItem('MENUBAR_RESTART', -8, 5, _f_getText('MENU_RETURN'), 'QUIT_GAME()', 0);
+    _f_h5_next=setTimeout('GAME_START(); ', 10);
+}
+function PLAY_HANAAWASE() {
+    _f_gamemode=_F_GAMEMODE_HANAAWASE;
+    _f_players=3;
+    _f_kabu_mode=0;
+    setMenuItem('MENUBAR_RESTART', -8, 5, _f_getText('MENU_RETURN'), 'QUIT_GAME()', 0);
+    _f_h5_next=setTimeout('GAME_START(); ', 10);
+}
+function PLAY_88() {
+    _f_gamemode=_F_GAMEMODE_88;
+    _f_players=3;
+    _f_kabu_mode=0;
+    setMenuItem('MENUBAR_RESTART', -8, 5, _f_getText('MENU_RETURN'), 'QUIT_GAME()', 0);
+    _f_h5_next=setTimeout('GAME_START(); ', 10);
+}
+function PLAY_2_88() {
+    _f_gamemode=_F_GAMEMODE_88;
+    _f_players=2;
+    _f_kabu_mode=0;
+    setMenuItem('MENUBAR_RESTART', -8, 5, _f_getText('MENU_RETURN'), 'QUIT_GAME()', 0);
+    _f_h5_next=setTimeout('GAME_START(); ', 10);
+}
+function PLAY_SUDAOSHI() {
+    _f_gamemode=_F_GAMEMODE_SUDAOSHI;
+    _f_players=3;
+    _f_kabu_mode=0;
+    setMenuItem('MENUBAR_RESTART', -8, 5, _f_getText('MENU_RETURN'), 'QUIT_GAME()', 0);
+    _f_h5_next=setTimeout('GAME_START(); ', 10);
+}
+function PLAY_2_600KEN() {
+    _f_gamemode=_F_GAMEMODE_600KEN;
+    _f_players=2;
+    _f_kabu_mode=0;
+    setMenuItem('MENUBAR_RESTART', -8, 5, _f_getText('MENU_RETURN'), 'QUIT_GAME()', 0);
+    _f_h5_next=setTimeout('GAME_START(); ', 10);
+}
+function PLAY_3_600KEN() {
+    _f_gamemode=_F_GAMEMODE_600KEN;
+    _f_players=3;
+    _f_kabu_mode=0;
+    setMenuItem('MENUBAR_RESTART', -8, 5, _f_getText('MENU_RETURN'), 'QUIT_GAME()', 0);
+    _f_h5_next=setTimeout('GAME_START(); ', 10);
+}
+function PLAY_HACHI() {
+    _f_gamemode=_F_GAMEMODE_HACHI;
+    _f_players=2;
+    _f_kabu_mode=0;
+    setMenuItem('MENUBAR_RESTART', -8, 5, _f_getText('MENU_RETURN'), 'QUIT_GAME()', 0);
+    _f_h5_next=setTimeout('GAME_START(); ', 10);
+}
+function PLAY_OICHOKABU() {
+    _f_gamemode=_F_GAMEMODE_OICHOKABU;
+    _f_players=3;
+    _f_kabu_mode=1;
+    setMenuItem('MENUBAR_RESTART', -8, 5, _f_getText('MENU_RETURN'), 'QUIT_GAME()', 0);
+    _f_h5_next=setTimeout('GAME_START(); ', 10);
+    }
+function PLAY_KYOKABU() {
+    _f_gamemode=_F_GAMEMODE_KYOKABU;
+    _f_players=3;
+    _f_kabu_mode=1;
+    setMenuItem('MENUBAR_RESTART', -8, 5, _f_getText('MENU_RETURN'), 'QUIT_GAME()', 0);
+    _f_h5_next=setTimeout('GAME_START(); ', 10);
+}
 
 function GAME_START() {
     var i, j;
@@ -88,6 +148,8 @@ function GAME_START() {
 }
 function NEW_GAME() {
     var i, j;
+
+    _f_currentMenu = _F_MENU_GAME; // TEMP
     
     _f_oya=Math.floor(Math.random()*_f_players);
     _f_kyokusu_ctr=0;
