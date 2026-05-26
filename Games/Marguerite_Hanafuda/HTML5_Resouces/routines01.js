@@ -1,3 +1,13 @@
+function _f_resetGameVariables() {
+    // Bets
+    i=-1;
+    while (++i<3) {
+        _f[i].betted=new Array(4);
+    }
+
+    // Scores
+}
+
 function PLAY_KOIKOI() {
     _f_gamemode=_F_GAMEMODE_KOIKOI;
     _f_players=2;
@@ -61,15 +71,7 @@ function PLAY_HACHI() {
     setMenuItem('MENUBAR_RESTART', -8, 5, _f_getText('MENU_RETURN'), 'QUIT_GAME()', 0);
     _f_h5_next=setTimeout('GAME_START(); ', 10);
 }
-function _f_resetBets() {
-    i=-1;
-    while (++i<3) {
-        _f[i].betted=new Array(4);
-    }
-}
 function PLAY_OICHOKABU() {
-    _f_resetBets();
-
     _f_gamemode=_F_GAMEMODE_OICHOKABU;
     _f_players=3;
     _f_kabu_mode=1;
@@ -77,8 +79,6 @@ function PLAY_OICHOKABU() {
     _f_h5_next=setTimeout('GAME_START(); ', 10);
 }
 function PLAY_KYOKABU() {
-    _f_resetBets();
-
     _f_gamemode=_F_GAMEMODE_KYOKABU;
     _f_players=3;
     _f_kabu_mode=1;
@@ -87,6 +87,8 @@ function PLAY_KYOKABU() {
 }
 
 function GAME_START() {
+    _f_resetPlayers();
+
     var i, j;
     _f_toggle_sprite_disp(1);
     graph_noSprite=_f_rule_sel['UI_noSprite'] || 0;

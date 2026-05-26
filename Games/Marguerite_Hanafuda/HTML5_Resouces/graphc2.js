@@ -1110,22 +1110,22 @@ function _f_torifuda_disp_main(seki) {
             y=_f_getPoint_Y88[0];
 
             j=_f[0].torifuda01_ctr+  _f[0].torifuda05_ctr*5+  _f[0].torifuda10_ctr*10+  _f[0].torifuda20_ctr*20;
-            e=_f_rightText('TORIFUDA_0-1', x, y, 192, 36, '#FFF', _f_to_wasuji(j)+'点');
+            e=_f_rightText('TORIFUDA_0-1', x, y, 192, 36, '#FFF', _f_to_wasuji(j)+_f_getText('GAME_POINTS_TEN'));
             e.style.background='rgba(0,0,0,0.7)';
 
             if ((j=_f[0].torifuda_dekiyaku)>0) {
                 if (_f_gamemode==_F_GAMEMODE_88) {
-                    e=_f_rightText('TORIFUDA_0-1', x, y, 192, 36, '#FF0', _f_to_wasuji(Math.floor(j/12))+'貫');
+                    e=_f_rightText('TORIFUDA_0-1', x, y, 192, 36, '#FF0', _f_to_wasuji(Math.floor(j/12))+_f_getText('GAME_POINTS_KAN'));
                     e.style.background='rgba(0,0,0,0.7)';
                 }
                 else if (_f_gamemode==_F_GAMEMODE_HANAAWASE) {
                     y-=36;
-                    e=_f_rightText('TORIFUDA_0-2', x, y, 192, 36, '#FF0', _f_to_wasuji(j)+'点');
+                    e=_f_rightText('TORIFUDA_0-2', x, y, 192, 36, '#FF0', _f_to_wasuji(j)+_f_getText('GAME_POINTS_TEN'));
                     e.style.background='rgba(0,0,0,0.7)';
                 }
                 else if(_f_gamemode==_F_GAMEMODE_SUDAOSHI) {
                     y-=36;
-                    e=_f_rightText('TORIFUDA_0-2', x, y, 192, 36, '#FF0', _f_to_wasuji(Math.floor(j/12))+'貫');
+                    e=_f_rightText('TORIFUDA_0-2', x, y, 192, 36, '#FF0', _f_to_wasuji(Math.floor(j/12))+_f_getText('KAN'));
                     e.style.background='rgba(0,0,0,0.7)';
                 }
             }
@@ -1234,17 +1234,17 @@ function _f_torifuda_disp_main(seki) {
                 if (_f_gamemode==_F_GAMEMODE_HACHI) {
                     j=_f[0].torifuda01_ctr*10+  _f[0].torifuda05_ctr+  _f[0].torifuda10_ctr*10+  _f[0].torifuda20_ctr*10;
                 }
-                e=_f_rightText('TORIFUDA_0-1', x, y, 192, 36, '#FFF', _f_to_wasuji(j)+'点');
+                e=_f_rightText('TORIFUDA_0-1', x, y, 192, 36, '#FFF', _f_to_wasuji(j)+_f_getText('GAME_POINTS_TEN'));
                 e.style.background='rgba(0,0,0,0.7)';
                 y+=36;
             }
             if ((j=_f[0].torifuda_dekiyaku)>0) {
-                i='点';
+                i=_f_getText('GAME_POINTS_TEN');
                 if (_f_gamemode==_F_GAMEMODE_KOIKOI)
-                    i='文';
+                    i=_f_getText('GAME_POINTS_MON');
                 if (_f_gamemode==_F_GAMEMODE_88) {
                     j=Math.floor(j / 12);
-                    i='貫';
+                    i=_f_getText('GAME_POINTS_KAN');
                 }
                 e=_f_rightText('TORIFUDA_0-2', x, y, 192, 36, '#FFF', _f_to_wasuji(j)+i);
                 e.style.background='rgba(0,0,0,0.7)';
@@ -1355,17 +1355,17 @@ function _f_torifuda_disp_main(seki) {
                 if (_f_gamemode==_F_GAMEMODE_HACHI) {
                     j=_f[1].torifuda01_ctr*10+  _f[1].torifuda05_ctr+  _f[1].torifuda10_ctr*10+  _f[1].torifuda20_ctr*10;
                 }
-                e=_f_rightText('TORIFUDA_1-1', x, y, 192, 36, '#FFF', _f_to_wasuji(j)+'点');
+                e=_f_rightText('TORIFUDA_1-1', x, y, 192, 36, '#FFF', _f_to_wasuji(j)+_f_getText('GAME_POINTS_TEN'));
                 e.style.background='rgba(0,0,0,0.7)';
                 y-=36;
             }
             if ((j=_f[1].torifuda_dekiyaku)>0) {
-                i='点';
+                i=_f_getText('GAME_POINTS_TEN');
                 if (_f_gamemode==_F_GAMEMODE_KOIKOI)
-                    i='文';
+                    i=_f_getText('GAME_POINTS_MON');
                 if (_f_gamemode==_F_GAMEMODE_88) {
                     j=Math.floor(j / 12);
-                    i='貫';
+                    i=_f_getText('GAME_POINTS_KAN');
                 }
                 e=_f_rightText('TORIFUDA_1-2', x, y, 192, 36, '#FFF', _f_to_wasuji(j)+i);
                 e.style.background='rgba(0,0,0,0.7)';
@@ -1547,21 +1547,21 @@ function _f_torifuda_disp_main(seki) {
             x=_f_getPoint_X88[2];
             y=_f_getPoint_Y88[2];
             j=_f[2].torifuda01_ctr+  _f[2].torifuda05_ctr*5+  _f[2].torifuda10_ctr*10+  _f[2].torifuda20_ctr*20;
-            e=_f_rightText('TORIFUDA_2-1', x, y, 192, 36, '#FFF', _f_to_wasuji(j)+'点');
+            e=_f_rightText('TORIFUDA_2-1', x, y, 192, 36, '#FFF', _f_to_wasuji(j)+_f_getText('GAME_POINTS_TEN'));
             e.style.background='rgba(0,0,0,0.7)';
             if ((j=_f[2].torifuda_dekiyaku)>0) {
                 if (_f_gamemode==_F_GAMEMODE_88) {
-                    e=_f_rightText('TORIFUDA_2-1', x, y, 192, 36, '#FF0', _f_to_wasuji(Math.floor(j/12))+'貫');
+                    e=_f_rightText('TORIFUDA_2-1', x, y, 192, 36, '#FF0', _f_to_wasuji(Math.floor(j/12))+_f_getText('GAME_POINTS_KAN'));
                     e.style.background='rgba(0,0,0,0.7)';
                 }
                 else if (_f_gamemode==_F_GAMEMODE_HANAAWASE) {
                     y+=36;
-                    e=_f_rightText('TORIFUDA_2-2', x, y, 192, 36, '#FF0', _f_to_wasuji(j)+'点');
+                    e=_f_rightText('TORIFUDA_2-2', x, y, 192, 36, '#FF0', _f_to_wasuji(j)+_f_getText('GAME_POINTS_TEN'));
                     e.style.background='rgba(0,0,0,0.7)';
                 }
                 else if(_f_gamemode==_F_GAMEMODE_SUDAOSHI) {
                     y+=36;
-                    e=_f_rightText('TORIFUDA_2-2', x, y, 192, 36, '#FF0', _f_to_wasuji(Math.floor(j/12))+'貫');
+                    e=_f_rightText('TORIFUDA_2-2', x, y, 192, 36, '#FF0', _f_to_wasuji(Math.floor(j/12))+_f_getText('GAME_POINTS_KAN'));
                     e.style.background='rgba(0,0,0,0.7)';
                 }
             }
@@ -1734,21 +1734,21 @@ function _f_torifuda_disp_main(seki) {
             x=_f_getPoint_X88[1];
             y=_f_getPoint_Y88[1];
             j=_f[1].torifuda01_ctr+  _f[1].torifuda05_ctr*5+  _f[1].torifuda10_ctr*10+  _f[1].torifuda20_ctr*20;
-            e=_f_rightText('TORIFUDA_1-1', x, y, 192, 36, '#FFF', _f_to_wasuji(j)+'点');
+            e=_f_rightText('TORIFUDA_1-1', x, y, 192, 36, '#FFF', _f_to_wasuji(j)+_f_getText('GAME_POINTS_TEN'));
             e.style.background='rgba(0,0,0,0.7)';
             if ((j=_f[1].torifuda_dekiyaku)>0) {
                 if (_f_gamemode==_F_GAMEMODE_88) {
-                    e=_f_rightText('TORIFUDA_1-1', x, y, 192, 36, '#FF0', _f_to_wasuji(Math.floor(j/12))+'貫');
+                    e=_f_rightText('TORIFUDA_1-1', x, y, 192, 36, '#FF0', _f_to_wasuji(Math.floor(j/12))+_f_getText('GAME_POINTS_KAN'));
                     e.style.background='rgba(0,0,0,0.7)';
                 }
                 else if (_f_gamemode==_F_GAMEMODE_HANAAWASE) {
                     y-=36;
-                    e=_f_rightText('TORIFUDA_1-2', x, y, 192, 36, '#FF0', _f_to_wasuji(j)+'点');
+                    e=_f_rightText('TORIFUDA_1-2', x, y, 192, 36, '#FF0', _f_to_wasuji(j)+_f_getText('GAME_POINTS_TEN'));
                     e.style.background='rgba(0,0,0,0.7)';
                 }
                 else if (_f_gamemode==_F_GAMEMODE_SUDAOSHI) {
                     y-=36;
-                    e=_f_rightText('TORIFUDA_1-2', x, y, 192, 36, '#FF0', _f_to_wasuji(Math.floor(j/12))+'貫');
+                    e=_f_rightText('TORIFUDA_1-2', x, y, 192, 36, '#FF0', _f_to_wasuji(Math.floor(j/12))+_f_getText('GAME_POINTS_KAN'));
                     e.style.background='rgba(0,0,0,0.7)';
                 }
             }
@@ -1855,7 +1855,7 @@ function _f_score_disp(seki, col) {
     if (j<0) {
         j=-j;
         n='CURRENT_SCORE_SIGN'+seki;
-        e=_f_leftText(n, x+6, y, 32, 36, '#fff', '▲');
+        e=_f_leftText(n, x+6, y, 32, 36, '#fff', _f_getText('GAME_NEGATIVE'));
         e.background='transparent';
     }
 
@@ -1864,7 +1864,7 @@ function _f_score_disp(seki, col) {
         k=Math.floor(j/12);
         j=j-k*12;
         n='CURRENT_SCORE_KAN'+seki;
-        e=_f_rightText(n, x-32, y, 164, 36, '#fff', _f_to_wasuji(k)+'<span style="color: #ff0; ">貫</span>');
+        e=_f_rightText(n, x-32, y, 164, 36, '#fff', _f_to_wasuji(k)+'<span style="color: #ff0; ">'+_f_getText('GAME_POINTS_KAN')+'</span>');
         e.style.background='transparent';
         e.style.paddingRight='2px';
         if (!j)
@@ -1875,17 +1875,17 @@ function _f_score_disp(seki, col) {
         if(j==0)
             j='';
         else
-            j=_f_to_wasuji(j)+'<span style="color: #ff0; ">点</span>';
+            j=_f_to_wasuji(j)+'<span style="color: #ff0; ">'+_f_getText('GAME_POINTS_TEN')+'</span>';
         e=_f_rightText(n, x, y, 100, 36, '#fff', j);
         e.style.background='transparent';
         e.style.paddingRight='2px';
         return;
     }
 
-    var u='点';
+    var u=_f_getText('GAME_POINTS_TEN');
     if (_f_gamemode==_F_GAMEMODE_600KEN) {
         j=Math.floor(j / 10);
-        u='勝';
+        u=_f_getText('GAME_POINTS_SHOU');
     }
     n='CURRENT_SCORE_TEN'+seki;
     e=_f_rightText(n, x, y, 232, 36, '#fff', _f_to_wasuji(j)+'<span style="color: #ff0; ">'+u+'</span>');
@@ -1911,21 +1911,27 @@ function _f_600ken_current_point_disp(seki) {
         y=_f_getPoint_Y88[seki];
     }
 
-    e=_f_rightText('POINT-600KEN_'+seki, x, y, 192, 36, c, _f_to_wasuji(_f[seki].current_point_600ken)+'点');
+    e=_f_rightText('POINT-600KEN_'+seki, x, y, 192, 36, c, _f_to_wasuji(_f[seki].current_point_600ken)+_f_getText('GAME_POINTS_TEN'));
     e.style.background='rgba(0,0,0,0.7)';
     e.style.paddingRight='4px';
     e.style.fontFamily='serif';
 }
 
 _f_kyokumei=new Array('松', '梅', '桜', '藤', '菖蒲', '牡丹', '萩', '芒', '菊', '紅葉', '柳', '桐');
+_f_kyokumei_en=new Array('Pine', 'Plum bl.', 'Cherry bl.', 'Wisteria', 'Iris', 'Peony', 'Lespedeza', 'Susuki grass', 'Chrysanth.', 'Maple', 'Willow', 'Paulownia');
+function _f_get_kyokumei(ctr) {
+    if (_f_lang==_F_LANG_JP)
+        return _f_kyokumei[ctr];
+    return _f_kyokumei_en[ctr];
+}
 function _f_playfield() {
     var x, y, i, d, n, o, e;
 
     if (_f_gamemode==_F_GAMEMODE_KYOKABU || _f_gamemode==_F_GAMEMODE_OICHOKABU) {
-        i='おいちょかぶ';
+        i=_f_getText('MENU_GAME_OICHOKABU');
         j=-56;
         if (_f_gamemode==_F_GAMEMODE_KYOKABU) {
-            i='京かぶ';
+            i=_f_getText('MENU_GAME_KYOKABU');
             j=28;
         }
         n='GAMEMODE_NAME';
@@ -1957,35 +1963,36 @@ function _f_playfield() {
         x=48;
         y+=8;
         n='KYOKUSU_STATUS';
-        e=_f_leftText(n, x, y, 224, 200, '#FFF', _f_kyokumei[_f_kyokusu_ctr]+'の局');
+        e=_f_leftText(n, x, y, 224, 200, '#FFF', _f_get_kyokumei(_f_kyokusu_ctr)+_f_getText('GAME_MONTHTEXT'));
         e.style.background='transparent';
         y+=40;
 
         if (_f_oichokabu_betted_total>0) {
             n='OICHO_BETTED_H';
-            e=_f_leftText(n, x, y, 224, 36, '#0FF', '賭数');
+            e=_f_leftText(n, x, y, 224, 36, '#0FF', _f_getText('GAME_KABU_BETSOFAR'));
             e.style.background='transparent';
 
             n='OICHO_BETTED_NUM';
-            e=_f_rightText(n, x+64, y, 224-64, 36, '#FFF', _f_to_wasuji(_f_oichokabu_betted_total)+'<span style="color: #ff0; ">点</span>');
+            e=_f_rightText(n, x+64, y, 224-64, 36, '#FFF', _f_to_wasuji(_f_oichokabu_betted_total)+'<span style="color: #ff0; ">'+_f_getText('GAME_POINTS_TEN')+'</span>');
             e.style.background='transparent';
         }
 
         y+=40;
-        i='胴前';
+        i=_f_getText('GAME_KABU_LIMIT');
         if (_f_oichokabu_limit<_f_oichokabu_domae)
-            i='あと';
+            i=_f_getText('GAME_KABU_BETREMAIN');
+        console.log(`limit: ${_f_oichokabu_limit}; domae: ${_f_oichokabu_domae}`);
         n='OICHO_BET_LIMIT_H';
         e=_f_leftText(n, x, y, 224, 36, '#0FF', i);
         e.style.background='transparent';
 
         n='OICHO_BET_LIMIT_NUM';
-        e=_f_rightText(n, x+64, y, 224-64, 36, '#FFF', _f_to_wasuji(_f_oichokabu_limit)+'<span style="color: #ff0; ">点</span>');
+        e=_f_rightText(n, x+64, y, 224-64, 36, '#FFF', _f_to_wasuji(_f_oichokabu_limit)+'<span style="color: #ff0; ">'+_f_getText('GAME_POINTS_TEN')+'</span>');
         e.style.background='transparent';
 
         y+=40;
         n='OICHO_OYA_GOT_H';
-        e=_f_leftText(n, x, y, 224, 36, '#0FF', '親の得点');
+        e=_f_leftText(n, x, y, 224, 36, '#0FF', _f_getText('GAME_KABU_OYASCORE'));
         e.style.background='transparent';
 
         y+=40;
@@ -1993,12 +2000,12 @@ function _f_playfield() {
         if (i<0) {
             i=-i;
             n='OICHO_OYA_GOT_SIGN';
-            e=_f_leftText(n, x, y, 32, 36, '#FFF', '▲');
+            e=_f_leftText(n, x, y, 32, 36, '#FFF', _f_getText('GAME_NEGATIVE'));
             e.style.background='transparent';
         }
 
         n='OICHO_OYA_GOT_NUM';
-        e=_f_rightText(n, x+64, y, 224-64, 36, '#FFF', _f_to_wasuji(i)+'<span style="color: #ff0; ">点</span>');
+        e=_f_rightText(n, x+64, y, 224-64, 36, '#FFF', _f_to_wasuji(i)+'<span style="color: #ff0; ">'+_f_getText('GAME_POINTS_TEN')+'</span>');
         e.style.background='transparent';
 
         i=3;
@@ -2019,34 +2026,34 @@ function _f_playfield() {
             y+=4;
             n='KYOKUSU_STATUS';
             if(_f_kyokusu_ctr>11)
-                i='越年';
+                i=_f_getText('GAME_ETSUNEN');
             else
-                i=_f_kyokumei[_f_kyokusu_ctr];
-            e=_f_leftText(n, x+2, y, 136, 36, '#FFF', i+'の局');
+                i=_f_get_kyokumei(_f_kyokusu_ctr);
+            e=_f_leftText(n, x+2, y, 136, 36, '#FFF', i+_f_getText('GAME_MONTHTEXT'));
             e.style.background='transparent';
             y+=32;
         }
         if (_f_gamemode==_F_GAMEMODE_88) {
-            i='<span style="color: #fff">小場</span>';
+            i='<span style="color: #fff">'+_f_getText('GAME_FIELD_SMALL')+'</span>';
             if (_f_88_ba_rate==2)
-                i='<span style="color: #ff0; ">大場</span>';
+                i='<span style="color: #ff0; ">'+_f_getText('GAME_FIELD_LARGE')+'</span>';
             if(_f_88_ba_rate==4)
-                i='<span style="color: #ff0; font-weight: bold; ">絶場</span>';
+                i='<span style="color: #ff0; font-weight: bold; ">'+_f_getText('GAME_FIELD_GRAND')+'</span>';
             if (_f_88_ba_rate_next<0)
-                i+='<span style="color: #f00; ">(二代)</span>';
+                i+='<span style="color: #f00; ">'+_f_getText('GAME_FIELD_CARRY')+'</span>';
             n='BA_RATE_STATUS_88';
             e=_f_leftText(n, x+2, y, 136, 36, '#FFF', i);
             e.style.background='transparent';
 
             y+=40;
-            i='はちはち';
+            i=_f_getText('MENU_GAME_88');
         }
         else if (_f_gamemode==_F_GAMEMODE_HANAAWASE)
-            i='花合わせ';
+            i=_f_getText('MENU_GAME_HANAAWASE');
         else if (_f_gamemode==_F_GAMEMODE_SUDAOSHI)
-            i='すだおし';
+            i=_f_getText('MENU_GAME_SUDAOSHI');
         else if(_f_gamemode==_F_GAMEMODE_600KEN)
-            i='三人六百間';
+            i=_f_getText('MENU_GAME_3_600KEN');
 
         n='GAMEMODE_NAME';
         newTextArea(n, 1038, 860, 160, 36, 24, 'rgba(0,0,0,0.8)', '#FFF');
@@ -2085,22 +2092,22 @@ function _f_playfield() {
         n='GAME_STATUS_ALL';
         newTextArea(n, xx+6, 380, w-5, 126, 29, '#000', '#FFF');
 
-        i='二人はちはち';
+        i=_f_getText('MENU_GAME_2_88');
         j=-56;
         if(_f_gamemode==_F_GAMEMODE_KOIKOI) {
-            i='こいこい';
+            i=_f_getText('MENU_GAME_KOIKOI');
             j=0;
         }
         else if (_f_gamemode==_F_GAMEMODE_MUSHI) {
-            i='むし';
+            i=_f_getText('MENU_GAME_MUSHI');
             j=56;
         }
         else if (_f_gamemode==_F_GAMEMODE_600KEN) {
-            i='六百間';
+            i=_f_getText('MENU_GAME_2_600KEN');
             j=28;
         }
         else if (_f_gamemode==_F_GAMEMODE_HACHI) {
-            i='はち';
+            i=_f_getText('MENU_GAME_HACHI');
             j=56;
         }
         n='GAMEMODE_NAME';
@@ -2120,38 +2127,38 @@ function _f_playfield() {
         y=384;
         if (_f_gamemode!=_F_GAMEMODE_600KEN && _f_gamemode!=_F_GAMEMODE_HACHI) {
             if (_f_kyokusu_ctr>11)
-                i='越年';
-            else i=_f_kyokumei[_f_kyokusu_ctr];
+                i=i=_f_getText('GAME_ETSUNEN');
+            else i=_f_get_kyokumei(_f_kyokusu_ctr);
             n='KYOKUSU_STATUS';
-            e=_f_leftText(n, x, y, w-15, 116, '#FFF', i+'の局');
+            e=_f_leftText(n, x, y, w-15, 116, '#FFF', i+_f_getText('GAME_MONTHTEXT'));
             e.style.background='transparent';
 
             if (_f_gamemode==_F_GAMEMODE_88) {
-                i='<span style="color: #fff">小場</span>';
+                i='<span style="color: #fff">'+_f_getText('GAME_FIELD_SMALL')+'</span>';
                 if (_f_88_ba_rate==2)
-                    i='<span style="color: #ff0; ">大場</span>';
+                    i='<span style="color: #ff0; ">'+_f_getText('GAME_FIELD_LARGE')+'</span>';
                 if (_f_88_ba_rate==4)
-                    i='<span style="color: #ff0; font-weight: bold; ">絶場</span>';
-                if (_f_88_ba_rate_next<0) i+='<span style="color: #f00; ">(二代)</span>';
+                    i='<span style="color: #ff0; font-weight: bold; ">'+_f_getText('GAME_FIELD_GRAND')+'</span>';
+                if (_f_88_ba_rate_next<0) i+='<span style="color: #f00; ">'+_f_getText('GAME_FIELD_CARRY')+'</span>';
                 n='BA_RATE_STATUS_88';
                 e=_f_leftText(n, x+128, y, 136, 36, '#FFF', i);
                 e.style.background='transparent';
             }
 
             y+=48;
-            var u='点';
+            var u=_f_getText('GAME_POINTS_TEN');
             if (_f_gamemode==_F_GAMEMODE_KOIKOI)
-                u='文';
+                u=_f_getText('GAME_POINTS_MON');
             if(_f_gamemode==_F_GAMEMODE_600KEN)
-                u='勝';
+                u=_f_getText('GAME_POINTS_SHOU');
 
             i='　';
             if(_f_oya==0)
-                i='親';
+                i=_f_getText('GAME_SEAT_OYA');
             if(_f_oya==1)
-                i='子';
+                i=_f_getText('GAME_SEAT_KO');
             n='PLAYERS_SEAT_STATUS';
-            e=_f_leftText(n, x, y, 32, 36, '#0FF', i);
+            e=_f_leftText(n, x, y, 500, 36, '#0FF', i);
             e.style.background='transparent';
 
             y+=38;
@@ -2161,11 +2168,11 @@ function _f_playfield() {
             }
             if (i<0) {
                 if(_f_gamemode==_F_GAMEMODE_600KEN) {
-                    u='敗';
+                    u=_f_getText('GAME_600KEN_LOSS');
                 }
                 else {
                     n='PLAYERS_SCORE_SIGN';
-                    e=_f_leftText(n, x, y, 32, 36, '#FFF', '▲');
+                    e=_f_leftText(n, x, y, 32, 36, '#FFF', _f_getText('GAME_NEGATIVE'));
                     e.style.background='transparent';
                 }
                 i=-i;
@@ -2176,12 +2183,12 @@ function _f_playfield() {
                 i=i-(j*12);
                 if (j!=0 || _f[0].score==0) {
                     n='PLAYERS_SCORE_KAN';
-                    e=_f_rightText(n, x+32, y, 160, 34, '#FFF', _f_to_wasuji(j)+'<span style="color: #ff0; ">貫</span>');
+                    e=_f_rightText(n, x+32, y, 160, 34, '#FFF', _f_to_wasuji(j)+'<span style="color: #ff0; ">'+_f_getText('GAME_POINTS_KAN')+'</span>');
                     e.style.background='transparent';
                 }
                 if (i>0) {
                     n='PLAYERS_SCORE_TEN';
-                    e=_f_rightText(n, x+192, y, 96, 34, '#FFF', _f_to_wasuji(i)+'<span style="color: #ff0; ">点</span>');
+                    e=_f_rightText(n, x+192, y, 96, 34, '#FFF', _f_to_wasuji(i)+'<span style="color: #ff0; ">'+_f_getText('GAME_POINTS_TEN')+'</span>');
                     e.style.background='transparent';
                 }
                 return;
@@ -2197,11 +2204,11 @@ function _f_playfield() {
             y+=2;
             i=Math.floor(_f[1].score / 10);
             n='CPU_WINS_CTR';
-            e=_f_rightText(n, x, y, 224, 34, '#FFF', _f_to_wasuji(i)+'<span style="color: #ff0; ">勝</span>');
+            e=_f_rightText(n, x, y, 224, 34, '#FFF', _f_to_wasuji(i)+'<span style="color: #ff0; ">'+_f_getText('GAME_POINTS_SHOU')+'</span>');
             e.style.background='transparent';
             if (_f_oya==1) {
                 n='CPU_OYA_STATUS';
-                e=_f_leftText(n, x, y, 32, 36, '#0FF', '親');
+                e=_f_leftText(n, x, y, 100, 36, '#0FF', _f_getText('GAME_SEAT_OYA'));
                 e.style.background='transparent';
             }
 
@@ -2210,13 +2217,13 @@ function _f_playfield() {
             if (_f_gamemode==_F_GAMEMODE_HACHI) {
                 if (_f_8_prev_winner>-1) {
                     n='PREVIOUS_WINNER_8-H';
-                    e=_f_leftText(n, x, y, 224, 34, '#FF0', '前局の上り：');
+                    e=_f_leftText(n, x, y, 500, 34, '#FF0', _f_getText('GAME_600KEN_PREVWINNER'));
                     e.style.background='transparent';
 
                     x+=158;
                     i='CPU';
                     if(_f_8_prev_winner==0)
-                        i='貴方';
+                        i=_f_getText('GAME_ANTA');
                     n='PREVIOUS_WINNER_8';
                     e=_f_rightText(n, x, y, 64, 34, '#FFF', i);
                     e.style.background='transparent';
@@ -2227,12 +2234,12 @@ function _f_playfield() {
             y+=40;
             i=Math.floor(_f[0].score / 10);
             n='PLAYER_WINS_CTR';
-            e=_f_rightText(n, x, y, 224, 34, '#FFF', _f_to_wasuji(i)+'<span style="color: #ff0; ">勝</span>');
+            e=_f_rightText(n, x, y, 224, 34, '#FFF', _f_to_wasuji(i)+'<span style="color: #ff0; ">'+_f_getText('GAME_POINTS_SHOU')+'</span>');
             e.style.background='transparent';
 
             if (_f_oya==0) {
                 n='PLAYER_OYA_STATUS';
-                e=_f_leftText(n, x, y, 32, 36, '#0FF', '親');e.style.background='transparent';
+                e=_f_leftText(n, x, y, 100, 36, '#0FF', _f_getText('GAME_SEAT_OYA'));e.style.background='transparent';
             }
         }
 

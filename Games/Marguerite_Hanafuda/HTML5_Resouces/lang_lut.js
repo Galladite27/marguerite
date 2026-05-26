@@ -72,10 +72,24 @@ function _f_langToggle() {
 
     else if (_f_currentMenu == _F_MENU_GAME) {
         _f_playfield();
+
         if (_f_gamemode==_F_GAMEMODE_OICHOKABU || _f_gamemode==_F_GAMEMODE_KYOKABU) {
             _f_bafuda_disp(0, true);
-            // TODO: display the tefuda / sing card being shown (?) if required, since it is partially covered by the bafuda draw call
+            // TODO: display the tefuda / single card being shown (?) if required, since it is partially covered by the bafuda draw call
+            // TODO: prevent oya/ken symbols from being drawn prematurely
         }
+        // TODO: kabu - switching languages after bets placed causes limit to be displayed rather than remaining
+
+        // Only draw torifuda counter if the text already exists
+        e=document.getElementById('TORIFUDA_0-1');
+        e2=document.getElementById('TORIFUDA_0-2');
+        if (e || e2) { _f_torifuda_disp(0); }
+        e=document.getElementById('TORIFUDA_1-1');
+        e2=document.getElementById('TORIFUDA_1-2');
+        if (e || e2) { _f_torifuda_disp(1); }
+        e=document.getElementById('TORIFUDA_2-1');
+        e2=document.getElementById('TORIFUDA_2-2');
+        if (e || e2) { _f_torifuda_disp(2); }
     }
 }
 
@@ -94,7 +108,7 @@ _f_playfield (peripheral information - does _f_score_disp and _f_yamafuda_disp)
 File transation status@
 audioLib - DONE!
 graphc1 - DONE!
-graphc2 - begun - to 1108
+graphc2 - DONE!
 graphc3 - not begun
 graphc4 - not begun
 graphc5 - DONE!
@@ -126,18 +140,31 @@ _f_registerText('QUITGAME_CONFIRM', '現在のゲームを終了して、お品�
 
 //graphc2
 _f_registerText('GAME_NEGATIVE', '▲　', '−')
-_f_registerText('GAME_POINTS_TEN', '点', ' pts');
-_f_registerText('GAME_POINTS_TEN_88', '点', ' ten');
-_f_registerText('GAME_POINTS_KAN', '', ' kan');
-_f_registerText('GAME_POINTS_MON', '', ' mon');
+_f_registerText('GAME_POINTS_TEN', '点', ' ten');
+_f_registerText('GAME_POINTS_KAN', '貫', ' kan');
+_f_registerText('GAME_POINTS_MON', '文', ' mon');
+_f_registerText('GAME_POINTS_SHOU', '勝', ' wins');
+_f_registerText('GAME_ANTA', '貴方', 'You');
 
 _f_registerText('GAME_KABU_DRAW', ' 引き', 'Hit');
 _f_registerText('GAME_KABU_NODRAW', '引かず', 'Stand');
-_f_registerText('', '', '');
-_f_registerText('', '', '');
-_f_registerText('', '', '');
-_f_registerText('', '', '');
-_f_registerText('', '', '');
+_f_registerText('GAME_KABU_BETSOFAR', '賭数', 'Bet');
+_f_registerText('GAME_KABU_LIMIT', '胴前', 'Limit');
+_f_registerText('GAME_KABU_BETREMAIN', 'あと', 'Remaining');
+_f_registerText('GAME_KABU_OYASCORE', '親の得点', 'Dealer gain');
+
+_f_registerText('GAME_600KEN_LOSS', '敗', 'Loss'); // Not sure where this is used or how it should be translated
+_f_registerText('GAME_600KEN_PREVWINNER', '前局の上り：', 'Prevoius winner: ');
+
+_f_registerText('GAME_MONTHTEXT', 'の局', '');
+_f_registerText('GAME_ETSUNEN', '越年', 'Bonus');
+_f_registerText('GAME_FIELD_SMALL', '小場', 'Small field');
+_f_registerText('GAME_FIELD_LARGE', '大場', 'Large field');
+_f_registerText('GAME_FIELD_GRAND', '絶場', 'Grand field');
+_f_registerText('GAME_FIELD_CARRY', '(二代)', '(carried)');
+
+_f_registerText('GAME_SEAT_OYA', '親', 'Dealer');
+_f_registerText('GAME_SEAT_KO', '子', 'Non-dealer');
 
 // graphc5
 _f_registerText('MENU_ANIMS_OFF', '札の動画効果：切', 'Animations: OFF');
@@ -298,5 +325,6 @@ _f_registerText('ATRACT_CREDIT', 'Copyright &copy; '+_f_copyright_year+' さい�
 _f_registerText('ATRACT_TX', '画面をクリック/タップして下さい。', 'Click to begin');
 
 _f_registerText('', '', '');
+//_f_getText('')
 
 // TODO: check if / where the current "page" / "mode" (e.g. menu, which menu, in game, which game) is stored so I know better what to redraw

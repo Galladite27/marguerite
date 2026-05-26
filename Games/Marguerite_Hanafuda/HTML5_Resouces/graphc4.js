@@ -27,7 +27,6 @@ function _f_status_erase(){removeTextArea('PROMPT_WINDOW');}
 function _f_status_disp(str){var fontSize=20;_f_status_erase();var w=236;var h=100;var x=1180-w;var y=690;newTextArea('PROMPT_WINDOW', x, y, w-16, h-16, fontSize, 'rgba(255,255,255,.8)', '#000');e=document.getElementById('PROMPT_WINDOW');e.style.border='solid #ccc 2px';e.style.padding=Math.floor(8*rRatio)+'px';e.style.fontSize=Math.floor(20*rRatio)+'px';e.style.lineHeight=Math.floor(22*rRatio)+'px';e.style.overflow='hidden';e.style.fontFamily='sans-serif';str=str.split('\n').join('<br />');e.innerHTML=str;return;}
 
 function _f_console_erase() {
-    console.log("F console erase")
     removeTextArea('COMMAND_BAR');
     removeTextArea('COMMAND_11');
     removeTextArea('COMMAND_12');
