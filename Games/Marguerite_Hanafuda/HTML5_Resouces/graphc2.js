@@ -1981,7 +1981,7 @@ function _f_playfield() {
         i=_f_getText('GAME_KABU_LIMIT');
         if (_f_oichokabu_limit<_f_oichokabu_domae)
             i=_f_getText('GAME_KABU_BETREMAIN');
-        console.log(`limit: ${_f_oichokabu_limit}; domae: ${_f_oichokabu_domae}`);
+        //console.log(`limit: ${_f_oichokabu_limit}; domae: ${_f_oichokabu_domae}`);
         n='OICHO_BET_LIMIT_H';
         e=_f_leftText(n, x, y, 224, 36, '#0FF', i);
         e.style.background='transparent';

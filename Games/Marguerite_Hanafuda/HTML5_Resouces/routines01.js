@@ -4,8 +4,6 @@ function _f_resetGameVariables() {
     while (++i<3) {
         _f[i].betted=new Array(4);
     }
-
-    // Scores
 }
 
 function PLAY_KOIKOI() {
