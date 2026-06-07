@@ -72,11 +72,11 @@ function _f_yaku_disp(dmode, seki, str) {
         _f_leftText4Yaku(n+'-TEXT', x, y, (cs*6+bcolumns)*2+bcolumns, (cs+blines)*6+cs, '#0ff', str);
     }
     else if (_f_gamemode==_F_GAMEMODE_88 && _f_players==2) {
-        var yakuType='相手の出来役';
+        var yakuType=_f_getText('SCORE_YAKUTYPE_AITE_DEKIYAKU');
         y=yh+margin;
 
         if (_f[0].torifuda_total<1)
-            yakuType='相手の手役';
+            yakuType=_f_getText('SCORE_YAKUTYPE_AITE_TEYAKU');
         else {
             i=_f[0].torifuda_total-_f[1].torifuda_total;
             r=0;
@@ -86,9 +86,9 @@ function _f_yaku_disp(dmode, seki, str) {
                 i=-i;
             }
 
-            _f_leftText4Yaku(n+'-TORIFUDATEN_H', xh+margin, y, cs*12, cs+blines, '#0ff', '取り札('+_f_to_wasuji(i)+'点差)');
+            _f_leftText4Yaku(n+'-TORIFUDATEN_H', xh+margin, y, cs*12, cs+blines, '#0ff', _f_getText('SCORE_POINTDIFF_1')+_f_to_wasuji(i)+_f_getText('SCORE_POINTDIFF_2'));
             if (j) {
-                _f_leftText4Yaku(n+'-TORIFUDATEN_SIGN', xh+margin+cs*8+bcolumns, y, cs, cs+blines, '#fff', '▲');
+                _f_leftText4Yaku(n+'-TORIFUDATEN_SIGN', xh+margin+cs*8+bcolumns, y, cs, cs+blines, '#fff', _f_getText('GAME_NEGATIVE_NOSP'));
             }
             if (i>=50)
                 i=60;
@@ -100,10 +100,10 @@ function _f_yaku_disp(dmode, seki, str) {
             i=i-j*12;
 
             if (j) {
-                _f_rightText4Yaku(n+'-TORIFUDATEN_KAN', xh+margin+cs*9+bcolumns, y, cs*4, cs+blines, '#fff', _f_to_wasuji(j)+'<span style="color: #ff0">貫</span>');
+                _f_rightText4Yaku(n+'-TORIFUDATEN_KAN', xh+margin+cs*9+bcolumns, y, cs*4, cs+blines, '#fff', _f_to_wasuji(j)+'<span style="color: #ff0">'+_f_getText('GAME_POINTS_KAN')+'</span>');
             }
             if (j<3) {
-                _f_rightText4Yaku(n+'-TORIFUDATEN_TEN',  xh+margin+cs*13+bcolumns, y, cs*3, cs+blines, '#fff', _f_to_wasuji(i)+'<span style="color: #ff0">点</span>');
+                _f_rightText4Yaku(n+'-TORIFUDATEN_TEN',  xh+margin+cs*13+bcolumns, y, cs*3, cs+blines, '#fff', _f_to_wasuji(i)+'<span style="color: #ff0">'+_f_getText('GAME_POINTS_TEN')+'</span>');
             }
             y+=cs+blines;
         }
@@ -138,10 +138,10 @@ function _f_yaku_disp(dmode, seki, str) {
             var k=Math.floor(j/12);
             j-=k*12;
             if (k) {
-                _f_rightText4Yaku(n+'-YAKU_KAN-'+i, xh+margin+cs*9+bcolumns, y, cs*4, cs+blines, '#fff', _f_to_wasuji(k)+'<span style="color:#ff0; ">貫</span>');
+                _f_rightText4Yaku(n+'-YAKU_KAN-'+i, xh+margin+cs*9+bcolumns, y, cs*4, cs+blines, '#fff', _f_to_wasuji(k)+'<span style="color:#ff0; ">'+_f_getText('GAME_POINTS_KAN')+'</span>');
             }
             if (j) {
-                _f_rightText4Yaku(n+'-YAKU_TEN-'+i,  xh+margin+cs*13+bcolumns, y, cs*3, cs+blines, '#fff', _f_to_wasuji(j)+'<span style="color:#ff0; ">点</span>');
+                _f_rightText4Yaku(n+'-YAKU_TEN-'+i,  xh+margin+cs*13+bcolumns, y, cs*3, cs+blines, '#fff', _f_to_wasuji(j)+'<span style="color:#ff0; ">'+_f_getText('GAME_POINTS_TEN')+'</span>');
             }
             y+=cs+blines;
             ++y1;
@@ -182,15 +182,15 @@ function _f_yaku_disp(dmode, seki, str) {
                 r+=j;
             }
             _f_leftText4Yaku(n+'-ENEMYS_YAKU_NAME-'+i, x1, y, cs*8+bcolumns, cs+blines, '#0ff', _f[1].yaku_name[i]);
-            _f_leftText4Yaku(n+'-ENEMYS_YAKU_SIGN-'+i, xh+margin+cs*8+bcolumns, y, cs, cs+blines, '#fff', '▲');
+            _f_leftText4Yaku(n+'-ENEMYS_YAKU_SIGN-'+i, xh+margin+cs*8+bcolumns, y, cs, cs+blines, '#fff', _f_getText('GAME_NEGATIVE_NOSP'));
 
             var k=Math.floor(j/12);
             j-=k*12;
             if (k) {
-                _f_rightText4Yaku(n+'-ENEMYS_YAKU_KAN-'+i,  xh+margin+cs*9+bcolumns, y, cs*4, cs+blines, '#fff', _f_to_wasuji(k)+'<span style="color:#ff0; ">貫</span>');
+                _f_rightText4Yaku(n+'-ENEMYS_YAKU_KAN-'+i,  xh+margin+cs*9+bcolumns, y, cs*4, cs+blines, '#fff', _f_to_wasuji(k)+'<span style="color:#ff0; ">'+_f_getText('GAME_POINTS_KAN')+'</span>');
             }
             if (j) {
-                _f_rightText4Yaku(n+'-ENEMYS_YAKU_TEN-'+i,  xh+margin+cs*13+bcolumns, y, cs*3, cs+blines, '#fff', _f_to_wasuji(j)+'<span style="color:#ff0; ">点</span>');
+                _f_rightText4Yaku(n+'-ENEMYS_YAKU_TEN-'+i,  xh+margin+cs*13+bcolumns, y, cs*3, cs+blines, '#fff', _f_to_wasuji(j)+'<span style="color:#ff0; ">'+_f_getText('GAME_POINTS_TEN')+'</span>');
             }
 
             y+=cs+blines;
@@ -202,7 +202,7 @@ function _f_yaku_disp(dmode, seki, str) {
         }
 
         if (_f[0].payback_point[0]) {
-            _f_leftText4Yaku(n+'-RETURNED_YAKU-H',  xh+margin, y, cs*12, cs+blines, '#f0f', 'あなたの役代返し');
+            _f_leftText4Yaku(n+'-RETURNED_YAKU-H',  xh+margin, y, cs*12, cs+blines, '#f0f', _f_getText('SCORE_2P88_ANATANO')+_f_getText('SCORE_2P88_RETURNED_YAKU'));
             ++y1;
             y+=cs+blines;
         }
@@ -212,12 +212,12 @@ function _f_yaku_disp(dmode, seki, str) {
         while (++i<_f[0].payback_name_ctr) {
             j=_f[0].payback_point[i];
             if (!j) {
-                _f_leftText4Yaku(n+'-RETURNED_YAKU-NAME-'+i, xh+margin, y, cs*12, cs+blines, '#f0f', 'あなたの'+_f[0].payback_name[i]);
+                _f_leftText4Yaku(n+'-RETURNED_YAKU-NAME-'+i, xh+margin, y, cs*12, cs+blines, '#f0f', _f_getText('SCORE_2P88_ANATANO')+_f[0].payback_name[i]);
                 ++y1;
                 y+=cs+blines;
                 continue;
             }
-            _f_leftText4Yaku(n+'-RETURNED_YAKU-SIGN-'+i, xh+margin+cs*8+bcolumns, y, cs, cs+blines, '#fff', '▲');
+            _f_leftText4Yaku(n+'-RETURNED_YAKU-SIGN-'+i, xh+margin+cs*8+bcolumns, y, cs, cs+blines, '#fff', _f_getText('GAME_NEGATIVE_NOSP'));
 
             j=-j;
             r+=j;
@@ -226,17 +226,17 @@ function _f_yaku_disp(dmode, seki, str) {
             var k=Math.floor(j/12);
             j-=k*12;
             if (k) {
-                _f_rightText4Yaku(n+'-RETURNED_YAKU-KAN-'+i,  xh+margin+cs*9+bcolumns, y, cs*4, cs+blines, '#fff', _f_to_wasuji(k)+'<span style="color:#ff0; ">貫</span>');
+                _f_rightText4Yaku(n+'-RETURNED_YAKU-KAN-'+i,  xh+margin+cs*9+bcolumns, y, cs*4, cs+blines, '#fff', _f_to_wasuji(k)+'<span style="color:#ff0; ">'+_f_getText('GAME_POINTS_KAN')+'</span>');
             }
             if (j) {
-                _f_rightText4Yaku(n+'-RETURNED_YAKU-TEN-'+i,  xh+margin+cs*13+bcolumns, y, cs*3, cs+blines, '#fff', _f_to_wasuji(j)+'<span style="color:#ff0; ">点</span>');
+                _f_rightText4Yaku(n+'-RETURNED_YAKU-TEN-'+i,  xh+margin+cs*13+bcolumns, y, cs*3, cs+blines, '#fff', _f_to_wasuji(j)+'<span style="color:#ff0; ">'+_f_getText('GAME_POINTS_TEN')+'</span>');
             }
             ++y1;
             y+=cs+blines;
         }
 
         if (_f[1].payback_point[0]) {
-            _f_leftText4Yaku(n+'-RETURNED_BY_ENEMY-H', xh+margin, y, cs*12, cs+blines, '#f0f', '相手の役代返し');
+            _f_leftText4Yaku(n+'-RETURNED_BY_ENEMY-H', xh+margin, y, cs*12, cs+blines, '#f0f', _f_getText('SCORE_2P88_AITENO')+_f_getText('SCORE_2P88_RETURNED_YAKU'));
             ++y1;
             y+=cs+blines;
         }
@@ -246,7 +246,7 @@ function _f_yaku_disp(dmode, seki, str) {
         while (++i<_f[1].payback_name_ctr) {
             j=_f[1].payback_point[i];
             if (!j) {
-                _f_leftText4Yaku(n+'-RETURNED_BY_ENEMY_NAME-H'+i, xh+margin, y, cs*12, cs+blines, '#f0f', '相手の'+_f[1].payback_name[i]);
+                _f_leftText4Yaku(n+'-RETURNED_BY_ENEMY_NAME-H'+i, xh+margin, y, cs*12, cs+blines, '#f0f', _f_getText('SCORE_2P88_AITENO')+_f[1].payback_name[i]);
                 ++y1;
                 y+=cs+blines;
                 continue;
@@ -259,10 +259,10 @@ function _f_yaku_disp(dmode, seki, str) {
             var k=Math.floor(j/12);
             j-=k*12;
             if (k) {
-                _f_rightText4Yaku(n+'-RETURNED_BY_ENEMY_KAN-'+i, xh+margin+cs*9+bcolumns, y, cs*4, cs+blines, '#fff', _f_to_wasuji(k)+'<span style="color:#ff0; ">貫</span>');
+                _f_rightText4Yaku(n+'-RETURNED_BY_ENEMY_KAN-'+i, xh+margin+cs*9+bcolumns, y, cs*4, cs+blines, '#fff', _f_to_wasuji(k)+'<span style="color:#ff0; ">'+_f_getText('GAME_POINTS_KAN')+'</span>');
             }
             if (j) {
-                _f_rightText4Yaku(n+'-RETURNED_BY_ENEMY_TEN-'+i, xh+margin+cs*13+bcolumns, y, cs*3, cs+blines, '#fff', _f_to_wasuji(j)+'<span style="color:#ff0; ">点</span>');
+                _f_rightText4Yaku(n+'-RETURNED_BY_ENEMY_TEN-'+i, xh+margin+cs*13+bcolumns, y, cs*3, cs+blines, '#fff', _f_to_wasuji(j)+'<span style="color:#ff0; ">'+_f_getText('GAME_POINTS_TEN')+'</span>');
             }
 
             ++y1;
@@ -270,29 +270,29 @@ function _f_yaku_disp(dmode, seki, str) {
         }
 
         y=yh+h-margin-cs;
-        i='小場';
+        i=_f_getText('GAME_FIELD_SMALL');
         if (_f_88_ba_rate==2)
-            i='大場倍付け';
+            i=_f_getText('GAME_FIELD_LARGE2X');
         if (_f_88_ba_rate==4)
-            i='絶場四倍付け';
+            i=_f_getText('GAME_FIELD_GRAND4X');
         _f_leftText4Yaku(n+'-BA_RATE', xh+margin, y, cs*6, cs+blines, '#0ff', i);
 
         r=_f[0].balance_total;
         if (!r) {
-            _f_rightText4Yaku(n+'-TOTAL-TEN',  xh+margin+cs*10+bcolumns, y, cs*6, cs+blines, '#fff', '零<span style="color:#ff0; ">点</span>');
+            _f_rightText4Yaku(n+'-TOTAL-TEN',  xh+margin+cs*10+bcolumns, y, cs*6, cs+blines, '#fff', _f_getText('GAME_REI')+'span style="color:#ff0; ">'+_f_getText('GAME_POINTS_TEN')+'</span>');
         }
         else {
             if (r<0) {
                 r=-r;
-                _f_leftText4Yaku(n+'-TOTAL-SIGN',  xh+margin+cs*8+bcolumns, y, cs, cs+blines, '#fff', '▲');
+                _f_leftText4Yaku(n+'-TOTAL-SIGN',  xh+margin+cs*8+bcolumns, y, cs, cs+blines, '#fff', _f_getText('GAME_NEGATIVE_NOSP'));
             }
 
             var k=Math.floor(r/12);
             r-=k*12;
             if (k) {
-                _f_rightText4Yaku(n+'-TOTAL-KAN',  xh+margin+cs*9+bcolumns, y, cs*4, cs+blines, '#fff', _f_to_wasuji(k)+'<span style="color:#ff0; ">貫</span>');
+                _f_rightText4Yaku(n+'-TOTAL-KAN',  xh+margin+cs*9+bcolumns, y, cs*4, cs+blines, '#fff', _f_to_wasuji(k)+'<span style="color:#ff0; ">'+_f_getText('GAME_POINTS_KAN')+'</span>');
             } if (r) {
-                _f_rightText4Yaku(n+'-TOTAL-TEN',  xh+margin+cs*13+bcolumns, y, cs*3, cs+blines, '#fff', _f_to_wasuji(r)+'<span style="color:#ff0; ">点</span>');
+                _f_rightText4Yaku(n+'-TOTAL-TEN',  xh+margin+cs*13+bcolumns, y, cs*3, cs+blines, '#fff', _f_to_wasuji(r)+'<span style="color:#ff0; ">'+_f_getText('GAME_POINTS_TEN')+'</span>');
             }
         }
     }
@@ -301,22 +301,22 @@ function _f_yaku_disp(dmode, seki, str) {
         x=xh+margin;
         y=yh+margin;
 
-        var bRateS='小場', bRate=1;
+        var bRateS=_f_getText('GAME_FIELD_SMALL'), bRate=1;
         if (_f_88_ba_rate==2) {
-            bRateS='大場倍付';
+            bRateS=_f_getText('GAME_FIELD_LARGE2X_NOKE');
             bRate=2;
         }
         if (_f_88_ba_rate==4) {
-            bRateS='絶場四倍付';
+            bRateS=_f_getText('GAME_FIELD_GRAND4X_NOKE');
             bRate=4;
         }
         if (_f_gamemode==_F_GAMEMODE_SUDAOSHI) {
-            bRateS='合計';
+            bRateS=_f_getText('GAME_FIELD_SUDAOSHI');
             bRate=1;
         }
 
         if ((i=_f[seki].torifuda_total)>0) {
-            _f_leftText4Yaku(n+'-TORIFUDATEN-H',  x, y, cs*12+bcolumns, cs+blines, '#0ff', '取札点('+_f_to_wasuji(i)+'点)');
+            _f_leftText4Yaku(n+'-TORIFUDATEN-H',  x, y, cs*12+bcolumns, cs+blines, '#0ff', _f_getText('SCORE_POINTDIFF_1.5')+_f_to_wasuji(i)+_f_getText('SCORE_POINTDIFF_3'));
             if (_f_gamemode==_F_GAMEMODE_SUDAOSHI) {
                 if (_f_oya==seki)
                     i-=100;
@@ -329,30 +329,30 @@ function _f_yaku_disp(dmode, seki, str) {
             r=i;
             if (i<0) {
                 i=-i;
-                _f_leftText4Yaku(n+'-TORIFUDATEN-SIGN',  x+cs*8+bcolumns, y, cs, cs+blines, '#fff', '▲');
+                _f_leftText4Yaku(n+'-TORIFUDATEN-SIGN',  x+cs*8+bcolumns, y, cs, cs+blines, '#fff', _f_getText('GAME_NEGATIVE_NOSP'));
             }
 
             var k=Math.floor(i/12);
             i-=k*12;
-            _f_rightText4Yaku(n+'-TORIFUDATEN-KAN',  x+cs*9+bcolumns, y, cs*4, cs+blines, '#fff', _f_to_wasuji(k)+'<span style="color:#ff0; ">貫</span>');
-            _f_rightText4Yaku(n+'-TORIFUDATEN-TEN', x+cs*13+bcolumns, y, cs*3, cs+blines, '#fff', _f_to_wasuji(i)+'<span style="color:#ff0; ">点</span>');
+            _f_rightText4Yaku(n+'-TORIFUDATEN-KAN',  x+cs*9+bcolumns, y, cs*4, cs+blines, '#fff', _f_to_wasuji(k)+'<span style="color:#ff0; ">'+_f_getText('GAME_POINTS_KAN')+'</span>');
+            _f_rightText4Yaku(n+'-TORIFUDATEN-TEN', x+cs*13+bcolumns, y, cs*3, cs+blines, '#fff', _f_to_wasuji(i)+'<span style="color:#ff0; ">'+_f_getText('GAME_POINTS_TEN')+'</span>');
 
             y+=(cs+blines)*2;
             r*=bRate;
             if (_f[seki].yaku_name_ctr<1 && _f[seki].payback_name_ctr<1)
                 y=yh+h-cs-margin;
-            _f_leftText4Yaku(n+'-BA_RATE',  x, y, cs*5, cs+blines, '#0ff', bRateS);
+            _f_leftText4Yaku(n+'-BA_RATE',  x, y, cs*10, cs+blines, '#0ff', bRateS);
             if (r<0) {
-                r=-r;_f_leftText4Yaku(n+'-TORIFUDATEN-SIGN-RATED',  x+cs*8+bcolumns, y, cs, cs+blines, '#fff', '▲');
+                r=-r;_f_leftText4Yaku(n+'-TORIFUDATEN-SIGN-RATED',  x+cs*8+bcolumns, y, cs, cs+blines, '#fff', _f_getText('GAME_NEGATIVE_NOSP'));
             }
 
             var k=Math.floor(r/12);
             r-=k*12;
             if (k || (!r && !k)) {
-                _f_rightText4Yaku(n+'-TORIFUDATEN-KAN-RATED',  x+cs*9+bcolumns, y, cs*4, cs+blines, '#fff', _f_to_wasuji(k)+'<span style="color:#ff0; ">貫</span>');
+                _f_rightText4Yaku(n+'-TORIFUDATEN-KAN-RATED',  x+cs*9+bcolumns, y, cs*4, cs+blines, '#fff', _f_to_wasuji(k)+'<span style="color:#ff0; ">'+_f_getText('GAME_POINTS_KAN')+'</span>');
             }
             if (r) {
-                _f_rightText4Yaku(n+'-TORIFUDATEN-TEN-RATED',  x+cs*13+bcolumns, y, cs*3, cs+blines, '#fff', _f_to_wasuji(r)+'<span style="color:#ff0; ">点</span>');
+                _f_rightText4Yaku(n+'-TORIFUDATEN-TEN-RATED',  x+cs*13+bcolumns, y, cs*3, cs+blines, '#fff', _f_to_wasuji(r)+'<span style="color:#ff0; ">'+_f_getText('GAME_POINTS_TEN')+'</span>');
             }
 
             y+=cs+blines;
@@ -393,10 +393,10 @@ function _f_yaku_disp(dmode, seki, str) {
             var k=Math.floor(j/12);
             j-=k*12;
             if (k || (!j && !k)) {
-                _f_rightText4Yaku(n+'-YAKU_KAN-'+i,  x+cs*9+bcolumns, y, cs*4, cs+blines, '#fff', _f_to_wasuji(k)+'<span style="color:#ff0; ">貫</span>');
+                _f_rightText4Yaku(n+'-YAKU_KAN-'+i,  x+cs*9+bcolumns, y, cs*4, cs+blines, '#fff', _f_to_wasuji(k)+'<span style="color:#ff0; ">'+_f_getText('GAME_POINTS_KAN')+'</span>');
             }
             if (j) {
-                _f_rightText4Yaku(n+'-YAKU_TEN-'+i,  x+cs*13+bcolumns, y, cs*3, cs+blines, '#fff', _f_to_wasuji(j)+'<span style="color:#ff0; ">点</span>');
+                _f_rightText4Yaku(n+'-YAKU_TEN-'+i,  x+cs*13+bcolumns, y, cs*3, cs+blines, '#fff', _f_to_wasuji(j)+'<span style="color:#ff0; ">'+_f_getText('GAME_POINTS_TEN')+'</span>');
             }
 
             y+=cs+blines;
@@ -405,20 +405,20 @@ function _f_yaku_disp(dmode, seki, str) {
         if (_f[seki].payback_name_ctr>0 && _f[seki].yaku_name_ctr>0) {
             r*=bRate;
             y+=cs+blines;
-            _f_leftText4Yaku(n+'-YAKU_TOTAL-H',  x, y, cs*5, cs+blines, '#0ff', bRateS);
+            _f_leftText4Yaku(n+'-YAKU_TOTAL-H',  x, y, cs*10, cs+blines, '#0ff', bRateS);
 
             if (r<0) {
                 r=-r;
-                _f_leftText4Yaku(n+'-YAKU_TOTAL-SIGN',  x+cs*8+bcolumns, y, cs, cs+blines, '#fff', '▲');
+                _f_leftText4Yaku(n+'-YAKU_TOTAL-SIGN',  x+cs*8+bcolumns, y, cs, cs+blines, '#fff', _f_getText('GAME_NEGATIVE_NOSP'));
             }
 
             var k=Math.floor(r/12);
             r-=k*12;
             if (k || (!r && !k)) {
-                _f_rightText4Yaku(n+'-YAKU_TOTAL-KAN', x+cs*9+bcolumns, y, cs*4, cs+blines, '#fff', _f_to_wasuji(k)+'<span style="color:#ff0; ">貫</span>');
+                _f_rightText4Yaku(n+'-YAKU_TOTAL-KAN', x+cs*9+bcolumns, y, cs*4, cs+blines, '#fff', _f_to_wasuji(k)+'<span style="color:#ff0; ">'+_f_getText('GAME_POINTS_KAN')+'</span>');
             }
             if (r) {
-                _f_rightText4Yaku(n+'-YAKU_TOTAL-TEN', x+cs*13+bcolumns, y, cs*3, cs+blines, '#fff', _f_to_wasuji(r)+'<span style="color:#ff0; ">点</span>');
+                _f_rightText4Yaku(n+'-YAKU_TOTAL-TEN', x+cs*13+bcolumns, y, cs*3, cs+blines, '#fff', _f_to_wasuji(r)+'<span style="color:#ff0; ">'+_f_getText('GAME_POINTS_TEN')+'</span>');
             }
 
             r=0;
@@ -428,7 +428,7 @@ function _f_yaku_disp(dmode, seki, str) {
         }
 
         if (_f[seki].payback_point[0]) {
-            _f_leftText4Yaku(n+'-PAYBACK-H', x, y, cs*5, cs+blines, '#f0f', '役代返し');
+            _f_leftText4Yaku(n+'-PAYBACK-H', x, y, cs*5, cs+blines, '#f0f', _f_getText('SCORE_2P88_RETURNED_YAKU'));
             y+=cs+blines;
         }
 
@@ -444,15 +444,15 @@ function _f_yaku_disp(dmode, seki, str) {
             j=-j;
             r-=j;
             _f_leftText4Yaku(n+'-PAYBACK-NAME'+i, x, y, cs*5, cs+blines, '#0ff', _f[seki].payback_name[i]);
-            _f_leftText4Yaku(n+'-PAYBACK-SIGN'+i, x+cs*8+bcolumns, y, cs, cs+blines, '#fff', '▲');
+            _f_leftText4Yaku(n+'-PAYBACK-SIGN'+i, x+cs*8+bcolumns, y, cs, cs+blines, '#fff', _f_getText('GAME_NEGATIVE_NOSP'));
 
             var k=Math.floor(j/12);
             j-=k*12;
             if (k || (!j && !k)) {
-                _f_rightText4Yaku(n+'-PAYBACK-KAN'+i, x+cs*9+bcolumns, y, cs*4, cs+blines, '#fff', _f_to_wasuji(k)+'<span style="color:#ff0; ">貫</span>');
+                _f_rightText4Yaku(n+'-PAYBACK-KAN'+i, x+cs*9+bcolumns, y, cs*4, cs+blines, '#fff', _f_to_wasuji(k)+'<span style="color:#ff0; ">'+_f_getText('GAME_POINTS_KAN')+'</span>');
             }
             if (j) {
-                _f_rightText4Yaku(n+'-PAYBACK-TEN'+i, x+cs*13+bcolumns, y, cs*3, cs+blines, '#fff', _f_to_wasuji(j)+'<span style="color:#ff0; ">点</span>');
+                _f_rightText4Yaku(n+'-PAYBACK-TEN'+i, x+cs*13+bcolumns, y, cs*3, cs+blines, '#fff', _f_to_wasuji(j)+'<span style="color:#ff0; ">'+_f_getText('GAME_POINTS_TEN')+'</span>');
             }
 
             y+=cs+blines;
@@ -461,22 +461,24 @@ function _f_yaku_disp(dmode, seki, str) {
         if (_f[seki].yaku_name_ctr>0 || _f[seki].payback_name_ctr>0) {
             r*=bRate;
             y=yh+h-cs-margin;
-            _f_leftText4Yaku(n+'-POINT_TOTAL-BA_RATE',  x, y, cs*5, cs+blines, '#0ff', bRateS);
+            _f_leftText4Yaku(n+'-POINT_TOTAL-BA_RATE',  x, y, cs*10, cs+blines, '#0ff', bRateS);
             if (r<0) {
                 r=-r;
-                _f_leftText4Yaku(n+'-POINT_TOTAL-SIGN', x+cs*8+bcolumns, y, cs, cs+blines, '#fff', '▲');
+                _f_leftText4Yaku(n+'-POINT_TOTAL-SIGN', x+cs*8+bcolumns, y, cs, cs+blines, '#fff', _f_getText('GAME_NEGATIVE_NOSP'));
             }
 
             var k=Math.floor(r/12);
             r-=k*12;
             if (k || (!r && !k)) {
-                _f_rightText4Yaku(n+'-POINT_TOTAL-KAN', x+cs*9+bcolumns, y, cs*4, cs+blines, '#fff', _f_to_wasuji(k)+'<span style="color:#ff0; ">貫</span>');
+                _f_rightText4Yaku(n+'-POINT_TOTAL-KAN', x+cs*9+bcolumns, y, cs*4, cs+blines, '#fff', _f_to_wasuji(k)+'<span style="color:#ff0; ">'+_f_getText('GAME_POINTS_KAN')+'</span>');
             }
             if (r) {
-                _f_rightText4Yaku(n+'-POINT_TOTAL-TEN', x+cs*13+bcolumns, y, cs*3, cs+blines, '#fff', _f_to_wasuji(r)+'<span style="color:#ff0; ">点</span>');
+                _f_rightText4Yaku(n+'-POINT_TOTAL-TEN', x+cs*13+bcolumns, y, cs*3, cs+blines, '#fff', _f_to_wasuji(r)+'<span style="color:#ff0; ">'+_f_getText('GAME_POINTS_TEN')+'</span>');
             }
         }
     }
+    
+    // Done to here
 
     else if (_f_gamemode==_F_GAMEMODE_KOIKOI) {
         i=-1;
@@ -485,7 +487,7 @@ function _f_yaku_disp(dmode, seki, str) {
             j=_f[seki].yaku_point[i];
             r+=j;
             _f_leftText4Yaku(n+'-YAKU-NAME-'+i,  x, y, cs*8+bcolumns, cs+blines, '#0ff', _f[seki].yaku_name[i]);
-            _f_rightText4Yaku(n+'-YAKU-MON-'+i, xh+margin+cs*11+bcolumns, y, cs*5, cs+blines, '#fff', _f_to_wasuji(j)+'<span style="color:#ff0; ">文</span>');
+            _f_rightText4Yaku(n+'-YAKU-MON-'+i, xh+margin+cs*11+bcolumns, y, cs*5, cs+blines, '#fff', _f_to_wasuji(j)+'<span style="color:#ff0; ">'+_f_getText('GAME_POINTS_MON')+'</span>');
 
             y+=cs+blines;
             ++y1;
@@ -498,22 +500,22 @@ function _f_yaku_disp(dmode, seki, str) {
 
         y=yh+h-margin-cs;
         _f[seki].yaku_result_point=r;
-        _f_leftText4Yaku(n+'-TOTAL_POINT-H', xh+margin, y, cs*8, cs+blines, '#0ff', '合計');
-        _f_rightText4Yaku(n+'-TOTAL_POINT',  xh+margin+cs*11+bcolumns, y, cs*5, cs+blines, '#fff', _f_to_wasuji(r)+'<span style="color:#ff0; ">文</span>');
+        _f_leftText4Yaku(n+'-TOTAL_POINT-H', xh+margin, y, cs*8, cs+blines, '#0ff', _f_getText('GAME_FIELD_SUDAOSHI'));
+        _f_rightText4Yaku(n+'-TOTAL_POINT',  xh+margin+cs*11+bcolumns, y, cs*5, cs+blines, '#fff', _f_to_wasuji(r)+'<span style="color:#ff0; ">'+_f_getText('GAME_POINTS_MON')+'</span>');
     }
 
     else if (_f_gamemode==_F_GAMEMODE_MUSHI) {
         y=yh+margin;
 
         i=_f[0].torifuda_total;
-        _f_leftText4Yaku(n+'-TORIFUDA-H',  xh+margin, y, cs*8, cs+blines, '#0ff', '取り札('+_f_to_wasuji(i)+'点)');
+        _f_leftText4Yaku(n+'-TORIFUDA-H',  xh+margin, y, cs*8, cs+blines, '#0ff', _f_getText('SCORE_POINTDIFF_1')+_f_to_wasuji(i)+_f_getText('SCORE_POINTDIFF_2'));
 
         i-=115;
         if (i<0) {
-            _f_leftText4Yaku(n+'-TORIFUDA-SIGN', xh+margin+cs*10+bcolumns, y, cs, cs+blines, '#fff', '▲');
+            _f_leftText4Yaku(n+'-TORIFUDA-SIGN', xh+margin+cs*10+bcolumns, y, cs, cs+blines, '#fff', _f_getText('GAME_NEGATIVE_NOSP'));
             i=-i;
         }
-        _f_rightText4Yaku(n+'-TORIFUDA',  xh+margin+cs*11+bcolumns, y, cs*5, cs+blines, '#fff', _f_to_wasuji(i)+'<span style="color:#ff0; ">点</span>');
+        _f_rightText4Yaku(n+'-TORIFUDA',  xh+margin+cs*11+bcolumns, y, cs*5, cs+blines, '#fff', _f_to_wasuji(i)+'<span style="color:#ff0; ">'+_f_getText('GAME_POINTS_TEN')+'</span>');
 
         y+=cs+blines;
         i=-1;
@@ -521,20 +523,20 @@ function _f_yaku_disp(dmode, seki, str) {
         while (++i<_f[0].yaku_name_ctr) {
             j=_f[0].yaku_point[i];
             _f_leftText4Yaku(n+'-DEKIYAKU-'+i,  xh+margin, y, cs*8+bcolumns, cs+blines, '#0ff', _f[0].yaku_name[i]);
-            _f_rightText4Yaku(n+'-DEKIYAKU-TEN-'+i,  xh+margin+cs*11+bcolumns, y, cs*5, cs+blines, '#fff', _f_to_wasuji(j)+'<span style="color:#ff0; ">点</span>');
+            _f_rightText4Yaku(n+'-DEKIYAKU-TEN-'+i,  xh+margin+cs*11+bcolumns, y, cs*5, cs+blines, '#fff', _f_to_wasuji(j)+'<span style="color:#ff0; ">'+_f_getText('GAME_POINTS_TEN')+'</span>');
             y+=cs+blines;
         }
 
         if (_f[1].yaku_name_ctr) {
-            _f_leftText4Yaku(n+'-ENEMYS_DEKIYAKU-H',  xh+margin, y, cs*8+bcolumns, cs+blines, '#f0f', '相手の出来役');
+            _f_leftText4Yaku(n+'-ENEMYS_DEKIYAKU-H',  xh+margin, y, cs*8+bcolumns, cs+blines, '#f0f', _f_getText('SCORE_YAKUTYPE_AITE_DEKIYAKU'));
 
             y+=cs+blines;
             i=-1;
             while (++i<_f[1].yaku_name_ctr) {
                 j=_f[1].yaku_point[i];
                 _f_leftText4Yaku(n+'-ENEMYS_DEKIYAKU-NAME-'+i,  xh+margin, y, cs*8+bcolumns, cs+blines, '#0ff', _f[1].yaku_name[i]);
-                _f_leftText4Yaku(n+'-ENEMYS_DEKIYAKU-SIGN-'+i,  xh+margin+cs*10+bcolumns, y, cs, cs+blines, '#fff', '▲');
-                _f_rightText4Yaku(n+'-ENEMYS_DEKIYAKU-TEN-'+i,  xh+margin+cs*11+bcolumns, y, cs*5, cs+blines, '#fff', _f_to_wasuji(j)+'<span style="color:#ff0; ">点</span>');
+                _f_leftText4Yaku(n+'-ENEMYS_DEKIYAKU-SIGN-'+i,  xh+margin+cs*10+bcolumns, y, cs, cs+blines, '#fff', _f_getText('GAME_NEGATIVE_NOSP'));
+                _f_rightText4Yaku(n+'-ENEMYS_DEKIYAKU-TEN-'+i,  xh+margin+cs*11+bcolumns, y, cs*5, cs+blines, '#fff', _f_to_wasuji(j)+'<span style="color:#ff0; ">'+_f_getText('GAME_POINTS_TEN')+'</span>');
 
                 y+=cs+blines;
             }
@@ -545,10 +547,10 @@ function _f_yaku_disp(dmode, seki, str) {
         _f_leftText4Yaku(n+'-TOTAL_POINT-H',  xh+margin, y, cs*8, cs+blines, '#0ff', '差引');
 
         if (r<0) {
-            _f_leftText4Yaku(n+'-TOTAL_POINT-SIGN', xh+margin+cs*10+bcolumns, y, cs, cs+blines, '#fff', '▲');
+            _f_leftText4Yaku(n+'-TOTAL_POINT-SIGN', xh+margin+cs*10+bcolumns, y, cs, cs+blines, '#fff', _f_getText('GAME_NEGATIVE_NOSP'));
             r=-r;
         }
-        _f_rightText4Yaku(n+'-TOTAL_POINT-TEN', xh+margin+cs*11+bcolumns, y, cs*5, cs+blines, '#fff', _f_to_wasuji(r)+'<span style="color:#ff0; ">点</span>');
+        _f_rightText4Yaku(n+'-TOTAL_POINT-TEN', xh+margin+cs*11+bcolumns, y, cs*5, cs+blines, '#fff', _f_to_wasuji(r)+'<span style="color:#ff0; ">'+_f_getText('GAME_POINTS_TEN')+'</span>');
     }
 
     else if (_f_gamemode==_F_GAMEMODE_HANAAWASE) {
@@ -556,13 +558,13 @@ function _f_yaku_disp(dmode, seki, str) {
         y=yh+margin;
 
         if ((i=_f[seki].torifuda_total)>0) {
-            _f_leftText4Yaku(n+'-TORIFUDA-H', x, y, cs*12+bcolumns, cs+blines, '#0ff', '取札点('+_f_to_wasuji(i)+'点)');
+            _f_leftText4Yaku(n+'-TORIFUDA-H', x, y, cs*12+bcolumns, cs+blines, '#0ff', _f_getText('SCORE_POINTDIFF_1.5')+_f_to_wasuji(i)+_f_getText('SCORE_POINTDIFF_3'));
 
             if ((i-=88)<0) {
-                _f_leftText4Yaku(n+'-TORIFUDA-SIGN',  x+cs*8+bcolumns, y, cs, cs+blines, '#fff', '▲');
+                _f_leftText4Yaku(n+'-TORIFUDA-SIGN',  x+cs*8+bcolumns, y, cs, cs+blines, '#fff', _f_getText('GAME_NEGATIVE_NOSP'));
                 i=-i;
             }
-            _f_rightText4Yaku(n+'-TORIFUDA-TEN',  x+cs*11+bcolumns, y, cs*5, cs+blines, '#fff', _f_to_wasuji(i)+'<span style="color:#ff0; ">点</span>');
+            _f_rightText4Yaku(n+'-TORIFUDA-TEN',  x+cs*11+bcolumns, y, cs*5, cs+blines, '#fff', _f_to_wasuji(i)+'<span style="color:#ff0; ">'+_f_getText('GAME_POINTS_TEN')+'</span>');
 
             y+=cs+blines;
         }
@@ -579,7 +581,7 @@ function _f_yaku_disp(dmode, seki, str) {
             _f_leftText4Yaku(n+'-DEKIYAKU-NAME-'+i, x, y, cs*5, cs+blines, '#0ff', _f[seki].yaku_name[i]);
 
             if (j>=0) {
-                _f_rightText4Yaku(n+'-DEKIYAKU-TEN-'+i, x+cs*13+bcolumns, y, cs*3, cs+blines, '#fff', _f_to_wasuji(j)+'<span style="color:#ff0; ">点</span>');
+                _f_rightText4Yaku(n+'-DEKIYAKU-TEN-'+i, x+cs*13+bcolumns, y, cs*3, cs+blines, '#fff', _f_to_wasuji(j)+'<span style="color:#ff0; ">'+_f_getText('GAME_POINTS_TEN')+'</span>');
                 r+=j;
             }
             else if (j==-1) {
@@ -594,13 +596,13 @@ function _f_yaku_disp(dmode, seki, str) {
 
         if (r>0) {
             y=yh+h-cs-margin;
-            _f_leftText4Yaku(n+'-TOTAL_POINT-H',  x, y, cs*5, cs+blines, '#0ff', '合計');
+            _f_leftText4Yaku(n+'-TOTAL_POINT-H',  x, y, cs*5, cs+blines, '#0ff', _f_getText('GAME_FIELD_SUDAOSHI'));
 
             if (i<0) {
                 i=-i;
-                _f_leftText4Yaku(n+'-TOTAL_POINT-SIGN', x+cs*8+bcolumns, y, cs, cs+blines, '#fff', '▲');
+                _f_leftText4Yaku(n+'-TOTAL_POINT-SIGN', x+cs*8+bcolumns, y, cs, cs+blines, '#fff', _f_getText('GAME_NEGATIVE_NOSP'));
             }
-            _f_rightText4Yaku(n+'-TOTAL_POINT-TEN', x+cs*9+bcolumns, y, cs*7, cs+blines, '#fff', _f_to_wasuji(r)+'<span style="color:#ff0; ">点</span>');
+            _f_rightText4Yaku(n+'-TOTAL_POINT-TEN', x+cs*9+bcolumns, y, cs*7, cs+blines, '#fff', _f_to_wasuji(r)+'<span style="color:#ff0; ">'+_f_getText('GAME_POINTS_TEN')+'</span>');
         }
     }
 
@@ -611,7 +613,7 @@ function _f_yaku_disp(dmode, seki, str) {
         r=_f[seki].torifuda05_ctr*10+_f[seki].torifuda10_ctr*10+_f[seki].torifuda20_ctr*50;
         if (r>0) {
             _f_leftText4Yaku(n+'-TORIFUDA-H',  x, y, cs*12+bcolumns, cs+blines, '#0ff', '取札点');
-            _f_rightText4Yaku(n+'-TORIFUDA-TEN',  x+cs*11+bcolumns, y, cs*5, cs+blines, '#fff', _f_to_wasuji(r)+'<span style="color:#ff0; ">点</span>');
+            _f_rightText4Yaku(n+'-TORIFUDA-TEN',  x+cs*11+bcolumns, y, cs*5, cs+blines, '#fff', _f_to_wasuji(r)+'<span style="color:#ff0; ">'+_f_getText('GAME_POINTS_TEN')+'</span>');
             y+=cs+blines;
         }
 
@@ -621,11 +623,11 @@ function _f_yaku_disp(dmode, seki, str) {
             _f_leftText4Yaku(n+'-DEKIYAKY-NAME-'+i,  x, y, cs*5, cs+blines, '#0ff', _f[seki].yaku_name[i]);
 
             if (j>0) {
-                _f_rightText4Yaku(n+'-DEKIYAKY-TEN-'+i, x+cs*10+bcolumns, y, cs*6, cs+blines, '#fff', _f_to_wasuji(j)+'<span style="color:#ff0; ">点</span>');
+                _f_rightText4Yaku(n+'-DEKIYAKY-TEN-'+i, x+cs*10+bcolumns, y, cs*6, cs+blines, '#fff', _f_to_wasuji(j)+'<span style="color:#ff0; ">'+_f_getText('GAME_POINTS_TEN')+'</span>');
                 r+=j;
             }
             else if (j==0) {
-                _f_rightText4Yaku(n+'-DEKIYAKY-TEN-'+i, x+cs*10+bcolumns, y, cs*6, cs+blines, '#fff', _f_to_wasuji(600)+'<span style="color:#ff0; ">点</span>');
+                _f_rightText4Yaku(n+'-DEKIYAKY-TEN-'+i, x+cs*10+bcolumns, y, cs*6, cs+blines, '#fff', _f_to_wasuji(600)+'<span style="color:#ff0; ">'+_f_getText('GAME_POINTS_TEN')+'</span>');
                 y+=cs+blines;
                 _f_rightText4Yaku(n+'-DEKIYAKY-TEN-NOTE-'+i, x+cs*11+bcolumns, y, cs*5, cs+blines, '#ff0', '(イチコロ)');
                 r+=600;
@@ -639,21 +641,21 @@ function _f_yaku_disp(dmode, seki, str) {
 
         if (_f[seki].current_point_600ken>0) {
             y=yh+h-cs-margin;
-            _f_leftText4Yaku(n+'-TOTAL_POINT-H',  x, y, cs*5, cs+blines, '#0ff', '合計');
+            _f_leftText4Yaku(n+'-TOTAL_POINT-H',  x, y, cs*5, cs+blines, '#0ff', _f_getText('GAME_FIELD_SUDAOSHI'));
 
             if (i<0) {
                 i=-i;
-                _f_leftText4Yaku(n+'-TOTAL_POINT-SIGN', x+cs*8+bcolumns, y, cs, cs+blines, '#fff', '▲');
+                _f_leftText4Yaku(n+'-TOTAL_POINT-SIGN', x+cs*8+bcolumns, y, cs, cs+blines, '#fff', _f_getText('GAME_NEGATIVE_NOSP'));
             }
 
-            _f_rightText4Yaku(n+'-TOTAL_POINT-TEN', x+cs*9+bcolumns, y, cs*7, cs+blines, '#fff', _f_to_wasuji(_f[seki].current_point_600ken)+'<span style="color:#ff0; ">点</span>');
+            _f_rightText4Yaku(n+'-TOTAL_POINT-TEN', x+cs*9+bcolumns, y, cs*7, cs+blines, '#fff', _f_to_wasuji(_f[seki].current_point_600ken)+'<span style="color:#ff0; ">'+_f_getText('GAME_POINTS_TEN')+'</span>');
         }
 
         x=xh+margin;
         y=yh+margin;
         r=_f[seki].current_point_600ken-r;
         _f_leftText4Yaku(n+'-ACCUMRATED_POINT-H', x, y, cs*12+bcolumns, cs+blines, '#0ff', '前局まで');
-        _f_rightText4Yaku(n+'-ACCUMRATED_POINT-TEN',  x+cs*11+bcolumns, y, cs*5, cs+blines, '#fff', _f_to_wasuji(r)+'<span style="color:#ff0; ">点</span>');
+        _f_rightText4Yaku(n+'-ACCUMRATED_POINT-TEN',  x+cs*11+bcolumns, y, cs*5, cs+blines, '#fff', _f_to_wasuji(r)+'<span style="color:#ff0; ">'+_f_getText('GAME_POINTS_TEN')+'</span>');
     }
 
     else if (_f_gamemode==_F_GAMEMODE_HACHI) {
@@ -662,21 +664,21 @@ function _f_yaku_disp(dmode, seki, str) {
 
         r=_f[seki].torifuda01_ctr*10+  _f[seki].torifuda05_ctr+  _f[seki].torifuda10_ctr*10+  _f[seki].torifuda20_ctr*10;
         _f_leftText4Yaku(n+'-TORIFUDA-H', x, y, cs*12+bcolumns, cs+blines, '#0ff', '取札点');
-        _f_rightText4Yaku(n+'-TORIFUDA-TEN', x+cs*11+bcolumns, y, cs*5, cs+blines, '#fff', _f_to_wasuji(r)+'<span style="color:#ff0; ">点</span>');
+        _f_rightText4Yaku(n+'-TORIFUDA-TEN', x+cs*11+bcolumns, y, cs*5, cs+blines, '#fff', _f_to_wasuji(r)+'<span style="color:#ff0; ">'+_f_getText('GAME_POINTS_TEN')+'</span>');
 
         y+=cs+blines;
         i=-1;
         while (++i<_f[seki].yaku_name_ctr) {
             j=_f[seki].yaku_point[i];
             _f_leftText4Yaku(n+'-DEKIYAKU-NAME-'+i,  x, y, cs*6, cs+blines, '#0ff', _f[seki].yaku_name[i]);
-            _f_rightText4Yaku(n+'-DEKIYAKU-TEN-'+i,  x+cs*10+bcolumns, y, cs*6, cs+blines, '#fff', _f_to_wasuji(j)+'<span style="color:#ff0; ">点</span>');
+            _f_rightText4Yaku(n+'-DEKIYAKU-TEN-'+i,  x+cs*10+bcolumns, y, cs*6, cs+blines, '#fff', _f_to_wasuji(j)+'<span style="color:#ff0; ">'+_f_getText('GAME_POINTS_TEN')+'</span>');
 
             r+=j;
             y+=cs+blines;
         }
 
         y=yh+h-cs-margin;
-        _f_rightText4Yaku(n+'-TOTAL_POINT-TEN',  x+cs*9+bcolumns, y, cs*7, cs+blines, '#fff', _f_to_wasuji(r)+'<span style="color:#ff0; ">点</span>');
+        _f_rightText4Yaku(n+'-TOTAL_POINT-TEN',  x+cs*9+bcolumns, y, cs*7, cs+blines, '#fff', _f_to_wasuji(r)+'<span style="color:#ff0; ">'+_f_getText('GAME_POINTS_TEN')+'</span>');
     }
 
     return;
@@ -741,9 +743,9 @@ function _f_balance_disp2(seki, btype) {
     var cs2=24, w, h, margin=16, blines=4, bcolumns=16, e, n='BALANCE-'+seki;
     var i, j, k,o, x, y, x1, y1;
 
-    var u='<span style="color:#ff0; ">点</span>';
+    var u='<span style="color:#ff0; ">'+_f_getText('GAME_POINTS_TEN')+'</span>';
     if (_f_gamemode==_F_GAMEMODE_KOIKOI)
-        u='<span style="color:#ff0; ">文</span>';
+        u='<span style="color:#ff0; ">'+_f_getText('GAME_POINTS_MON')+'</span>';
     if (_f_kabu_mode)
         cs2=24;
 
@@ -826,14 +828,14 @@ function _f_balance_disp2(seki, btype) {
         }
         else {
             if (i<0) {
-                _f_leftText(n+'-MOCHITEN-SIGN',  xh+margin+29*3, y, 29, 29+blines, '#fff', '▲');
+                _f_leftText(n+'-MOCHITEN-SIGN',  xh+margin+29*3, y, 29, 29+blines, '#fff', _f_getText('GAME_NEGATIVE_NOSP'));
                 i=-i;
             }
             if (_f_gamemode==_F_GAMEMODE_88) {
                 j=Math.floor(i/12);
                 i=i-12*j;
                 if (j) {
-                    _f_rightText(n+'-MOCHITEN-KAN',  xh+w-margin-29*10, y, 29*7, 29+blines, '#fff', _f_to_wasuji(j)+'<span style="color:#ff0; ">貫</span>');
+                    _f_rightText(n+'-MOCHITEN-KAN',  xh+w-margin-29*10, y, 29*7, 29+blines, '#fff', _f_to_wasuji(j)+'<span style="color:#ff0; ">'+_f_getText('GAME_POINTS_KAN')+'</span>');
                 }
             }
             if (i) {
@@ -856,12 +858,12 @@ function _f_balance_disp2(seki, btype) {
         _f_leftText(n+'-BEFORE-H',  xh+margin, y, 29*6, 29+blines, '#0ff', '開局前');
         if (i<0) {
             i=-i;
-            _f_leftText(n+'-BEFORE-SIGN',  xh+margin+29*3, y, 29, 29+blines, '#fff', '▲');
+            _f_leftText(n+'-BEFORE-SIGN',  xh+margin+29*3, y, 29, 29+blines, '#fff', _f_getText('GAME_NEGATIVE_NOSP'));
         }
         if (i)
             i=_f_to_wasuji(i);
         else i='零';
-        _f_rightText(n+'-BEFORE-TEN',  xh+w-margin-29*7, y, 29*7, 29+blines, '#fff', i+'<span style="color:#ff0; ">点</span>');
+        _f_rightText(n+'-BEFORE-TEN',  xh+w-margin-29*7, y, 29*7, 29+blines, '#fff', i+'<span style="color:#ff0; ">'+_f_getText('GAME_POINTS_TEN')+'</span>');
 
         y+=29+blines;
         if (_f_oya!=seki) {
@@ -869,12 +871,12 @@ function _f_balance_disp2(seki, btype) {
             _f_leftText(n+'-BETTED-H',  xh+margin, y, 29*6, 29+blines, '#0ff', '賭点');
             if (i<0) {
                 i=-i;
-                _f_leftText(n+'-BETTED-SIGN',  xh+margin+29*3, y, 29, 29+blines, '#fff', '▲');
+                _f_leftText(n+'-BETTED-SIGN',  xh+margin+29*3, y, 29, 29+blines, '#fff', _f_getText('GAME_NEGATIVE_NOSP'));
             }
             if (i)
                 i=_f_to_wasuji(i);
             else i='零';
-            _f_rightText(n+'-BETTED-TEN', xh+w-margin-29*7, y, 29*7, 29+blines, '#fff', i+'<span style="color:#ff0; ">点</span>');
+            _f_rightText(n+'-BETTED-TEN', xh+w-margin-29*7, y, 29*7, 29+blines, '#fff', i+'<span style="color:#ff0; ">'+_f_getText('GAME_POINTS_TEN')+'</span>');
             y+=29+blines;
         }
 
@@ -883,20 +885,20 @@ function _f_balance_disp2(seki, btype) {
         
         if (i<0) {
             i=-i;
-            _f_leftText(n+'-BALANCE-SIGN',  xh+margin+29*3, y, 29, 29+blines, '#fff', '▲');
+            _f_leftText(n+'-BALANCE-SIGN',  xh+margin+29*3, y, 29, 29+blines, '#fff', _f_getText('GAME_NEGATIVE_NOSP'));
         }
         if (i)
             i=_f_to_wasuji(i);
         else
             i='零';
-        _f_rightText(n+'-BALANCE-TEN',  xh+w-margin-29*7, y, 29*7, 29+blines, '#fff', i+'<span style="color:#ff0; ">点</span>');
+        _f_rightText(n+'-BALANCE-TEN',  xh+w-margin-29*7, y, 29*7, 29+blines, '#fff', i+'<span style="color:#ff0; ">'+_f_getText('GAME_POINTS_TEN')+'</span>');
         
         y=yh+h-margin-29;
         _f_leftText(n+'-RESULT-H',  xh+margin, y, 29*6, 29+blines, '#0ff', '現計');
         
         i=_f[seki].score_after_balance;
         if (i<0) {
-            _f_leftText(n+'-RESULT-SIGN',  xh+margin+29*3, y, 29, 29+blines, '#fff', '▲');
+            _f_leftText(n+'-RESULT-SIGN',  xh+margin+29*3, y, 29, 29+blines, '#fff', _f_getText('GAME_NEGATIVE_NOSP'));
             i=-i;
         }
         _f_rightText(n+'-RESULT-TEN', xh+w-margin-29*7, y, 29*7, 29+blines, '#fff', _f_to_wasuji(i)+u);
@@ -910,17 +912,17 @@ function _f_balance_disp2(seki, btype) {
             
             if (i<0) {
                 i=-i;
-                _f_leftText(n+'-RETURN-SIGN',  xh+margin+29*3, y, 29*6, 29+blines, '#fff', '▲');
+                _f_leftText(n+'-RETURN-SIGN',  xh+margin+29*3, y, 29*6, 29+blines, '#fff', _f_getText('GAME_NEGATIVE_NOSP'));
             }
             if (_f_gamemode==_F_GAMEMODE_88 || _f_gamemode==_F_GAMEMODE_SUDAOSHI) {
                 j=Math.floor(i/12);
                 i=i-12*j;
                 if (j) {
-                    _f_rightText(n+'-RETURN-KAN', xh+w-margin-29*10, y, 29*7, 29+blines, '#fff', _f_to_wasuji(j)+'<span style="color:#ff0; ">貫</span>');
+                    _f_rightText(n+'-RETURN-KAN', xh+w-margin-29*10, y, 29*7, 29+blines, '#fff', _f_to_wasuji(j)+'<span style="color:#ff0; ">'+_f_getText('GAME_POINTS_KAN')+'</span>');
                 }
             }
             if (i) {
-                _f_rightText(n+'-RETURN-TEN', xh+w-margin-29*3, y, 29*3, 29+blines, '#fff', _f_to_wasuji(i)+'<span style="color:#ff0; ">点</span>');
+                _f_rightText(n+'-RETURN-TEN', xh+w-margin-29*3, y, 29*3, 29+blines, '#fff', _f_to_wasuji(i)+'<span style="color:#ff0; ">'+_f_getText('GAME_POINTS_TEN')+'</span>');
             }
             
             y+=29+blines;
@@ -932,18 +934,18 @@ function _f_balance_disp2(seki, btype) {
             
             if (i<0) {
                 i=-i;
-                _f_leftText(n+'-TORIFUDA-SIGN', xh+margin+29*3, y, 29*6, 29+blines, '#fff', '▲');
+                _f_leftText(n+'-TORIFUDA-SIGN', xh+margin+29*3, y, 29*6, 29+blines, '#fff', _f_getText('GAME_NEGATIVE_NOSP'));
             }
             if (_f_gamemode==_F_GAMEMODE_88 || _f_gamemode==_F_GAMEMODE_SUDAOSHI) {
                 if (i==0) {
-                    _f_rightText(n+'-TORIFUDA-KAN',  xh+w-margin-29*10, y, 29*7, 29+blines, '#fff', '零<span style="color:#ff0; ">貫</span>');
+                    _f_rightText(n+'-TORIFUDA-KAN',  xh+w-margin-29*10, y, 29*7, 29+blines, '#fff', _f_getText('GAME_REI')+'span style="color:#ff0; ">'+_f_getText('GAME_POINTS_KAN')+'</span>');
                 }
                 else {
                     j=Math.floor(i/12);
                     i=i-12*j;
-                    _f_rightText(n+'-TORIFUDA-KAN', xh+w-margin-29*10, y, 29*7, 29+blines, '#fff', _f_to_wasuji(j)+'<span style="color:#ff0; ">貫</span>');
+                    _f_rightText(n+'-TORIFUDA-KAN', xh+w-margin-29*10, y, 29*7, 29+blines, '#fff', _f_to_wasuji(j)+'<span style="color:#ff0; ">'+_f_getText('GAME_POINTS_KAN')+'</span>');
                     if (i) {
-                        _f_rightText(n+'-TORIFUDA-TEN', xh+w-margin-29*3, y, 29*3, 29+blines, '#fff', _f_to_wasuji(i)+'<span style="color:#ff0; ">点</span>');
+                        _f_rightText(n+'-TORIFUDA-TEN', xh+w-margin-29*3, y, 29*3, 29+blines, '#fff', _f_to_wasuji(i)+'<span style="color:#ff0; ">'+_f_getText('GAME_POINTS_TEN')+'</span>');
                     }
                 }
             }
@@ -962,18 +964,18 @@ function _f_balance_disp2(seki, btype) {
             
             if (i<0) {
                 i=-i;
-                _f_leftText(n+'-YAKUDAI-SIGN', xh+margin+29*3, y, 29*6, 29+blines, '#fff', '▲');
+                _f_leftText(n+'-YAKUDAI-SIGN', xh+margin+29*3, y, 29*6, 29+blines, '#fff', _f_getText('GAME_NEGATIVE_NOSP'));
             }
             if (_f_gamemode==_F_GAMEMODE_88 || _f_gamemode==_F_GAMEMODE_SUDAOSHI) {
                 if (i==0) {
-                    _f_rightText(n+'-YAKUDAI-KAN', xh+w-margin-29*10, y, 29*7, 29+blines, '#fff', '零<span style="color:#ff0; ">貫</span>');
+                    _f_rightText(n+'-YAKUDAI-KAN', xh+w-margin-29*10, y, 29*7, 29+blines, '#fff', _f_getText('GAME_REI')+'span style="color:#ff0; ">'+_f_getText('GAME_POINTS_KAN')+'</span>');
                 }
                 else {
                     j=Math.floor(i/12);
                     i=i-12*j;
-                    _f_rightText(n+'-YAKUDAI-KAN', xh+w-margin-29*10, y, 29*7, 29+blines, '#fff', _f_to_wasuji(j)+'<span style="color:#ff0; ">貫</span>');
+                    _f_rightText(n+'-YAKUDAI-KAN', xh+w-margin-29*10, y, 29*7, 29+blines, '#fff', _f_to_wasuji(j)+'<span style="color:#ff0; ">'+_f_getText('GAME_POINTS_KAN')+'</span>');
                     if (i) {
-                        _f_rightText(n+'-YAKUDAI-TEN', xh+w-margin-29*3, y, 29*3, 29+blines, '#fff', _f_to_wasuji(i)+'<span style="color:#ff0; ">点</span>');
+                        _f_rightText(n+'-YAKUDAI-TEN', xh+w-margin-29*3, y, 29*3, 29+blines, '#fff', _f_to_wasuji(i)+'<span style="color:#ff0; ">'+_f_getText('GAME_POINTS_TEN')+'</span>');
                     }
                 }
             }
@@ -991,13 +993,13 @@ function _f_balance_disp2(seki, btype) {
         
         i=_f[seki].score_after_balance;
         if (i<0) {
-            _f_leftText(n+'-AFTER-SIGN', xh+margin+29*3, y, 29, 29+blines, '#fff', '▲');
+            _f_leftText(n+'-AFTER-SIGN', xh+margin+29*3, y, 29, 29+blines, '#fff', _f_getText('GAME_NEGATIVE_NOSP'));
             i=-i;
         }
         if (_f_gamemode==_F_GAMEMODE_88 || _f_gamemode==_F_GAMEMODE_SUDAOSHI) {
             j=Math.floor(i/12);
             i=i-12*j;
-            _f_rightText(n+'-AFTER-KAN', xh+w-margin-29*10, y, 29*7, 29+blines, '#fff', _f_to_wasuji(j)+'<span style="color:#ff0; ">貫</span>');
+            _f_rightText(n+'-AFTER-KAN', xh+w-margin-29*10, y, 29*7, 29+blines, '#fff', _f_to_wasuji(j)+'<span style="color:#ff0; ">'+_f_getText('GAME_POINTS_KAN')+'</span>');
         }
         _f_rightText(n+'-AFTER-TEN', xh+w-margin-29*6, y, 29*6, 29+blines, '#fff', _f_to_wasuji(i)+u);
     }

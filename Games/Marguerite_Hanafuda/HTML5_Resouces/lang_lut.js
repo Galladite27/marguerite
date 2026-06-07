@@ -90,6 +90,10 @@ function _f_langToggle() {
         e=document.getElementById('TORIFUDA_2-1');
         e2=document.getElementById('TORIFUDA_2-2');
         if (e || e2) { _f_torifuda_disp(2); }
+        
+        // Testing
+        // TODO: check if on balance display screen
+        //_f_balance_disp(0);
     }
 }
 
@@ -140,7 +144,7 @@ _f_registerText('H5_MENU_VERSION', _f_version, _f_version_en);
 _f_registerText('QUITGAME_CONFIRM', '現在のゲームを終了して、お品書きに戻りますか？', 'Quit game and return to menu?')
 
 //graphc2
-_f_registerText('GAME_NEGATIVE', '▲　', '−')
+_f_registerText('GAME_NEGATIVE', '▲　', '−');
 _f_registerText('GAME_POINTS_TEN', '点', ' ten');
 _f_registerText('GAME_POINTS_KAN', '貫', ' kan');
 _f_registerText('GAME_POINTS_MON', '文', ' mon');
@@ -162,10 +166,33 @@ _f_registerText('GAME_ETSUNEN', '越年', 'Bonus');
 _f_registerText('GAME_FIELD_SMALL', '小場', 'Small field');
 _f_registerText('GAME_FIELD_LARGE', '大場', 'Large field');
 _f_registerText('GAME_FIELD_GRAND', '絶場', 'Grand field');
-_f_registerText('GAME_FIELD_CARRY', '(二代)', '(carried)');
+_f_registerText('GAME_FIELD_CARRY', '(二代)', '(carried)'); // TODO: text doesn't fit - enlarge text box for 88?
 
 _f_registerText('GAME_SEAT_OYA', '親', 'Dealer');
 _f_registerText('GAME_SEAT_KO', '子', 'Non-dealer');
+
+// graphc3
+_f_registerText('GAME_NEGATIVE_NOSP', '▲', '−');
+_f_registerText('GAME_REI', '零', '0 ');
+_f_registerText('SCORE_YAKUTYPE_AITE_DEKIYAKU', '相手の出来役', 'Opponent captured yaku');
+_f_registerText('SCORE_YAKUTYPE_AITE_TEYAKU', '相手の手役', 'Opponent hand yaku');
+_f_registerText('SCORE_POINTDIFF_1', '取り札(', 'Captured cards (');
+_f_registerText('SCORE_POINTDIFF_1.5', '取札点(', 'Captured cards (');
+_f_registerText('SCORE_POINTDIFF_2', '点差)', 'ten diff)');
+_f_registerText('SCORE_POINTDIFF_3', '点)', ' ten)');
+
+_f_registerText('SCORE_2P88_ANATANO', 'あなたの', 'Your ');
+_f_registerText('SCORE_2P88_AITENO', '相手の', 'Opponent\'s ');
+_f_registerText('SCORE_2P88_RETURNED_YAKU', '役代返し', 'repayment'); // Not sure about this translation
+_f_registerText('GAME_FIELD_LARGE2X', '大場倍付け', 'Large field (2×)');
+_f_registerText('GAME_FIELD_GRAND4X', '絶場四倍付け', 'Grand field (4×)');
+_f_registerText('GAME_FIELD_LARGE2X_NOKE', '大場倍付', 'Large field (2×)');
+_f_registerText('GAME_FIELD_GRAND4X_NOKE', '絶場四倍付', 'Grand field (4×)');
+_f_registerText('GAME_FIELD_SUDAOSHI', '合計', 'Total');
+
+_f_registerText('', '', '');
+_f_registerText('', '', '');
+_f_registerText('', '', '');
 
 // graphc5
 _f_registerText('MENU_ANIMS_OFF', '札の動画効果：切', 'Animations: OFF');
