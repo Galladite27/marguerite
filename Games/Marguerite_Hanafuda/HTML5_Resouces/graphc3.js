@@ -571,13 +571,13 @@ function _f_yaku_disp(dmode, seki, str) {
             _f_horizontal_rule(n+'-BEtWEEN_TORIFUDA_AND_DEKIYAKU', xh, y+(cs+blines) / 2-4, w+4, 4);
             y+=cs+blines;
         }
-        
+
         i=-1;
         r=0;
         while (++i<_f[seki].yaku_name_ctr) {
             j=_f[seki].yaku_point[i];
             _f_leftText4Yaku(n+'-DEKIYAKU-NAME-'+i, x, y, cs*5, cs+blines, '#0ff', _f[seki].yaku_name[i]);
-            
+
             if (j>=0) {
                 _f_rightText4Yaku(n+'-DEKIYAKU-TEN-'+i, x+cs*13+bcolumns, y, cs*3, cs+blines, '#fff', _f_to_wasuji(j)+'<span style="color:#ff0; ">点</span>');
                 r+=j;
@@ -588,14 +588,14 @@ function _f_yaku_disp(dmode, seki, str) {
             else if (j<0) {
                 _f_rightText4Yaku(n+'-DEKIYAKU-TEN-'+i, x+cs*13+bcolumns, y, cs*3, cs+blines, '#f00', '役流し');
             }
-            
+
             y+=cs+blines;
         }
-        
+
         if (r>0) {
             y=yh+h-cs-margin;
             _f_leftText4Yaku(n+'-TOTAL_POINT-H',  x, y, cs*5, cs+blines, '#0ff', '合計');
-            
+
             if (i<0) {
                 i=-i;
                 _f_leftText4Yaku(n+'-TOTAL_POINT-SIGN', x+cs*8+bcolumns, y, cs, cs+blines, '#fff', '▲');
@@ -603,23 +603,23 @@ function _f_yaku_disp(dmode, seki, str) {
             _f_rightText4Yaku(n+'-TOTAL_POINT-TEN', x+cs*9+bcolumns, y, cs*7, cs+blines, '#fff', _f_to_wasuji(r)+'<span style="color:#ff0; ">点</span>');
         }
     }
-    
+
     else if (_f_gamemode==_F_GAMEMODE_600KEN) {
         x=xh+margin;
         y=yh+margin+cs+blines;
-        
+
         r=_f[seki].torifuda05_ctr*10+_f[seki].torifuda10_ctr*10+_f[seki].torifuda20_ctr*50;
         if (r>0) {
             _f_leftText4Yaku(n+'-TORIFUDA-H',  x, y, cs*12+bcolumns, cs+blines, '#0ff', '取札点');
             _f_rightText4Yaku(n+'-TORIFUDA-TEN',  x+cs*11+bcolumns, y, cs*5, cs+blines, '#fff', _f_to_wasuji(r)+'<span style="color:#ff0; ">点</span>');
             y+=cs+blines;
         }
-        
+
         i=-1;
         while (++i<_f[seki].yaku_name_ctr) {
             j=_f[seki].yaku_point[i];
             _f_leftText4Yaku(n+'-DEKIYAKY-NAME-'+i,  x, y, cs*5, cs+blines, '#0ff', _f[seki].yaku_name[i]);
-            
+
             if (j>0) {
                 _f_rightText4Yaku(n+'-DEKIYAKY-TEN-'+i, x+cs*10+bcolumns, y, cs*6, cs+blines, '#fff', _f_to_wasuji(j)+'<span style="color:#ff0; ">点</span>');
                 r+=j;
@@ -636,34 +636,34 @@ function _f_yaku_disp(dmode, seki, str) {
 
             y+=cs+blines;
         }
-        
+
         if (_f[seki].current_point_600ken>0) {
             y=yh+h-cs-margin;
             _f_leftText4Yaku(n+'-TOTAL_POINT-H',  x, y, cs*5, cs+blines, '#0ff', '合計');
-            
+
             if (i<0) {
                 i=-i;
                 _f_leftText4Yaku(n+'-TOTAL_POINT-SIGN', x+cs*8+bcolumns, y, cs, cs+blines, '#fff', '▲');
             }
-            
+
             _f_rightText4Yaku(n+'-TOTAL_POINT-TEN', x+cs*9+bcolumns, y, cs*7, cs+blines, '#fff', _f_to_wasuji(_f[seki].current_point_600ken)+'<span style="color:#ff0; ">点</span>');
         }
-        
+
         x=xh+margin;
         y=yh+margin;
         r=_f[seki].current_point_600ken-r;
         _f_leftText4Yaku(n+'-ACCUMRATED_POINT-H', x, y, cs*12+bcolumns, cs+blines, '#0ff', '前局まで');
         _f_rightText4Yaku(n+'-ACCUMRATED_POINT-TEN',  x+cs*11+bcolumns, y, cs*5, cs+blines, '#fff', _f_to_wasuji(r)+'<span style="color:#ff0; ">点</span>');
     }
-    
+
     else if (_f_gamemode==_F_GAMEMODE_HACHI) {
         x=xh+margin;
         y=yh+margin;
-        
+
         r=_f[seki].torifuda01_ctr*10+  _f[seki].torifuda05_ctr+  _f[seki].torifuda10_ctr*10+  _f[seki].torifuda20_ctr*10;
         _f_leftText4Yaku(n+'-TORIFUDA-H', x, y, cs*12+bcolumns, cs+blines, '#0ff', '取札点');
         _f_rightText4Yaku(n+'-TORIFUDA-TEN', x+cs*11+bcolumns, y, cs*5, cs+blines, '#fff', _f_to_wasuji(r)+'<span style="color:#ff0; ">点</span>');
-        
+
         y+=cs+blines;
         i=-1;
         while (++i<_f[seki].yaku_name_ctr) {
@@ -674,16 +674,346 @@ function _f_yaku_disp(dmode, seki, str) {
             r+=j;
             y+=cs+blines;
         }
-        
+
         y=yh+h-cs-margin;
         _f_rightText4Yaku(n+'-TOTAL_POINT-TEN',  x+cs*9+bcolumns, y, cs*7, cs+blines, '#fff', _f_to_wasuji(r)+'<span style="color:#ff0; ">点</span>');
     }
-    
+
     return;
 }
 
-function _f_leftText4Yaku(n, x, y, w, h, color, str){var e, s=29;if(_f_charMode) s=24;newTextArea(n, x, y, w, h, s, 'transparent', '#FFF');e=document.getElementById(n);e.style.color=color;e.style.textAlign='left';e.style.fontFamily='serif';e.style.lineHeight='1em';e.style.verticalAlign='text-top';e.innerHTML=str;}
-function _f_rightText4Yaku(n, x, y, w, h, color, str){var e, s=29;if(_f_charMode) s=24;newTextArea(n, x, y, w, h, s, 'transparent', '#FFF');e=document.getElementById(n);e.style.color=color;e.style.textAlign='right';e.style.fontFamily='serif';e.style.lineHeight='1em';e.style.verticalAlign='text-top';e.innerHTML=str;}
-function _f_balance_disp(btype){var e, i, j;e=document.getElementsByTagName('div');i=e.length; while(--i>=0){if(!e[i].getAttribute('data-bylib')) continue;if(!(j=e[i].getAttribute('id'))) continue;if(j.indexOf('YAKU_')!=0) continue;e[i].parentNode.removeChild(e[i]);}if(_f_players==2){ _f_balance_disp2(0, btype); return; }i=_f_players;while(--i>=0) _f_balance_disp2(i, btype);}
-function _f_balance_disp2(seki, btype){var cs2=24, w, h, margin=16, blines=4, bcolumns=16, e, n='BALANCE-'+seki;var i, j, k,o, x, y, x1, y1;var u='<span style="color:#ff0; ">点</span>'; if(_f_gamemode==_F_GAMEMODE_KOIKOI) u='<span style="color:#ff0; ">文</span>';if(_f_kabu_mode) cs2=24;w=cs2*16+margin*2+bcolumns;h=cs2*10+margin*2;xh=600-w/2; yh=200+h+3;if(_f_players===3){xh=600-w/2; yh=80+h+3;if(seki==2){ xh=600-w; yh=80; }if(seki==1){ xh=603; yh=80; }if(_f_gamemode==_F_GAMEMODE_KYOKABU || _f_gamemode==_F_GAMEMODE_OICHOKABU){if(_f_oya==1){xh=600-w/2; yh=80;if(seki==2){ xh=600-w; yh=80+h+3; }if(seki==0){ xh=603; yh=80+h+3; }}else if(_f_oya==2){xh=600-w/2; yh=80;if(seki==0){ xh=600-w; yh=80+h+3; }if(seki==1){ xh=603; yh=80+h+3; }}else {xh=600-w/2; yh=80+h+3;if(seki==2){ xh=600-w; yh=80; }if(seki==1){ xh=603; yh=80; }}}}else { yh=240+h+3; }_f_textWindow(n, xh, yh, w, h, '#fff');y=yh+margin; x1=0; y1=0;if(btype==2){y=yh+((h-cs2) >> 1);_f_leftText(n+'-MOCHITEN-H', xh+margin, y, 29*6, 29+blines, '#0ff', '持点');i=_f[seki].score;if(!i){_f_rightText(n+'-MOCHITEN-TEN', xh+w-margin-29*7, y, 29*7, 29+blines, '#fff', '零'+u);}else {if(i<0){_f_leftText(n+'-MOCHITEN-SIGN',  xh+margin+29*3, y, 29, 29+blines, '#fff', '▲');i=-i;}if(_f_gamemode==_F_GAMEMODE_88){j=Math.floor(i/12); i=i-12*j;if(j){_f_rightText(n+'-MOCHITEN-KAN',  xh+w-margin-29*10, y, 29*7, 29+blines, '#fff', _f_to_wasuji(j)+'<span style="color:#ff0; ">貫</span>');}}if(i){_f_rightText(n+'-MOCHITEN-TEN',  xh+w-margin-29*7, y, 29*7, 29+blines, '#fff', _f_to_wasuji(i)+u);}}}else if(_f_gamemode==_F_GAMEMODE_KYOKABU || _f_gamemode==_F_GAMEMODE_OICHOKABU){y=yh+margin;i=_f_seatName[seki];if(_f_oya==seki) i+=' (親)';_f_leftText(n+'-SEATNAME-H',  xh+margin, y, 29*8, 29+blines, '#ff0', i);var e=document.getElementById(n+'-SEATNAME-H');e.style.whiteSpace='noWrap';y+=29+blines;i=_f[seki].score_before_game;_f_leftText(n+'-BEFORE-H',  xh+margin, y, 29*6, 29+blines, '#0ff', '開局前');if(i<0){i=-i;_f_leftText(n+'-BEFORE-SIGN',  xh+margin+29*3, y, 29, 29+blines, '#fff', '▲');}if(i) i=_f_to_wasuji(i); else i='零';_f_rightText(n+'-BEFORE-TEN',  xh+w-margin-29*7, y, 29*7, 29+blines, '#fff', i+'<span style="color:#ff0; ">点</span>');y+=29+blines;if(_f_oya!=seki){i=-_f[seki].balance_betted;_f_leftText(n+'-BETTED-H',  xh+margin, y, 29*6, 29+blines, '#0ff', '賭点');if(i<0){i=-i;_f_leftText(n+'-BETTED-SIGN',  xh+margin+29*3, y, 29, 29+blines, '#fff', '▲');}if(i) i=_f_to_wasuji(i); else i='零';_f_rightText(n+'-BETTED-TEN', xh+w-margin-29*7, y, 29*7, 29+blines, '#fff', i+'<span style="color:#ff0; ">点</span>');y+=29+blines;}i=_f[seki].balance;_f_leftText(n+'-BALANCE-H',  xh+margin, y, 29*6, 29+blines, '#0ff', '収支');if(i<0){i=-i;_f_leftText(n+'-BALANCE-SIGN',  xh+margin+29*3, y, 29, 29+blines, '#fff', '▲');}if(i) i=_f_to_wasuji(i); else i='零';_f_rightText(n+'-BALANCE-TEN',  xh+w-margin-29*7, y, 29*7, 29+blines, '#fff', i+'<span style="color:#ff0; ">点</span>');y=yh+h-margin-29;_f_leftText(n+'-RESULT-H',  xh+margin, y, 29*6, 29+blines, '#0ff', '現計');i=_f[seki].score_after_balance;if(i<0){_f_leftText(n+'-RESULT-SIGN',  xh+margin+29*3, y, 29, 29+blines, '#fff', '▲');i=-i;}_f_rightText(n+'-RESULT-TEN', xh+w-margin-29*7, y, 29*7, 29+blines, '#fff', _f_to_wasuji(i)+u);}else {y=yh+margin;if((i=_f[seki].balance_payback)!=0){_f_leftText(n+'-RETURN-H',  xh+margin, y, 29*6, 29+blines, '#0ff', '払戻し');if(i<0){i=-i;_f_leftText(n+'-RETURN-SIGN',  xh+margin+29*3, y, 29*6, 29+blines, '#fff', '▲');}if(_f_gamemode==_F_GAMEMODE_88 || _f_gamemode==_F_GAMEMODE_SUDAOSHI){j=Math.floor(i/12); i=i-12*j;if(j){_f_rightText(n+'-RETURN-KAN', xh+w-margin-29*10, y, 29*7, 29+blines, '#fff', _f_to_wasuji(j)+'<span style="color:#ff0; ">貫</span>');}}if(i){_f_rightText(n+'-RETURN-TEN', xh+w-margin-29*3, y, 29*3, 29+blines, '#fff', _f_to_wasuji(i)+'<span style="color:#ff0; ">点</span>');}y+=29+blines;}if(_f_gamemode!=_F_GAMEMODE_KOIKOI && ((_f_gamemode!=_F_GAMEMODE_88 && _f_gamemode!=_F_GAMEMODE_SUDAOSHI) || _f_88_yaku_flag!=1) && (_f[0].torifuda_total!=0 && _f[1].torifuda_total!=0)){i=_f[seki].balance_torifuda;_f_leftText(n+'-TORIFUDA-H', xh+margin, y, 29*6, 29+blines, '#0ff', '取り札');if(i<0){i=-i;_f_leftText(n+'-TORIFUDA-SIGN', xh+margin+29*3, y, 29*6, 29+blines, '#fff', '▲');}if(_f_gamemode==_F_GAMEMODE_88 || _f_gamemode==_F_GAMEMODE_SUDAOSHI){if(i==0){_f_rightText(n+'-TORIFUDA-KAN',  xh+w-margin-29*10, y, 29*7, 29+blines, '#fff', '零<span style="color:#ff0; ">貫</span>');}else {j=Math.floor(i/12); i=i-12*j;_f_rightText(n+'-TORIFUDA-KAN', xh+w-margin-29*10, y, 29*7, 29+blines, '#fff', _f_to_wasuji(j)+'<span style="color:#ff0; ">貫</span>');if(i){_f_rightText(n+'-TORIFUDA-TEN', xh+w-margin-29*3, y, 29*3, 29+blines, '#fff', _f_to_wasuji(i)+'<span style="color:#ff0; ">点</span>');}}}else {if(i) i=_f_to_wasuji(i); else i='零';_f_rightText(n+'-TORIFUDA-TEN', xh+w-margin-29*7, y, 29*7, 29+blines, '#fff', i+u);}y+=29+blines;}if((i=_f[seki].balance)!=0 || _f_88_yaku_flag>0 || (_f_gamemode==_F_GAMEMODE_88 && _f[seki].yaku_name_ctr>0)){_f_leftText(n+'-YAKUDAI-H', xh+margin, y, 29*6, 29+blines, '#0ff', '役代');if(i<0){i=-i;_f_leftText(n+'-YAKUDAI-SIGN', xh+margin+29*3, y, 29*6, 29+blines, '#fff', '▲');}if(_f_gamemode==_F_GAMEMODE_88 || _f_gamemode==_F_GAMEMODE_SUDAOSHI){if(i==0){_f_rightText(n+'-YAKUDAI-KAN', xh+w-margin-29*10, y, 29*7, 29+blines, '#fff', '零<span style="color:#ff0; ">貫</span>');}else {j=Math.floor(i/12); i=i-12*j;_f_rightText(n+'-YAKUDAI-KAN', xh+w-margin-29*10, y, 29*7, 29+blines, '#fff', _f_to_wasuji(j)+'<span style="color:#ff0; ">貫</span>');if(i){_f_rightText(n+'-YAKUDAI-TEN', xh+w-margin-29*3, y, 29*3, 29+blines, '#fff', _f_to_wasuji(i)+'<span style="color:#ff0; ">点</span>');}}}else {if(i) i=_f_to_wasuji(i); else i='零';_f_rightText(n+'-YAKUDAI-TEN',  xh+w-margin-29*7, y, 29*7, 29+blines, '#fff', i+u);}}y=yh+h-margin-29;_f_leftText(n+'-AFTER-H', xh+margin, y, 29*6, 29+blines, '#0ff', '収支後');i=_f[seki].score_after_balance;if(i<0){_f_leftText(n+'-AFTER-SIGN', xh+margin+29*3, y, 29, 29+blines, '#fff', '▲');i=-i;}if(_f_gamemode==_F_GAMEMODE_88 || _f_gamemode==_F_GAMEMODE_SUDAOSHI){j=Math.floor(i/12); i=i-12*j;_f_rightText(n+'-AFTER-KAN', xh+w-margin-29*10, y, 29*7, 29+blines, '#fff', _f_to_wasuji(j)+'<span style="color:#ff0; ">貫</span>');}_f_rightText(n+'-AFTER-TEN', xh+w-margin-29*6, y, 29*6, 29+blines, '#fff', _f_to_wasuji(i)+u);}}
-function _f_balance_erase(){var e, i, j;e=document.getElementsByTagName('div');i=e.length; while(--i>=0){if(!e[i].getAttribute('data-bylib')) continue;if(!(j=e[i].getAttribute('id'))) continue;if(j.indexOf('BALANCE-')!=0 && j.indexOf('YAKU_')!=0) continue;e[i].parentNode.removeChild(e[i]);}}
+function _f_leftText4Yaku(n, x, y, w, h, color, str) {
+    var e, s=29;
+    if(_f_charMode)
+        s=24;
+
+    newTextArea(n, x, y, w, h, s, 'transparent', '#FFF');
+    e=document.getElementById(n);
+    e.style.color=color;
+    e.style.textAlign='left';
+    e.style.fontFamily='serif';
+    e.style.lineHeight='1em';
+    e.style.verticalAlign='text-top';
+    e.innerHTML=str;
+}
+function _f_rightText4Yaku(n, x, y, w, h, color, str) {
+    var e, s=29;
+    if(_f_charMode)
+        s=24;
+
+    newTextArea(n, x, y, w, h, s, 'transparent', '#FFF');
+    e=document.getElementById(n);
+    e.style.color=color;
+    e.style.textAlign='right';
+    e.style.fontFamily='serif';
+    e.style.lineHeight='1em';
+    e.style.verticalAlign='text-top';
+    e.innerHTML=str;
+}
+
+function _f_balance_disp(btype) {
+    var e, i, j;
+
+    e=document.getElementsByTagName('div');
+    i=e.length;
+    while (--i>=0) {
+        if (!e[i].getAttribute('data-bylib'))
+            continue;
+        if (!(j=e[i].getAttribute('id')))
+            continue;
+        if (j.indexOf('YAKU_')!=0)
+            continue;
+
+        e[i].parentNode.removeChild(e[i]);
+    }
+
+    if (_f_players==2) {
+        _f_balance_disp2(0, btype);
+        return;
+    }
+
+    i=_f_players;
+    while (--i>=0)
+        _f_balance_disp2(i, btype);
+}
+
+function _f_balance_disp2(seki, btype) {
+    var cs2=24, w, h, margin=16, blines=4, bcolumns=16, e, n='BALANCE-'+seki;
+    var i, j, k,o, x, y, x1, y1;
+
+    var u='<span style="color:#ff0; ">点</span>';
+    if (_f_gamemode==_F_GAMEMODE_KOIKOI)
+        u='<span style="color:#ff0; ">文</span>';
+    if (_f_kabu_mode)
+        cs2=24;
+
+    w=cs2*16+margin*2+bcolumns;
+    h=cs2*10+margin*2;
+    xh=600-w/2;
+    yh=200+h+3;
+
+    if (_f_players===3) {
+        xh=600-w/2;
+        yh=80+h+3;
+
+        if (seki==2) {
+            xh=600-w;
+            yh=80;
+        }
+        if (seki==1) {
+            xh=603;
+            yh=80;
+        }
+        if (_f_gamemode==_F_GAMEMODE_KYOKABU || _f_gamemode==_F_GAMEMODE_OICHOKABU) {
+            if (_f_oya==1) {
+                xh=600-w/2;
+                yh=80;
+
+                if (seki==2) {
+                    xh=600-w;
+                    yh=80+h+3;
+                }
+                if (seki==0) {
+                    xh=603;
+                    yh=80+h+3;
+                }
+            }
+            else if (_f_oya==2) {
+                xh=600-w/2;
+                yh=80;
+
+                if (seki==0) {
+                    xh=600-w;
+                    yh=80+h+3;
+                }
+                if (seki==1) {
+                    xh=603;
+                    yh=80+h+3;
+                }
+            }
+            else {
+                xh=600-w/2;
+                yh=80+h+3;
+
+                if (seki==2) {
+                    xh=600-w;
+                    yh=80;
+                }
+                if (seki==1) {
+                    xh=603;
+                    yh=80;
+                }
+            }
+        }
+    }
+    else {
+        yh=240+h+3;
+    }
+
+    _f_textWindow(n, xh, yh, w, h, '#fff');
+
+    y=yh+margin;
+    x1=0;
+    y1=0;
+
+    if (btype==2) {
+        y=yh+((h-cs2) >> 1);
+        _f_leftText(n+'-MOCHITEN-H', xh+margin, y, 29*6, 29+blines, '#0ff', '持点');
+
+        i=_f[seki].score;
+        if (!i) {
+            _f_rightText(n+'-MOCHITEN-TEN', xh+w-margin-29*7, y, 29*7, 29+blines, '#fff', '零'+u);
+        }
+        else {
+            if (i<0) {
+                _f_leftText(n+'-MOCHITEN-SIGN',  xh+margin+29*3, y, 29, 29+blines, '#fff', '▲');
+                i=-i;
+            }
+            if (_f_gamemode==_F_GAMEMODE_88) {
+                j=Math.floor(i/12);
+                i=i-12*j;
+                if (j) {
+                    _f_rightText(n+'-MOCHITEN-KAN',  xh+w-margin-29*10, y, 29*7, 29+blines, '#fff', _f_to_wasuji(j)+'<span style="color:#ff0; ">貫</span>');
+                }
+            }
+            if (i) {
+                _f_rightText(n+'-MOCHITEN-TEN',  xh+w-margin-29*7, y, 29*7, 29+blines, '#fff', _f_to_wasuji(i)+u);
+            }
+        }
+    }
+
+    else if (_f_gamemode==_F_GAMEMODE_KYOKABU || _f_gamemode==_F_GAMEMODE_OICHOKABU) {
+        y=yh+margin;
+        i=_f_seatName[seki];
+        if (_f_oya==seki)
+            i+=' (親)';
+        _f_leftText(n+'-SEATNAME-H',  xh+margin, y, 29*8, 29+blines, '#ff0', i);
+        var e=document.getElementById(n+'-SEATNAME-H');
+        e.style.whiteSpace='noWrap';
+
+        y+=29+blines;
+        i=_f[seki].score_before_game;
+        _f_leftText(n+'-BEFORE-H',  xh+margin, y, 29*6, 29+blines, '#0ff', '開局前');
+        if (i<0) {
+            i=-i;
+            _f_leftText(n+'-BEFORE-SIGN',  xh+margin+29*3, y, 29, 29+blines, '#fff', '▲');
+        }
+        if (i)
+            i=_f_to_wasuji(i);
+        else i='零';
+        _f_rightText(n+'-BEFORE-TEN',  xh+w-margin-29*7, y, 29*7, 29+blines, '#fff', i+'<span style="color:#ff0; ">点</span>');
+
+        y+=29+blines;
+        if (_f_oya!=seki) {
+            i=-_f[seki].balance_betted;
+            _f_leftText(n+'-BETTED-H',  xh+margin, y, 29*6, 29+blines, '#0ff', '賭点');
+            if (i<0) {
+                i=-i;
+                _f_leftText(n+'-BETTED-SIGN',  xh+margin+29*3, y, 29, 29+blines, '#fff', '▲');
+            }
+            if (i)
+                i=_f_to_wasuji(i);
+            else i='零';
+            _f_rightText(n+'-BETTED-TEN', xh+w-margin-29*7, y, 29*7, 29+blines, '#fff', i+'<span style="color:#ff0; ">点</span>');
+            y+=29+blines;
+        }
+
+        i=_f[seki].balance;
+        _f_leftText(n+'-BALANCE-H',  xh+margin, y, 29*6, 29+blines, '#0ff', '収支');
+        
+        if (i<0) {
+            i=-i;
+            _f_leftText(n+'-BALANCE-SIGN',  xh+margin+29*3, y, 29, 29+blines, '#fff', '▲');
+        }
+        if (i)
+            i=_f_to_wasuji(i);
+        else
+            i='零';
+        _f_rightText(n+'-BALANCE-TEN',  xh+w-margin-29*7, y, 29*7, 29+blines, '#fff', i+'<span style="color:#ff0; ">点</span>');
+        
+        y=yh+h-margin-29;
+        _f_leftText(n+'-RESULT-H',  xh+margin, y, 29*6, 29+blines, '#0ff', '現計');
+        
+        i=_f[seki].score_after_balance;
+        if (i<0) {
+            _f_leftText(n+'-RESULT-SIGN',  xh+margin+29*3, y, 29, 29+blines, '#fff', '▲');
+            i=-i;
+        }
+        _f_rightText(n+'-RESULT-TEN', xh+w-margin-29*7, y, 29*7, 29+blines, '#fff', _f_to_wasuji(i)+u);
+    }
+    
+    else {
+        y=yh+margin;
+
+        if ((i=_f[seki].balance_payback)!=0) {
+            _f_leftText(n+'-RETURN-H',  xh+margin, y, 29*6, 29+blines, '#0ff', '払戻し');
+            
+            if (i<0) {
+                i=-i;
+                _f_leftText(n+'-RETURN-SIGN',  xh+margin+29*3, y, 29*6, 29+blines, '#fff', '▲');
+            }
+            if (_f_gamemode==_F_GAMEMODE_88 || _f_gamemode==_F_GAMEMODE_SUDAOSHI) {
+                j=Math.floor(i/12);
+                i=i-12*j;
+                if (j) {
+                    _f_rightText(n+'-RETURN-KAN', xh+w-margin-29*10, y, 29*7, 29+blines, '#fff', _f_to_wasuji(j)+'<span style="color:#ff0; ">貫</span>');
+                }
+            }
+            if (i) {
+                _f_rightText(n+'-RETURN-TEN', xh+w-margin-29*3, y, 29*3, 29+blines, '#fff', _f_to_wasuji(i)+'<span style="color:#ff0; ">点</span>');
+            }
+            
+            y+=29+blines;
+        }
+
+        if (_f_gamemode!=_F_GAMEMODE_KOIKOI && ((_f_gamemode!=_F_GAMEMODE_88 && _f_gamemode!=_F_GAMEMODE_SUDAOSHI) || _f_88_yaku_flag!=1) && (_f[0].torifuda_total!=0 && _f[1].torifuda_total!=0)) {
+            i=_f[seki].balance_torifuda;
+            _f_leftText(n+'-TORIFUDA-H', xh+margin, y, 29*6, 29+blines, '#0ff', '取り札');
+            
+            if (i<0) {
+                i=-i;
+                _f_leftText(n+'-TORIFUDA-SIGN', xh+margin+29*3, y, 29*6, 29+blines, '#fff', '▲');
+            }
+            if (_f_gamemode==_F_GAMEMODE_88 || _f_gamemode==_F_GAMEMODE_SUDAOSHI) {
+                if (i==0) {
+                    _f_rightText(n+'-TORIFUDA-KAN',  xh+w-margin-29*10, y, 29*7, 29+blines, '#fff', '零<span style="color:#ff0; ">貫</span>');
+                }
+                else {
+                    j=Math.floor(i/12);
+                    i=i-12*j;
+                    _f_rightText(n+'-TORIFUDA-KAN', xh+w-margin-29*10, y, 29*7, 29+blines, '#fff', _f_to_wasuji(j)+'<span style="color:#ff0; ">貫</span>');
+                    if (i) {
+                        _f_rightText(n+'-TORIFUDA-TEN', xh+w-margin-29*3, y, 29*3, 29+blines, '#fff', _f_to_wasuji(i)+'<span style="color:#ff0; ">点</span>');
+                    }
+                }
+            }
+            else {
+                if (i)
+                    i=_f_to_wasuji(i);
+                else i='零';
+                _f_rightText(n+'-TORIFUDA-TEN', xh+w-margin-29*7, y, 29*7, 29+blines, '#fff', i+u);
+            }
+            
+            y+=29+blines;
+        }
+        
+        if ((i=_f[seki].balance)!=0 || _f_88_yaku_flag>0 || (_f_gamemode==_F_GAMEMODE_88 && _f[seki].yaku_name_ctr>0)) {
+            _f_leftText(n+'-YAKUDAI-H', xh+margin, y, 29*6, 29+blines, '#0ff', '役代');
+            
+            if (i<0) {
+                i=-i;
+                _f_leftText(n+'-YAKUDAI-SIGN', xh+margin+29*3, y, 29*6, 29+blines, '#fff', '▲');
+            }
+            if (_f_gamemode==_F_GAMEMODE_88 || _f_gamemode==_F_GAMEMODE_SUDAOSHI) {
+                if (i==0) {
+                    _f_rightText(n+'-YAKUDAI-KAN', xh+w-margin-29*10, y, 29*7, 29+blines, '#fff', '零<span style="color:#ff0; ">貫</span>');
+                }
+                else {
+                    j=Math.floor(i/12);
+                    i=i-12*j;
+                    _f_rightText(n+'-YAKUDAI-KAN', xh+w-margin-29*10, y, 29*7, 29+blines, '#fff', _f_to_wasuji(j)+'<span style="color:#ff0; ">貫</span>');
+                    if (i) {
+                        _f_rightText(n+'-YAKUDAI-TEN', xh+w-margin-29*3, y, 29*3, 29+blines, '#fff', _f_to_wasuji(i)+'<span style="color:#ff0; ">点</span>');
+                    }
+                }
+            }
+            else {
+                if (i)
+                    i=_f_to_wasuji(i);
+                else
+                    i='零';
+                _f_rightText(n+'-YAKUDAI-TEN',  xh+w-margin-29*7, y, 29*7, 29+blines, '#fff', i+u);
+            }
+        }
+        
+        y=yh+h-margin-29;
+        _f_leftText(n+'-AFTER-H', xh+margin, y, 29*6, 29+blines, '#0ff', '収支後');
+        
+        i=_f[seki].score_after_balance;
+        if (i<0) {
+            _f_leftText(n+'-AFTER-SIGN', xh+margin+29*3, y, 29, 29+blines, '#fff', '▲');
+            i=-i;
+        }
+        if (_f_gamemode==_F_GAMEMODE_88 || _f_gamemode==_F_GAMEMODE_SUDAOSHI) {
+            j=Math.floor(i/12);
+            i=i-12*j;
+            _f_rightText(n+'-AFTER-KAN', xh+w-margin-29*10, y, 29*7, 29+blines, '#fff', _f_to_wasuji(j)+'<span style="color:#ff0; ">貫</span>');
+        }
+        _f_rightText(n+'-AFTER-TEN', xh+w-margin-29*6, y, 29*6, 29+blines, '#fff', _f_to_wasuji(i)+u);
+    }
+}
+
+function _f_balance_erase(){var e, i, j;
+    e=document.getElementsByTagName('div');
+    i=e.length;
+    while (--i>=0) {
+        if (!e[i].getAttribute('data-bylib'))
+            continue;
+        if (!(j=e[i].getAttribute('id')))
+            continue;
+        if (j.indexOf('BALANCE-')!=0 && j.indexOf('YAKU_')!=0)
+            continue;
+
+        e[i].parentNode.removeChild(e[i]);
+    }
+}
